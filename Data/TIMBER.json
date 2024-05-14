@@ -1,0 +1,413 @@
+{
+  "id": "54f13f0e-bc81-46ef-84ff-c4356afe10a9",
+  "level": 2,
+  "callsign": "Timber",
+  "name": "Blaidd Vorn",
+  "player_name": "",
+  "status": "Active",
+  "dead": false,
+  "text_appearance": "",
+  "notes": "",
+  "history": "",
+  "quirks": [],
+  "current_hp": 10,
+  "background": "Soldier",
+  "resistances": [],
+  "mechs": [
+    {
+      "id": "d16b34d5-3cd4-46f3-9e0b-1fc97a6f813f",
+      "name": "Midnight Snack",
+      "notes": "",
+      "gm_note": "",
+      "frame": "mf_blackbeard",
+      "active": false,
+      "current_structure": 2,
+      "current_move": 5,
+      "boost": 0,
+      "current_hp": 19,
+      "overshield": 0,
+      "current_stress": 4,
+      "current_heat": 0,
+      "current_repairs": 6,
+      "current_overcharge": 1,
+      "current_core_energy": 1,
+      "statuses": [],
+      "conditions": [],
+      "resistances": [],
+      "reactions": [],
+      "burn": 0,
+      "destroyed": false,
+      "defeat": "",
+      "activations": 1,
+      "meltdown_imminent": false,
+      "reactor_destroyed": false,
+      "core_active": false,
+      "cc_ver": "ERR",
+      "lastModified": "Tue Apr 23 2024 22:20:26 GMT-0400 (Eastern Daylight Time)",
+      "isDeleted": false,
+      "expireTime": "",
+      "deleteTime": "",
+      "portrait": "",
+      "cloud_portrait": "",
+      "loadouts": [
+        {
+          "id": "a89c7e60-84f1-4bba-8f09-b52611832e07",
+          "name": "Primary",
+          "systems": [
+            {
+              "id": "ms_synthetic_muscle_netting",
+              "uses": 0,
+              "destroyed": false,
+              "cascading": false,
+              "flavorName": "",
+              "flavorDescription": "IPS-N’s Synthetic Muscle Netting (SMN) is a proprietary, field-proven modification compatible with all existing IPS-N frames. This convenient spray-on catalytic and structural enhancement boosts manipulator and propulsion performance by roughly 25 percent with no demonstrated reduction in operational life. An SMN layer also enhances impact absorption and thermal insulation.<br>IPS-N recommends that pilots apply SMN to internal components only and practice frequent cleaning to prevent septic-analogous decay."
+            },
+            {
+              "id": "ms_stable_structure",
+              "uses": 0,
+              "destroyed": false,
+              "cascading": false,
+              "flavorName": "",
+              "flavorDescription": ""
+            },
+            {
+              "id": "ms_expanded_compartment",
+              "uses": 0,
+              "destroyed": false,
+              "cascading": false,
+              "flavorName": "",
+              "flavorDescription": ""
+            },
+            {
+              "id": "ms_personalizations",
+              "uses": 0,
+              "destroyed": false,
+              "cascading": false,
+              "flavorName": "",
+              "flavorDescription": ""
+            }
+          ],
+          "integratedSystems": [],
+          "mounts": [
+            {
+              "mount_type": "Flex",
+              "lock": false,
+              "slots": [
+                {
+                  "size": "Flex",
+                  "weapon": {
+                    "id": "mw_chain_axe",
+                    "destroyed": false,
+                    "cascading": false,
+                    "loaded": true,
+                    "mod": null,
+                    "flavorName": "",
+                    "flavorDescription": "A simple tactical-scale version of a logging tool, IPS-N’s chain axe is a serrated chainblade run off core power. The axe’s teeth are tungsten-tipped, hardened to chew through both hard and soft targets. Chain axes are effective weapons and utility tools that are often used by boarding parties to breach reinforced bulkheads.",
+                    "customDamageType": null,
+                    "maxUseOverride": 0,
+                    "uses": 0,
+                    "selectedProfile": 0
+                  }
+                }
+              ],
+              "extra": [
+                {
+                  "size": "Auxiliary",
+                  "weapon": null
+                }
+              ],
+              "bonus_effects": [],
+              "modifiable": true
+            },
+            {
+              "mount_type": "Main",
+              "lock": false,
+              "slots": [
+                {
+                  "size": "Main",
+                  "weapon": {
+                    "id": "mw_chain_axe",
+                    "destroyed": false,
+                    "cascading": false,
+                    "loaded": true,
+                    "mod": null,
+                    "flavorName": "",
+                    "flavorDescription": "A simple tactical-scale version of a logging tool, IPS-N’s chain axe is a serrated chainblade run off core power. The axe’s teeth are tungsten-tipped, hardened to chew through both hard and soft targets. Chain axes are effective weapons and utility tools that are often used by boarding parties to breach reinforced bulkheads.",
+                    "customDamageType": null,
+                    "maxUseOverride": 0,
+                    "uses": 0,
+                    "selectedProfile": 0
+                  }
+                }
+              ],
+              "extra": [],
+              "bonus_effects": [],
+              "modifiable": true
+            },
+            {
+              "mount_type": "Heavy",
+              "lock": false,
+              "slots": [
+                {
+                  "size": "Heavy",
+                  "weapon": {
+                    "id": "mw_nanocarbon_sword",
+                    "destroyed": false,
+                    "cascading": false,
+                    "loaded": true,
+                    "mod": null,
+                    "flavorName": "",
+                    "flavorDescription": "IPS-N’s nanocarbon sword is a new spin on an old classic. Embedded nanosensors along the blade capture a full spectrum of data and transfer it to omninet storage banks for after-action review. Meanwhile, onboard software interprets the live feedback and adjusts the molecular composition of the blade edge in real time.",
+                    "customDamageType": null,
+                    "maxUseOverride": 0,
+                    "uses": 0,
+                    "selectedProfile": 0
+                  }
+                }
+              ],
+              "extra": [],
+              "bonus_effects": [],
+              "modifiable": true
+            }
+          ],
+          "integratedMounts": [],
+          "improved_armament": {
+            "mount_type": "Flex",
+            "lock": false,
+            "slots": [
+              {
+                "size": "Flex",
+                "weapon": null
+              }
+            ],
+            "extra": [
+              {
+                "size": "Auxiliary",
+                "weapon": null
+              }
+            ],
+            "bonus_effects": [],
+            "modifiable": true
+          },
+          "superheavy_mounting": {
+            "mount_type": "Superheavy",
+            "lock": false,
+            "slots": [
+              {
+                "size": "Superheavy",
+                "weapon": null
+              }
+            ],
+            "extra": [],
+            "bonus_effects": [],
+            "modifiable": true
+          },
+          "integratedWeapon": {
+            "mount_type": "Aux",
+            "lock": false,
+            "slots": [
+              {
+                "size": "Auxiliary",
+                "weapon": null
+              }
+            ],
+            "extra": [],
+            "bonus_effects": [],
+            "modifiable": true
+          },
+          "extraMounts": [],
+          "extraIntegratedMounts": []
+        }
+      ],
+      "active_loadout_index": 0
+    }
+  ],
+  "cc_ver": "",
+  "special_equipment": {
+    "PilotGear": [],
+    "Frames": [],
+    "MechWeapons": [],
+    "WeaponMods": [],
+    "MechSystems": [],
+    "SystemMods": []
+  },
+  "combat_history": {
+    "moves": 10,
+    "kills": 0,
+    "damage": 11,
+    "hp_damage": 1,
+    "structure_damage": 1,
+    "overshield": 0,
+    "heat_damage": 0,
+    "reactor_damage": 0,
+    "overcharge_uses": 0,
+    "core_uses": 0
+  },
+  "state": {
+    "active_mech_id": "d16b34d5-3cd4-46f3-9e0b-1fc97a6f813f",
+    "remote_mech_id": "",
+    "stage": "Narrative",
+    "turn": 4,
+    "mission": 0,
+    "actions": 2,
+    "braced": false,
+    "overcharged": false,
+    "prepare": false,
+    "bracedCooldown": false,
+    "redundant": false,
+    "mounted": true,
+    "stats": {
+      "moves": 10,
+      "kills": 0,
+      "damage": 11,
+      "hp_damage": 1,
+      "structure_damage": 1,
+      "overshield": 0,
+      "heat_damage": 0,
+      "reactor_damage": 0,
+      "overcharge_uses": 0,
+      "core_uses": 0
+    },
+    "deployed": []
+  },
+  "lastModified": "Mon May 13 2024 21:29:27 GMT-0400 (Eastern Daylight Time)",
+  "isDeleted": false,
+  "expireTime": "",
+  "deleteTime": "",
+  "lastUpdate_cloud": "Tue Mar 05 2024 19:31:14 GMT-0500 (Eastern Standard Time)",
+  "lastSync": "Tue Mar 05 2024 19:31:14 GMT-0500 (Eastern Standard Time)",
+  "shareCode": "7PZFI6",
+  "shareCodeExpiry": "Mon Jun 03 2024 19:31:21 GMT-0400 (Eastern Daylight Time)",
+  "skills": [
+    {
+      "id": "sk_assault",
+      "rank": 2
+    },
+    {
+      "id": "sk_read_a_situation",
+      "rank": 1
+    },
+    {
+      "id": "sk_stay_cool",
+      "rank": 1
+    },
+    {
+      "id": "sk_take_control",
+      "rank": 2
+    }
+  ],
+  "talents": [
+    {
+      "id": "t_executioner",
+      "rank": 3
+    },
+    {
+      "id": "t_brawler",
+      "rank": 1
+    },
+    {
+      "id": "t_duelist",
+      "rank": 1
+    }
+  ],
+  "mechSkills": [ 2, 1, 1, 0 ],
+  "counter_data": [],
+  "custom_counters": [],
+  "core_bonuses": [],
+  "licenses": [
+    {
+      "id": "mf_blackbeard",
+      "rank": 2
+    }
+  ],
+  "reserves": [],
+  "orgs": [],
+  "bondId": "ktb-bond-wolf",
+  "xp": 7,
+  "stress": 0,
+  "isBroken": false,
+  "burdens": [],
+  "bondPowers": [
+    {
+      "name": "Tear Throat",
+      "description": "You can instantly kill any NPC in arm’s reach of you without rolling, but must first pay the cost. The GM chooses one:<ul>  <li>You are wracked by guilt and unable to use this ability again until the next session.</li><li>You take a burden.</li></ul>"
+    }
+  ],
+  "powerSelections": 0,
+  "maxStress": 8,
+  "bondAnswers": [ "A long time spent alone in the cold, a time you’d rather forget.", "The blood in your past that’s catching up to you." ],
+  "minorIdeal": "My pain or weakness became apparent despite my efforts to hide it.",
+  "clocks": [],
+  "group": "Grayson Lancer",
+  "sort_index": 0,
+  "portrait": "",
+  "cloud_portrait": "https://d1nurxym97qk9o.cloudfront.net/public/us-east-1:88c19765-1cfd-c245-4b3b-1cbf0ec6887f/pilot/OIG2.jpg",
+  "loadout": {
+    "id": "979d953e-9400-4487-9465-9f042a386edb",
+    "name": "Primary",
+    "armor": [
+      {
+        "id": "pg_assault_hardsuit",
+        "destroyed": false,
+        "uses": 0,
+        "cascading": false,
+        "flavorName": "",
+        "flavorDescription": "These hardsuits, common among military units, feature heavier plating than light hardsuits but more mobility than heavy hardsuits. They are powered, augmenting the user’s strength, and typically feature an onboard computer, sensor suite, integrated air, burst EVA system, and waste recycling systems.",
+        "customDamageType": null
+      }
+    ],
+    "weapons": [
+      {
+        "id": "pg_heavy_a_c",
+        "destroyed": false,
+        "uses": 0,
+        "cascading": false,
+        "flavorName": "",
+        "flavorDescription": "Heavy weapons are designed with the augmented strength of hardsuits in mind and include war hammers, mallets, rams, pikes, and heavy two-handed assault swords.",
+        "customDamageType": null
+      },
+      {
+        "id": "pg_light_a_c",
+        "destroyed": false,
+        "uses": 0,
+        "cascading": false,
+        "flavorName": "",
+        "flavorDescription": "Light A/C weapons might be knives, bayonets, punching daggers, and short swords.",
+        "customDamageType": null
+      }
+    ],
+    "gear": [
+      {
+        "id": "pg_flexsuit",
+        "destroyed": false,
+        "uses": 0,
+        "cascading": false,
+        "flavorName": "",
+        "flavorDescription": "A strong base-layer suit that recycles water, generates nutrients, and adapts very rapidly to hostile environs, maintaining a stable condition and extending survivability. Flexsuit wearers can go for roughly a week without eating or drink thanks to the ambrosia paste generated by their suit before its systems are depleted; however, they don’t prevent feelings of hunger. Removing the suit for a day or two is enough to replenish its reserves. Flexsuits also maintain a steady temperature within acceptable parameters.",
+        "customDamageType": null
+      },
+      {
+        "id": "pg_player_two_neural_bypass",
+        "destroyed": false,
+        "uses": 0,
+        "cascading": false,
+        "note": "Involuntary Bypass, used as a safety measure to prevent Blaidd from insubordination and even attempted fragging of superior officers or other individuals deemed 'allies' by Union.",
+        "flavorName": "",
+        "flavorDescription": "This neural bypass implant is designed to allow an NHP to take control of and operate a biological pilot’s body as if it were a robotic subaltern. The extensive security and failsafes built into the bypass mean the pilot’s body may only be controlled in this way if they are willing, and they can take back control at any time. Some pilots use this system to get work done while asleep or in VR; others so they can act as a backup host to a friendly NHP in a pinch.",
+        "customDamageType": null
+      },
+      {
+        "id": "pg_stims",
+        "destroyed": false,
+        "uses": 3,
+        "cascading": false,
+        "flavorName": "",
+        "flavorDescription": "These chemical stimulants are sometimes administered automatically by injectors built into a pilot’s suit, or even implanted within their body. Uncontrolled use can be addictive and dangerous to health in the long-term and is a problem for some pilots.<br>Expend a charge for one of the following effects:<ul><li><b>Kick:</b> Keeps a pilot awake and alert for up to 30 hours.</li><li><b>Freeze:</b> Keeps a pilot calm and emotionally stable; deadens fear and other strong reactions.</li><li><b>Juice:</b> Heighten senses and alertness, reduce fatigue, and shorten reaction times. Juice occasionally provokes rage in some users.</li></ul>",
+        "customDamageType": null
+      }
+    ],
+    "extendedWeapons": [ null ],
+    "extendedGear": [ null, null ]
+  },
+  "brews": []
+}
