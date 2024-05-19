@@ -1,4 +1,5 @@
 ﻿using Godot;
+using MASTMAN.Data;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
@@ -44,25 +45,5 @@ namespace MASTMAN.Data
 
         [JsonPropertyName("special_equipment")]
         public List<string> SpecialEquipment { get; set; }
-    }
-
-    public class BonusData
-    {
-        // Define properties for BonusData
-    }
-
-    public class SynergyData
-    {
-        // Define properties for SynergyData
-    }
-
-    public class DeployableData
-    {
-        // Define properties for DeployableData
-    }
-
-    public class CounterData
-    {
-        // Define properties for CounterData
     }
 }

@@ -37,22 +37,26 @@ namespace MASTMAN.Data
         public string Effect { get; set; }
 
         [JsonPropertyName("tags")]
-        public List<TagData> Tags { get; set; }
+        public List<TagValData> Tags { get; set; }
 
         [JsonPropertyName("allowed_types")]
+        [JsonConverter(typeof(JsonStringEnumConverter))]
         public List<WeaponType> AllowedTypes { get; set; }
 
         [JsonPropertyName("allowed_sizes")]
+        [JsonConverter(typeof(JsonStringEnumConverter))]
         public List<WeaponSize> AllowedSizes { get; set; }
 
         [JsonPropertyName("restricted_types")]
+        [JsonConverter(typeof(JsonStringEnumConverter))]
         public List<WeaponType> RestrictedTypes { get; set; }
 
         [JsonPropertyName("restricted_sizes")]
+        [JsonConverter(typeof(JsonStringEnumConverter))]
         public List<WeaponSize> RestrictedSizes { get; set; }
 
         [JsonPropertyName("added_tags")]
-        public List<TagData> AddedTags { get; set; }
+        public List<TagValData> AddedTags { get; set; }
 
         [JsonPropertyName("added_damage")]
         public List<DamageData> AddedDamage { get; set; }
@@ -91,15 +95,5 @@ namespace MASTMAN.Data
     public class RangeData
     {
         // Define properties for RangeData
-    }
-
-    public enum WeaponType
-    {
-        // Define weapon types
-    }
-
-    public enum WeaponSize
-    {
-        // Define weapon sizes
     }
 }

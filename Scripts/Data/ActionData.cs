@@ -46,10 +46,18 @@ namespace MASTMAN.Data
 
     public enum ActivationType
     {
-        // Define possible values for ActivationType
-        Passive,
-        Active,
-        // Add other types as necessary
+        Free,
+        Protocol,
+        Quick,
+        Full,
+        Invade,
+        [JsonPropertyName("Full Tech")]
+        FullTech,
+        [JsonPropertyName("Quick Tech")]
+        QuickTech,
+        Reaction,
+        Other
+
     }
 
 }

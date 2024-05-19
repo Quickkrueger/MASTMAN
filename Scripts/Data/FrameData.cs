@@ -100,19 +100,21 @@ namespace MASTMAN.Data
         public int SP { get; set; }
     }
 
-    public class MountType
+    public enum MountType
     {
-        // Define properties for MountType
+        Main,
+        Heavy,
+        [JsonPropertyName("Aux/Aux")]
+        AuxAux,
+        Aux,
+        [JsonPropertyName("Main/Aux")]
+        MainAux,
+        Flex,
+        Integrated
+
     }
 
-    public interface IPrerequisite
-    {
-        string Source { get; set; }
-        int MinRank { get; set; }
-        bool? Cumulative { get; set; }
-    }
-
-    public class SpecialtyPrerequisite : IPrerequisite
+    public class SpecialtyPrerequisite
     {
         [JsonPropertyName("source")]
         public string Source { get; set; }

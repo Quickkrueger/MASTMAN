@@ -4,17 +4,40 @@ using System.Text.Json.Serialization;
 
 namespace MASTMAN.Data
 {
-    public partial class FrameTraitData : Resource
+    public partial class SystemData : Resource
     {
+        [JsonPropertyName("id")]
+        public string Id { get; set; }
+
         [JsonPropertyName("name")]
         public string Name { get; set; }
+
+        [JsonPropertyName("source")]
+        public string Source { get; set; }
+
+        [JsonPropertyName("license")]
+        public string License { get; set; }
+
+        [JsonPropertyName("license_id")]
+        public string LicenseId { get; set; }
+
+        [JsonPropertyName("license_level")]
+        public int LicenseLevel { get; set; }
+
+        [JsonPropertyName("effect")]
+        public string Effect { get; set; }
+
+        [JsonPropertyName("type")]
+        public SystemType Type { get; set; }
+
+        [JsonPropertyName("sp")]
+        public int? Sp { get; set; }
 
         [JsonPropertyName("description")]
         public string Description { get; set; }
 
-        [JsonPropertyName("use")]
-        [JsonConverter(typeof(JsonStringEnumConverter))]
-        public UseType? Use { get; set; }
+        [JsonPropertyName("tags")]
+        public List<TagValData> Tags { get; set; }
 
         [JsonPropertyName("actions")]
         public List<ActionData> Actions { get; set; }
@@ -38,14 +61,16 @@ namespace MASTMAN.Data
         public List<string> SpecialEquipment { get; set; }
     }
 
-    public enum UseType
-    {
-        Turn,
-        NextTurn,
-        Round,
-        NextRound,
-        Scene,
-        Encounter,
-        Mission
+    public enum SystemType 
+    { 
+        AI,
+        Deployable,
+        Drone,
+        [JsonPropertyName("Flight System")]
+        FlightSystem,
+        Shield,
+        System,
+        Tech
     }
+
 }

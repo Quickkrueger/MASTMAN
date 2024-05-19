@@ -67,11 +67,6 @@ namespace MASTMAN.Data
         public List<string> SpecialEquipment { get; set; }
 
         [JsonPropertyName("tags")]
-        public List<TagData> Tags { get; set; }
-    }
-
-    public class TagData
-    {
-        // Define properties for TagData
+        public List<TagValData> Tags { get; set; }
     }
 }
