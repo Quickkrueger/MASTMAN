@@ -1,11 +1,10 @@
-﻿using Godot;
-using MASTMAN.Data;
+﻿using MASTMAN.Data;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
 namespace MASTMAN.Scripts.Data
 {
-    public partial class AmmoData : Resource
+    public class AmmoData
     {
         [JsonPropertyName("name")]
         public string Name { get; set; }

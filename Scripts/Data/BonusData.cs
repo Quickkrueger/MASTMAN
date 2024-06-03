@@ -1,13 +1,9 @@
-﻿using Godot;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Text.Json.Serialization;
-using System.Threading.Tasks;
 
 namespace MASTMAN.Data
 {
-    public partial class BonusData : Resource
+    public class BonusData
     {
         [JsonPropertyName("id")]
         public string Id { get; set; }

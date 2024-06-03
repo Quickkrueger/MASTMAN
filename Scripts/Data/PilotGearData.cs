@@ -1,10 +1,9 @@
-﻿using Godot;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
 namespace MASTMAN.Data
 {
-    public partial class PilotGearData : Resource
+    public class PilotGearData
     {
         [JsonPropertyName("id")]
         public string Id { get; set; }
@@ -32,7 +31,7 @@ namespace MASTMAN.Data
         public List<DamageData> Damage { get; set; }
 
         [JsonPropertyName("actions")]
-        public List<ActionData> Actions { get; set; }
+        public List<ItemActionData> Actions { get; set; }
 
         [JsonPropertyName("bonuses")]
         public List<BonusData> Bonuses { get; set; }

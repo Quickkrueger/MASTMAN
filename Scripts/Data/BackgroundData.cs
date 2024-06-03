@@ -1,10 +1,9 @@
-﻿using Godot;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
 namespace MASTMAN.Data
 {
-    public partial class BackgroundData : Resource
+    public class BackgroundData
     {
         [JsonPropertyName("id")]
         public string Id { get; set; }

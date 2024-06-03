@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvy7vdt1xurn3"]
+
+[ext_resource type="Script" path="res://Scripts/Manager/Data_Manager.cs" id="1_heg1j"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource("1_heg1j")

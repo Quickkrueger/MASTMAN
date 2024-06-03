@@ -1,10 +1,9 @@
-﻿using Godot;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
 namespace MASTMAN.Data
 {
-    public partial class SynergyData : Resource
+    public class SynergyData
     {
         [JsonPropertyName("locations")]
         public List<string> Locations { get; set; }

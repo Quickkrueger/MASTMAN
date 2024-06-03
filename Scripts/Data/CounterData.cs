@@ -1,13 +1,8 @@
-﻿using Godot;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
+﻿using System.Text.Json.Serialization;
 
 namespace MASTMAN.Data
 {
-    public partial class CounterData : Resource
+    public class CounterData
     {
         [JsonPropertyName("id")]
         public string Id { get; set; }

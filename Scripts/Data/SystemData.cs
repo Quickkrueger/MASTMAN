@@ -1,10 +1,9 @@
-﻿using Godot;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
 namespace MASTMAN.Data
 {
-    public partial class SystemData : Resource
+    public class SystemData
     {
         [JsonPropertyName("id")]
         public string Id { get; set; }
@@ -40,7 +39,7 @@ namespace MASTMAN.Data
         public List<TagValData> Tags { get; set; }
 
         [JsonPropertyName("actions")]
-        public List<ActionData> Actions { get; set; }
+        public List<ItemActionData> Actions { get; set; }
 
         [JsonPropertyName("bonuses")]
         public List<BonusData> Bonuses { get; set; }

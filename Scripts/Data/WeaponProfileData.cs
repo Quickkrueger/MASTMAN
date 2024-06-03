@@ -3,25 +3,37 @@ using System.Text.Json.Serialization;
 
 namespace MASTMAN.Data
 {
-    public class CoreBonusData
+    public class WeaponProfileData
     {
-        [JsonPropertyName("id")]
-        public string Id { get; set; }
-
         [JsonPropertyName("name")]
         public string Name { get; set; }
-
-        [JsonPropertyName("source")]
-        public string Source { get; set; }
 
         [JsonPropertyName("effect")]
         public string Effect { get; set; }
 
-        [JsonPropertyName("description")]
-        public string Description { get; set; }
+        [JsonPropertyName("skirmish")]
+        public bool? Skirmish { get; set; }
 
-        [JsonPropertyName("mounted_effect")]
-        public string MountedEffect { get; set; }
+        [JsonPropertyName("barrage")]
+        public bool? Barrage { get; set; }
+
+        [JsonPropertyName("cost")]
+        public int? Cost { get; set; }
+
+        [JsonPropertyName("on_attack")]
+        public string OnAttack { get; set; }
+
+        [JsonPropertyName("on_hit")]
+        public string OnHit { get; set; }
+
+        [JsonPropertyName("on_crit")]
+        public string OnCrit { get; set; }
+
+        [JsonPropertyName("damage")]
+        public List<DamageData> Damage { get; set; }
+
+        [JsonPropertyName("range")]
+        public List<RangeData> Range { get; set; }
 
         [JsonPropertyName("actions")]
         public List<ItemActionData> Actions { get; set; }

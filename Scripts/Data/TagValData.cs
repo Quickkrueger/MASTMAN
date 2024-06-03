@@ -1,11 +1,10 @@
-﻿using Godot;
-using System.Text.Json.Serialization;
+﻿using System.Text.Json.Serialization;
 using System.Text.Json;
 using System;
 
 namespace MASTMAN.Data
 {
-    public partial class TagValData : Resource
+    public class TagValData
     {
         [JsonPropertyName("id")]
         public string Id { get; set; }

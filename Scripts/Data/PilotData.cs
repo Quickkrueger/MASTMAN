@@ -1,343 +1,167 @@
-using Godot;
+﻿using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace MASTMAN.Data
 {
-    public partial class PilotData : Resource
+    public class PilotData
     {
-        public string id { get; set; }
-        public int level { get; set; }
-        public string callsign { get; set; }
-        public string name { get; set; }
-        public string player_name { get; set; }
-        public string status { get; set; }
-        public bool dead { get; set; }
-        public string text_appearance { get; set; }
-        public string notes { get; set; }
-        public string history { get; set; }
-        public object[] quirks { get; set; }
-        public int current_hp { get; set; }
-        public string background { get; set; }
-        public object[] resistances { get; set; }
-        public Mech[] mechs { get; set; }
-        public string cc_ver { get; set; }
-        public Special_Equipment special_equipment { get; set; }
-        public Combat_History combat_history { get; set; }
-        public State state { get; set; }
-        public string lastModified { get; set; }
-        public bool isDeleted { get; set; }
-        public string expireTime { get; set; }
-        public string deleteTime { get; set; }
-        public string lastUpdate_cloud { get; set; }
-        public string lastSync { get; set; }
-        public string shareCode { get; set; }
-        public string shareCodeExpiry { get; set; }
-        public Skill[] skills { get; set; }
-        public Talent[] talents { get; set; }
-        public int[] mechSkills { get; set; }
-        public object[] counter_data { get; set; }
-        public object[] custom_counters { get; set; }
-        public object[] core_bonuses { get; set; }
-        public License[] licenses { get; set; }
-        public object[] reserves { get; set; }
-        public object[] orgs { get; set; }
-        public string bondId { get; set; }
-        public int xp { get; set; }
-        public int stress { get; set; }
-        public bool isBroken { get; set; }
-        public object[] burdens { get; set; }
-        public Bondpower[] bondPowers { get; set; }
-        public int powerSelections { get; set; }
-        public int maxStress { get; set; }
-        public string[] bondAnswers { get; set; }
-        public string minorIdeal { get; set; }
-        public object[] clocks { get; set; }
-        public string group { get; set; }
-        public int sort_index { get; set; }
-        public string portrait { get; set; }
-        public string cloud_portrait { get; set; }
-        public Loadout loadout { get; set; }
-        public object[] brews { get; set; }
-    }
+        [JsonPropertyName("id")]
+        public string Id { get; set; }
 
-    public class Special_Equipment
-    {
-        public object[] PilotGear { get; set; }
-        public object[] Frames { get; set; }
-        public object[] MechWeapons { get; set; }
-        public object[] WeaponMods { get; set; }
-        public object[] MechSystems { get; set; }
-        public object[] SystemMods { get; set; }
-    }
+        [JsonPropertyName("level")]
+        public int Level { get; set; }
 
-    public class Combat_History
-    {
-        public int moves { get; set; }
-        public int kills { get; set; }
-        public int damage { get; set; }
-        public int hp_damage { get; set; }
-        public int structure_damage { get; set; }
-        public int overshield { get; set; }
-        public int heat_damage { get; set; }
-        public int reactor_damage { get; set; }
-        public int overcharge_uses { get; set; }
-        public int core_uses { get; set; }
-    }
+        [JsonPropertyName("callsign")]
+        public string Callsign { get; set; }
 
-    public class State
-    {
-        public string active_mech_id { get; set; }
-        public string remote_mech_id { get; set; }
-        public string stage { get; set; }
-        public int turn { get; set; }
-        public int mission { get; set; }
-        public int actions { get; set; }
-        public bool braced { get; set; }
-        public bool overcharged { get; set; }
-        public bool prepare { get; set; }
-        public bool bracedCooldown { get; set; }
-        public bool redundant { get; set; }
-        public bool mounted { get; set; }
-        public Stats stats { get; set; }
-        public object[] deployed { get; set; }
-    }
+        [JsonPropertyName("name")]
+        public string Name { get; set; }
 
-    public class Stats
-    {
-        public int moves { get; set; }
-        public int kills { get; set; }
-        public int damage { get; set; }
-        public int hp_damage { get; set; }
-        public int structure_damage { get; set; }
-        public int overshield { get; set; }
-        public int heat_damage { get; set; }
-        public int reactor_damage { get; set; }
-        public int overcharge_uses { get; set; }
-        public int core_uses { get; set; }
-    }
+        [JsonPropertyName("player_name")]
+        public string PlayerName { get; set; }
 
-    public class Loadout
-    {
-        public string id { get; set; }
-        public string name { get; set; }
-        public Armor[] armor { get; set; }
-        public Weapon[] weapons { get; set; }
-        public Gear[] gear { get; set; }
-        public object[] extendedWeapons { get; set; }
-        public object[] extendedGear { get; set; }
-    }
+        [JsonPropertyName("status")]
+        public string Status { get; set; }
 
-    public class Armor
-    {
-        public string id { get; set; }
-        public bool destroyed { get; set; }
-        public int uses { get; set; }
-        public bool cascading { get; set; }
-        public string flavorName { get; set; }
-        public string flavorDescription { get; set; }
-        public object customDamageType { get; set; }
-    }
+        [JsonPropertyName("dead")]
+        public bool Dead { get; set; }
 
-    public class Weapon
-    {
-        public string id { get; set; }
-        public bool destroyed { get; set; }
-        public int uses { get; set; }
-        public bool cascading { get; set; }
-        public string flavorName { get; set; }
-        public string flavorDescription { get; set; }
-        public object customDamageType { get; set; }
-    }
+        [JsonPropertyName("text_appearance")]
+        public string TextAppearance { get; set; }
 
-    public class Gear
-    {
-        public string id { get; set; }
-        public bool destroyed { get; set; }
-        public int uses { get; set; }
-        public bool cascading { get; set; }
-        public string flavorName { get; set; }
-        public string flavorDescription { get; set; }
-        public object customDamageType { get; set; }
-        public string note { get; set; }
-    }
+        [JsonPropertyName("notes")]
+        public string Notes { get; set; }
 
-    public class Mech
-    {
-        public string id { get; set; }
-        public string name { get; set; }
-        public string notes { get; set; }
-        public string gm_note { get; set; }
-        public string frame { get; set; }
-        public bool active { get; set; }
-        public int current_structure { get; set; }
-        public int current_move { get; set; }
-        public int boost { get; set; }
-        public int current_hp { get; set; }
-        public int overshield { get; set; }
-        public int current_stress { get; set; }
-        public int current_heat { get; set; }
-        public int current_repairs { get; set; }
-        public int current_overcharge { get; set; }
-        public int current_core_energy { get; set; }
-        public object[] statuses { get; set; }
-        public object[] conditions { get; set; }
-        public object[] resistances { get; set; }
-        public object[] reactions { get; set; }
-        public int burn { get; set; }
-        public bool destroyed { get; set; }
-        public string defeat { get; set; }
-        public int activations { get; set; }
-        public bool meltdown_imminent { get; set; }
-        public bool reactor_destroyed { get; set; }
-        public bool core_active { get; set; }
-        public string cc_ver { get; set; }
-        public string lastModified { get; set; }
-        public bool isDeleted { get; set; }
-        public string expireTime { get; set; }
-        public string deleteTime { get; set; }
-        public string portrait { get; set; }
-        public string cloud_portrait { get; set; }
-        public MechLoadout[] loadouts { get; set; }
-        public int active_loadout_index { get; set; }
-    }
+        [JsonPropertyName("history")]
+        public string History { get; set; }
 
-    public class MechLoadout
-    {
-        public string id { get; set; }
-        public string name { get; set; }
-        public System[] systems { get; set; }
-        public object[] integratedSystems { get; set; }
-        public Mount[] mounts { get; set; }
-        public object[] integratedMounts { get; set; }
-        public Improved_Armament improved_armament { get; set; }
-        public Superheavy_Mounting superheavy_mounting { get; set; }
-        public Integratedweapon integratedWeapon { get; set; }
-        public object[] extraMounts { get; set; }
-        public object[] extraIntegratedMounts { get; set; }
-    }
+        [JsonPropertyName("quirks")]
+        public List<string> Quirks { get; set; }
 
-    public class Improved_Armament
-    {
-        public string mount_type { get; set; }
-        public bool _lock { get; set; }
-        public Slot[] slots { get; set; }
-        public Extra[] extra { get; set; }
-        public object[] bonus_effects { get; set; }
-        public bool modifiable { get; set; }
-    }
+        [JsonPropertyName("current_hp")]
+        public int CurrentHp { get; set; }
 
-    public class Slot
-    {
-        public string size { get; set; }
-        public object weapon { get; set; }
-    }
+        [JsonPropertyName("background")]
+        public string Background { get; set; }
 
-    public class Extra
-    {
-        public string size { get; set; }
-        public object weapon { get; set; }
-    }
+        [JsonPropertyName("resistances")]
+        public List<string> Resistances { get; set; }
 
-    public class Superheavy_Mounting
-    {
-        public string mount_type { get; set; }
-        public bool _lock { get; set; }
-        public Slot1[] slots { get; set; }
-        public object[] extra { get; set; }
-        public object[] bonus_effects { get; set; }
-        public bool modifiable { get; set; }
-    }
+        [JsonPropertyName("mechs")]
+        public List<FrameData> Mechs { get; set; }
 
-    public class Slot1
-    {
-        public string size { get; set; }
-        public object weapon { get; set; }
-    }
+        [JsonPropertyName("cc_ver")]
+        public string CcVer { get; set; }
 
-    public class Integratedweapon
-    {
-        public string mount_type { get; set; }
-        public bool _lock { get; set; }
-        public Slot2[] slots { get; set; }
-        public object[] extra { get; set; }
-        public object[] bonus_effects { get; set; }
-        public bool modifiable { get; set; }
-    }
+        [JsonPropertyName("special_equipment")]
+        public PilotGearData SpecialEquipment { get; set; }
 
-    public class Slot2
-    {
-        public string size { get; set; }
-        public object weapon { get; set; }
-    }
+        [JsonPropertyName("combat_history")]
+        public CombatHistory CombatHistory { get; set; }
 
-    public class System
-    {
-        public string id { get; set; }
-        public int uses { get; set; }
-        public bool destroyed { get; set; }
-        public bool cascading { get; set; }
-        public string flavorName { get; set; }
-        public string flavorDescription { get; set; }
-    }
+        [JsonPropertyName("state")]
+        public State State { get; set; }
 
-    public class Mount
-    {
-        public string mount_type { get; set; }
-        public bool _lock { get; set; }
-        public Slot3[] slots { get; set; }
-        public Extra1[] extra { get; set; }
-        public object[] bonus_effects { get; set; }
-        public bool modifiable { get; set; }
-    }
+        [JsonPropertyName("lastModified")]
+        public string LastModified { get; set; }
 
-    public class Slot3
-    {
-        public string size { get; set; }
-        public Weapon1 weapon { get; set; }
-    }
+        [JsonPropertyName("isDeleted")]
+        public bool IsDeleted { get; set; }
 
-    public class Weapon1
-    {
-        public string id { get; set; }
-        public bool destroyed { get; set; }
-        public bool cascading { get; set; }
-        public bool loaded { get; set; }
-        public object mod { get; set; }
-        public string flavorName { get; set; }
-        public string flavorDescription { get; set; }
-        public object customDamageType { get; set; }
-        public int maxUseOverride { get; set; }
-        public int uses { get; set; }
-        public int selectedProfile { get; set; }
-    }
+        [JsonPropertyName("expireTime")]
+        public string ExpireTime { get; set; }
 
-    public class Extra1
-    {
-        public string size { get; set; }
-        public object weapon { get; set; }
-    }
+        [JsonPropertyName("deleteTime")]
+        public string DeleteTime { get; set; }
 
-    public class Skill
-    {
-        public string id { get; set; }
-        public int rank { get; set; }
-    }
+        [JsonPropertyName("lastUpdate_cloud")]
+        public string LastUpdateCloud { get; set; }
 
-    public class Talent
-    {
-        public string id { get; set; }
-        public int rank { get; set; }
-    }
+        [JsonPropertyName("lastSync")]
+        public string LastSync { get; set; }
 
-    public class License
-    {
-        public string id { get; set; }
-        public int rank { get; set; }
-    }
+        [JsonPropertyName("shareCode")]
+        public string ShareCode { get; set; }
 
-    public class Bondpower
-    {
-        public string name { get; set; }
-        public string description { get; set; }
-    }
+        [JsonPropertyName("shareCodeExpiry")]
+        public string ShareCodeExpiry { get; set; }
 
+        [JsonPropertyName("skills")]
+        public List<SkillData> Skills { get; set; }
+
+        [JsonPropertyName("talents")]
+        public List<TalentData> Talents { get; set; }
+
+        [JsonPropertyName("mechSkills")]
+        public List<int> MechSkills { get; set; }
+
+        [JsonPropertyName("counter_data")]
+        public List<string> CounterData { get; set; }
+
+        [JsonPropertyName("custom_counters")]
+        public List<string> CustomCounters { get; set; }
+
+        [JsonPropertyName("core_bonuses")]
+        public List<string> CoreBonuses { get; set; }
+
+        [JsonPropertyName("licenses")]
+        public List<License> Licenses { get; set; }
+
+        [JsonPropertyName("reserves")]
+        public List<string> Reserves { get; set; }
+
+        [JsonPropertyName("orgs")]
+        public List<string> Orgs { get; set; }
+
+        [JsonPropertyName("bondId")]
+        public string BondId { get; set; }
+
+        [JsonPropertyName("xp")]
+        public int Xp { get; set; }
+
+        [JsonPropertyName("stress")]
+        public int Stress { get; set; }
+
+        [JsonPropertyName("isBroken")]
+        public bool IsBroken { get; set; }
+
+        [JsonPropertyName("burdens")]
+        public List<string> Burdens { get; set; }
+
+        [JsonPropertyName("bondPowers")]
+        public List<BondPower> BondPowers { get; set; }
+
+        [JsonPropertyName("powerSelections")]
+        public int PowerSelections { get; set; }
+
+        [JsonPropertyName("maxStress")]
+        public int MaxStress { get; set; }
+
+        [JsonPropertyName("bondAnswers")]
+        public List<string> BondAnswers { get; set; }
+
+        [JsonPropertyName("minorIdeal")]
+        public string MinorIdeal { get; set; }
+
+        [JsonPropertyName("clocks")]
+        public List<string> Clocks { get; set; }
+
+        [JsonPropertyName("group")]
+        public string Group { get; set; }
+
+        [JsonPropertyName("sort_index")]
+        public int SortIndex { get; set; }
+
+        [JsonPropertyName("portrait")]
+        public string Portrait { get; set; }
+
+        [JsonPropertyName("cloud_portrait")]
+        public string CloudPortrait { get; set; }
+
+        [JsonPropertyName("loadout")]
+        public List<PilotGearData> GearLoadout { get; set; }
+
+        [JsonPropertyName("brews")]
+        public List<string> Brews { get; set; }
+    }
 }

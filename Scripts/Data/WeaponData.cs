@@ -1,13 +1,9 @@
-﻿using Godot;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Text.Json.Serialization;
-using System.Threading.Tasks;
 
 namespace MASTMAN.Data
 {
-    public partial class WeaponData : Resource
+    public class WeaponData
     {
         [JsonPropertyName("id")]
         public string Id { get; set; }
@@ -79,7 +75,7 @@ namespace MASTMAN.Data
         public string OnCrit { get; set; }
 
         [JsonPropertyName("actions")]
-        public List<ActionData> Actions { get; set; }
+        public List<ItemActionData> Actions { get; set; }
 
         [JsonPropertyName("bonuses")]
         public List<BonusData> Bonuses { get; set; }
@@ -106,7 +102,7 @@ namespace MASTMAN.Data
         public List<string> SpecialEquipment { get; set; }
 
         [JsonPropertyName("profiles")]
-        public List<WeaponProfile> Profiles { get; set; }
+        public List<WeaponProfileData> Profiles { get; set; }
     }
 
     public enum WeaponType

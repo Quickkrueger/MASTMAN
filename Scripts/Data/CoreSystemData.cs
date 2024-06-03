@@ -1,10 +1,9 @@
-﻿using Godot;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
 namespace MASTMAN.Data
 {
-    public partial class CoreSystemData : Resource
+    public class CoreSystemData
     {
         [JsonPropertyName("name")]
         public string Name { get; set; }
@@ -31,7 +30,7 @@ namespace MASTMAN.Data
         public UseType? Use { get; set; }
 
         [JsonPropertyName("active_actions")]
-        public List<ActionData> ActiveActions { get; set; }
+        public List<ItemActionData> ActiveActions { get; set; }
 
         [JsonPropertyName("active_bonuses")]
         public List<BonusData> ActiveBonuses { get; set; }
@@ -46,7 +45,7 @@ namespace MASTMAN.Data
         public string PassiveEffect { get; set; }
 
         [JsonPropertyName("passive_actions")]
-        public List<ActionData> PassiveActions { get; set; }
+        public List<ItemActionData> PassiveActions { get; set; }
 
         [JsonPropertyName("passive_bonuses")]
         public List<BonusData> PassiveBonuses { get; set; }

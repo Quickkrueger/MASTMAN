@@ -1,11 +1,9 @@
-﻿using Godot;
-using MASTMAN.Scripts.Data;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
 namespace MASTMAN.Data
 {
-    public partial class FrameTraitData : Resource
+    public class FrameTraitData
     {
         [JsonPropertyName("name")]
         public string Name { get; set; }
@@ -18,7 +16,7 @@ namespace MASTMAN.Data
         public UseType? Use { get; set; }
 
         [JsonPropertyName("actions")]
-        public List<ActionData> Actions { get; set; }
+        public List<ItemActionData> Actions { get; set; }
 
         [JsonPropertyName("bonuses")]
         public List<BonusData> Bonuses { get; set; }
