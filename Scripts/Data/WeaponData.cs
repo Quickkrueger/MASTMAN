@@ -24,28 +24,30 @@ namespace MASTMAN.Data
         public int LicenseLevel { get; set; }
 
         [JsonPropertyName("mount")]
+        [JsonConverter(typeof(JsonStringEnumConverter))]
         public MountType Mount { get; set; }
 
         [JsonPropertyName("type")]
+        [JsonConverter(typeof(JsonStringEnumConverter))]
         public WeaponType Type { get; set; }
 
         [JsonPropertyName("cost")]
-        public int? Cost { get; set; }
+        public int Cost { get; set; }
 
         [JsonPropertyName("barrage")]
-        public bool? Barrage { get; set; }
+        public bool Barrage { get; set; }
 
         [JsonPropertyName("skirmish")]
-        public bool? Skirmish { get; set; }
+        public bool Skirmish { get; set; }
 
         [JsonPropertyName("no_attack")]
-        public bool? NoAttack { get; set; }
+        public bool NoAttack { get; set; }
 
         [JsonPropertyName("no_mods")]
-        public bool? NoMods { get; set; }
+        public bool NoMods { get; set; }
 
         [JsonPropertyName("no_core_bonus")]
-        public bool? NoCoreBonus { get; set; }
+        public bool NoCoreBonus { get; set; }
 
         [JsonPropertyName("damage")]
         public List<DamageData> Damage { get; set; }
@@ -57,7 +59,7 @@ namespace MASTMAN.Data
         public List<TagValData> Tags { get; set; }
 
         [JsonPropertyName("sp")]
-        public int? SP { get; set; }
+        public int SP { get; set; }
 
         [JsonPropertyName("description")]
         public string Description { get; set; }
@@ -81,13 +83,13 @@ namespace MASTMAN.Data
         public List<BonusData> Bonuses { get; set; }
 
         [JsonPropertyName("no_bonus")]
-        public bool? NoBonus { get; set; }
+        public bool NoBonus { get; set; }
 
         [JsonPropertyName("synergies")]
         public List<SynergyData> Synergies { get; set; }
 
         [JsonPropertyName("no_synergy")]
-        public bool? NoSynergy { get; set; }
+        public bool NoSynergy { get; set; }
 
         [JsonPropertyName("deployables")]
         public List<DeployableData> Deployables { get; set; }

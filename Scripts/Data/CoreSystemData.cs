@@ -23,11 +23,11 @@ namespace MASTMAN.Data
 
         [JsonPropertyName("deactivation")]
         [JsonConverter(typeof(JsonStringEnumConverter))]
-        public ActivationType? Deactivation { get; set; }
+        public ActivationType Deactivation { get; set; }
 
         [JsonPropertyName("use")]
         [JsonConverter(typeof(JsonStringEnumConverter))]
-        public UseType? Use { get; set; }
+        public UseType Use { get; set; }
 
         [JsonPropertyName("active_actions")]
         public List<ItemActionData> ActiveActions { get; set; }

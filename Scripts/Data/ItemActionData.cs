@@ -9,6 +9,7 @@ namespace MASTMAN.Data
         public string Name { get; set; }
 
         [JsonPropertyName("activation")]
+        [JsonConverter(typeof(JsonStringEnumConverter))]
         public ActivationType Activation { get; set; }
 
         [JsonPropertyName("detail")]

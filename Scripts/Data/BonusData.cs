@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using MASTMAN.Util;
+using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
 namespace MASTMAN.Data
@@ -12,24 +13,26 @@ namespace MASTMAN.Data
         public object Val { get; set; }  // to accommodate both string and number
 
         [JsonPropertyName("damage_types")]
+        [JsonConverter(typeof(ItemConverterDecorator<JsonStringEnumConverter>))]
         public List<DamageType> DamageTypes { get; set; }
 
         [JsonPropertyName("range_types")]
+        [JsonConverter(typeof(ItemConverterDecorator<JsonStringEnumConverter>))]
         public List<RangeType> RangeTypes { get; set; }
 
         [JsonPropertyName("weapon_types")]
-        [JsonConverter(typeof(JsonStringEnumConverter))]
+        [JsonConverter(typeof(ItemConverterDecorator<JsonStringEnumConverter>))]
         public List<WeaponType> WeaponTypes { get; set; }
 
         [JsonPropertyName("weapon_sizes")]
-        [JsonConverter(typeof(JsonStringEnumConverter))]
+        [JsonConverter(typeof(ItemConverterDecorator<JsonStringEnumConverter>))]
         public List<WeaponSize> WeaponSizes { get; set; }
 
         [JsonPropertyName("overwrite")]
-        public bool? Overwrite { get; set; }
+        public bool Overwrite { get; set; }
 
         [JsonPropertyName("replace")]
-        public bool? Replace { get; set; }
+        public bool Replace { get; set; }
     }
 
     public enum DamageType

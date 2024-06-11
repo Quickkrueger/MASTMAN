@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using MASTMAN.Util;
+using System.Collections.Generic;
+using System.Runtime.Serialization;
 using System.Text.Json.Serialization;
 
 namespace MASTMAN.Data
@@ -21,10 +23,10 @@ namespace MASTMAN.Data
         public string Terse { get; set; }
 
         [JsonPropertyName("pilot")]
-        public bool? Pilot { get; set; }
+        public bool Pilot { get; set; }
 
         [JsonPropertyName("mech")]
-        public bool? Mech { get; set; }
+        public bool Mech { get; set; }
 
         [JsonPropertyName("synergy_locations")]
         public List<string> SynergyLocations { get; set; }
@@ -36,12 +38,32 @@ namespace MASTMAN.Data
         public string Log { get; set; }
 
         [JsonPropertyName("ignore_used")]
-        public bool? IgnoreUsed { get; set; }
+        public bool IgnoreUsed { get; set; }
 
         [JsonPropertyName("heat_cost")]
-        public bool? HeatCost { get; set; }
+        public bool HeatCost { get; set; }
+
+        public override string ToString()
+        {
+            string output = "{\n";
+            output += $"\t{Id}\n";
+            output += $"\t{Name}\n";
+            output += $"\t{Detail}\n";
+            output += $"\t{Activation}\n";
+            output += $"\t{Terse}\n";
+            output += $"\t{Pilot}\n";
+            output += $"\t{Mech}\n";
+            output += $"\t{LogHelper.ToStringList<string>(SynergyLocations)}\n";
+            output += $"\t{LogHelper.ToStringList<string>(Confirm)}\n";
+            output += $"\t{Log}\n";
+            output += $"\t{IgnoreUsed}\n";
+            output += $"\t{HeatCost}\n";
+            output += "}";
+            return output;
+        }
     }
 
+    [JsonConverter(typeof(JsonEnumMemberStringEnumConverter))]
     public enum ActivationType
     {
         Free,
@@ -49,11 +71,13 @@ namespace MASTMAN.Data
         Quick,
         Full,
         Invade,
-        [JsonPropertyName("Full Tech")]
+        [EnumMember(Value = "Full Tech")]
         FullTech,
-        [JsonPropertyName("Quick Tech")]
+        [EnumMember(Value = "Quick Tech")]
         QuickTech,
         Reaction,
+        Move,
+        Downtime,
         Other
 
     }

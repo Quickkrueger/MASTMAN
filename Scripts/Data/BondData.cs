@@ -53,4 +53,40 @@ namespace MASTMAN.Data
         [JsonPropertyName("master")]
         public bool? Master { get; set; }
     }
+
+    public class PilotBondData
+    {
+        [JsonPropertyName("bondId")]
+        public string BondId { get; set; }
+
+        [JsonPropertyName("xp")]
+        public int Xp { get; set; }
+
+        [JsonPropertyName("stress")]
+        public int Stress { get; set; }
+
+        [JsonPropertyName("maxStress")]
+        public int MaxStress { get; set; }
+
+        [JsonPropertyName("powerSelections")]
+        public int PowerSelections { get; set; }
+
+        [JsonPropertyName("isBroken")]
+        public bool IsBroken { get; set; }
+
+        [JsonPropertyName("burdens")]
+        public List<ClockData> Burdens { get; set; }
+
+        [JsonPropertyName("bondPowers")]
+        public List<BondPower> BondPowers { get; set; }
+
+        [JsonPropertyName("clocks")]
+        public List<ClockData> Clocks { get; set; }
+
+        [JsonPropertyName("minorIdeal")]
+        public string MinorIdeal { get; set; }
+
+        [JsonPropertyName("bondAnswers")]
+        public List<string> BondAnswers { get; set; }
+    }
 }

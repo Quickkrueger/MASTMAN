@@ -32,4 +32,22 @@ namespace MASTMAN.Data
         [JsonPropertyName("integrated")]
         public List<string> Integrated { get; set; }
     }
+
+    public class RankedData
+    {
+        [JsonPropertyName("id")]
+        public string Id { get; set; }
+
+        [JsonPropertyName("rank")]
+        public int Rank { get; set; }
+
+        [JsonPropertyName("custom")]
+        public bool? Custom { get; set; }
+
+        [JsonPropertyName("custom_desc")]
+        public string CustomDesc { get; set; }
+
+        [JsonPropertyName("custom_detail")]
+        public string CustomDetail { get; set; }
+    }
 }

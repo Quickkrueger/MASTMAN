@@ -18,15 +18,19 @@ namespace MASTMAN.Data
         public int Size { get; set; } // Not required for Mines
 
         [JsonPropertyName("activation")]
+        [JsonConverter(typeof(JsonStringEnumConverter))]
         public ActivationType? Activation { get; set; }
 
         [JsonPropertyName("deactivation")]
+        [JsonConverter(typeof(JsonStringEnumConverter))]
         public ActivationType? Deactivation { get; set; }
 
         [JsonPropertyName("recall")]
+        [JsonConverter(typeof(JsonStringEnumConverter))]
         public ActivationType? Recall { get; set; }
 
         [JsonPropertyName("redeploy")]
+        [JsonConverter(typeof(JsonStringEnumConverter))]
         public ActivationType? Redeploy { get; set; }
 
         [JsonPropertyName("instances")]
@@ -85,5 +89,26 @@ namespace MASTMAN.Data
 
         [JsonPropertyName("tags")]
         public List<TagValData> Tags { get; set; }
+    }
+
+    public class DeployedData
+    {
+        [JsonPropertyName("data")]
+        public DeployableData Data { get; set; }
+
+        [JsonPropertyName("assigned_name")]
+        public string AssignedName { get; set; }
+
+        [JsonPropertyName("current_hp")]
+        public int CurrentHp { get; set; }
+
+        [JsonPropertyName("current_duration")]
+        public int? CurrentDuration { get; set; }
+
+        [JsonPropertyName("overshield")]
+        public int? Overshield { get; set; }
+
+        [JsonPropertyName("destroyed")]
+        public bool? Destroyed { get; set; }
     }
 }
