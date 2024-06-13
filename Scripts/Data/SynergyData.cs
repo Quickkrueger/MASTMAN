@@ -13,7 +13,7 @@ namespace MASTMAN.Data
         public string Detail { get; set; }
 
         [JsonPropertyName("weapon_types")]
-        [JsonConverter(typeof(ItemConverterDecorator<JsonStringEnumConverter>))]
+        [JsonConverter(typeof(JsonEnumListConverter<WeaponType>))]
         public List<WeaponType> WeaponTypes { get; set; }
 
         [JsonPropertyName("system_types")]
@@ -21,7 +21,7 @@ namespace MASTMAN.Data
         public List<SystemType> SystemTypes { get; set; }
 
         [JsonPropertyName("weapon_sizes")]
-        [JsonConverter(typeof(ItemConverterDecorator<JsonStringEnumConverter>))]
+        [JsonConverter(typeof(JsonEnumListConverter<WeaponSize>))]
         public List<WeaponSize> WeaponSizes { get; set; }
     }
 }

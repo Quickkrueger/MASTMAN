@@ -39,19 +39,19 @@ namespace MASTMAN.Data
         public List<TagValData> Tags { get; set; }
 
         [JsonPropertyName("allowed_types")]
-        [JsonConverter(typeof(ItemConverterDecorator<JsonStringEnumConverter>))]
+        [JsonConverter(typeof(JsonEnumListConverter<WeaponType>))]
         public List<WeaponType> AllowedTypes { get; set; }
 
         [JsonPropertyName("allowed_sizes")]
-        [JsonConverter(typeof(ItemConverterDecorator<JsonStringEnumConverter>))]
+        [JsonConverter(typeof(JsonEnumListConverter<WeaponSize>))]
         public List<WeaponSize> AllowedSizes { get; set; }
 
         [JsonPropertyName("restricted_types")]
-        [JsonConverter(typeof(ItemConverterDecorator<JsonStringEnumConverter>))]
+        [JsonConverter(typeof(JsonEnumListConverter<WeaponType>))]
         public List<WeaponType> RestrictedTypes { get; set; }
 
         [JsonPropertyName("restricted_sizes")]
-        [JsonConverter(typeof(ItemConverterDecorator<JsonStringEnumConverter>))]
+        [JsonConverter(typeof(JsonEnumListConverter<WeaponSize>))]
         public List<WeaponSize> RestrictedSizes { get; set; }
 
         [JsonPropertyName("added_tags")]

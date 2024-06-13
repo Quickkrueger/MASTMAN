@@ -13,19 +13,19 @@ namespace MASTMAN.Data
         public object Val { get; set; }  // to accommodate both string and number
 
         [JsonPropertyName("damage_types")]
-        [JsonConverter(typeof(ItemConverterDecorator<JsonStringEnumConverter>))]
+        [JsonConverter(typeof(JsonEnumListConverter<DamageType>))]
         public List<DamageType> DamageTypes { get; set; }
 
         [JsonPropertyName("range_types")]
-        [JsonConverter(typeof(ItemConverterDecorator<JsonStringEnumConverter>))]
+        [JsonConverter(typeof(JsonEnumListConverter<RangeType>))]
         public List<RangeType> RangeTypes { get; set; }
 
         [JsonPropertyName("weapon_types")]
-        [JsonConverter(typeof(ItemConverterDecorator<JsonStringEnumConverter>))]
+        [JsonConverter(typeof(JsonEnumListConverter<WeaponType>))]
         public List<WeaponType> WeaponTypes { get; set; }
 
         [JsonPropertyName("weapon_sizes")]
-        [JsonConverter(typeof(ItemConverterDecorator<JsonStringEnumConverter>))]
+        [JsonConverter(typeof(JsonEnumListConverter<WeaponSize>))]
         public List<WeaponSize> WeaponSizes { get; set; }
 
         [JsonPropertyName("overwrite")]
