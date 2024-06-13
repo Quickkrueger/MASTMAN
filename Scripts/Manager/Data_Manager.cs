@@ -16,27 +16,27 @@ public partial class Data_Manager : Node
 	public override void _Ready()
 	 {
 		processors = new Dictionary<string, Func<string, Task>>() {
-			{ "actions", async (url) => await ProcessFileContent<ActionData>(url) },
-			{ "backgrounds", async (url) => await ProcessFileContent<BackgroundData>(url) },
-			{ "core_bonuses", async (url) => await ProcessFileContent<CoreBonusData>(url) },
-			{ "environments", async (url) => await ProcessFileContent<EnvironmentData>(url) },
+			{ "actions", async (url) => await ProcessFileListContent<ActionData>(url) },
+			{ "backgrounds", async (url) => await ProcessFileListContent<BackgroundData>(url) },
+			{ "core_bonuses", async (url) => await ProcessFileListContent<CoreBonusData>(url) },
+			{ "environments", async (url) => await ProcessFileListContent<EnvironmentData>(url) },
 			//{ "factions", async (url) => await ProcessFileContent<FactionData>(url) },
-			{ "frames", async (url) => await ProcessFileContent<FrameData>(url) },
+			{ "frames", async (url) => await ProcessFileListContent<FrameData>(url) },
 			//{ "glossary", async (url) => await ProcessFileContent<GlossaryData>(url) },
 			{ "info", async (url) => await ProcessFileContent<ManifestData>(url) },
-			{ "manufacturers", async (url) => await ProcessFileContent<ManufacturerData>(url) },
-			{ "mods", async (url) => await ProcessFileContent<ModData>(url) },
-			{ "pilot_gear", async (url) => await ProcessFileContent<PilotGearData>(url) },
-			{ "reserves", async (url) => await ProcessFileContent<ReserveData>(url) },
+			{ "manufacturers", async (url) => await ProcessFileListContent<ManufacturerData>(url) },
+			{ "mods", async (url) => await ProcessFileListContent<ModData>(url) },
+			{ "pilot_gear", async (url) => await ProcessFileListContent<PilotGearData>(url) },
+			{ "reserves", async (url) => await ProcessFileListContent<ReserveData>(url) },
 			{ "rules", async (url) => await ProcessFileContent<RuleData>(url) },
-			{ "sitreps", async (url) => await ProcessFileContent<SitrepData>(url) },
-			{ "skills", async (url) => await ProcessFileContent<SkillData>(url) },
-			{ "statuses", async (url) => await ProcessFileContent<StatusData>(url) },
-			{ "systems", async (url) => await ProcessFileContent<SystemData>(url) },
+			{ "sitreps", async (url) => await ProcessFileListContent<SitrepData>(url) },
+			{ "skills", async (url) => await ProcessFileListContent<SkillData>(url) },
+			{ "statuses", async (url) => await ProcessFileListContent<StatusData>(url) },
+			{ "systems", async (url) => await ProcessFileListContent<SystemData>(url) },
 			//{ "tables", async (url) => await ProcessFileContent<TableData>(url) },
-			{ "tags", async (url) => await ProcessFileContent<TagData>(url) },
-			{ "talents", async (url) => await ProcessFileContent<TalentData>(url) },
-			{ "weapons", async (url) => await ProcessFileContent<WeaponData>(url) }
+			{ "tags", async (url) => await ProcessFileListContent<TagData>(url) },
+			{ "talents", async (url) => await ProcessFileListContent<TalentData>(url) },
+			{ "weapons", async (url) => await ProcessFileListContent<WeaponData>(url) }
 		};
 
 		Task.Run(async() => await GetCoreJsonDataAsync());
@@ -72,26 +72,41 @@ public partial class Data_Manager : Node
 		}
 	}
 
-	private async Task ProcessFileContent<T>(string url)
+	private async Task ProcessFileListContent<T>(string url)
 	{
-		List<T> data = await GetFileContent<T>(url);
+		List<T> data = await GetFileListContent<T>(url);
 		GD.PrintRaw($"Content of {url}:\n");
 		data.ForEach(item => GD.Print($"{item}"));
 	}
 
-	private async Task<GitHubFile[]> GetFileListFromRepo(string repoUrl)
+    private async Task ProcessFileContent<T>(string url)
+    {
+        T data = await GetFileContent<T>(url);
+        GD.PrintRaw($"Content of {url}:\n");
+		GD.Print($"{data}");
+    }
+
+
+    private async Task<GitHubFile[]> GetFileListFromRepo(string repoUrl)
 	{
 		string response = await client.GetStringAsync(repoUrl);
 		return JsonSerializer.Deserialize<GitHubFile[]>(response);
 	}
 
-	private async Task<List<T>> GetFileContent<T>(string fileUrl)
+	private async Task<List<T>> GetFileListContent<T>(string fileUrl)
 	{
 		string jsonString = await client.GetStringAsync(fileUrl);
 		List<T> serializableClass = JsonSerializer.Deserialize<List<T>>(jsonString);
 
 		return serializableClass;
 	}
+    private async Task<T> GetFileContent<T>(string fileUrl)
+    {
+        string jsonString = await client.GetStringAsync(fileUrl);
+        T serializableClass = JsonSerializer.Deserialize<T>(jsonString);
+
+        return serializableClass;
+    }
 }
 
 public class GitHubFile

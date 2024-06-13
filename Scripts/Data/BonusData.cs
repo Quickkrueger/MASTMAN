@@ -35,6 +35,7 @@ namespace MASTMAN.Data
         public bool Replace { get; set; }
     }
 
+    [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum DamageType
     {
         Kinetic,
@@ -45,6 +46,7 @@ namespace MASTMAN.Data
         Variable
     }
 
+    [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum RangeType
     {
         Range,

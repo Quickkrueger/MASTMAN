@@ -15,18 +15,15 @@ namespace MASTMAN.Data
         public string ActiveEffect { get; set; }
 
         [JsonPropertyName("activation")]
-        [JsonConverter(typeof(JsonStringEnumConverter))]
         public ActivationType Activation { get; set; }
 
         [JsonPropertyName("description")]
         public string Description { get; set; }
 
         [JsonPropertyName("deactivation")]
-        [JsonConverter(typeof(JsonStringEnumConverter))]
         public ActivationType Deactivation { get; set; }
 
         [JsonPropertyName("use")]
-        [JsonConverter(typeof(JsonStringEnumConverter))]
         public UseType Use { get; set; }
 
         [JsonPropertyName("active_actions")]

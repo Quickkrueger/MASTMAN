@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using MASTMAN.Util;
+using System.Collections.Generic;
+using System.Runtime.Serialization;
 using System.Text.Json.Serialization;
 
 namespace MASTMAN.Data
@@ -60,6 +62,7 @@ namespace MASTMAN.Data
         public List<string> SpecialEquipment { get; set; }
     }
 
+    [JsonConverter(typeof(JsonEnumMemberStringEnumConverter<SystemType>))]
     public enum SystemType 
     { 
         AI,

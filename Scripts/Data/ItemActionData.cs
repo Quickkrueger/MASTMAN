@@ -6,10 +6,9 @@ namespace MASTMAN.Data
     public class ItemActionData
     {
         [JsonPropertyName("name")]
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
         [JsonPropertyName("activation")]
-        [JsonConverter(typeof(JsonStringEnumConverter))]
         public ActivationType Activation { get; set; }
 
         [JsonPropertyName("detail")]
@@ -22,12 +21,12 @@ namespace MASTMAN.Data
         public bool? Pilot { get; set; }
 
         [JsonPropertyName("synergy_locations")]
-        public List<string> SynergyLocations { get; set; }
+        public List<string>? SynergyLocations { get; set; }
 
         [JsonPropertyName("tech_attack")]
         public bool? TechAttack { get; set; }
 
         [JsonPropertyName("log")]
-        public List<string> Log { get; set; }
+        public List<string>? Log { get; set; }
     }
 }

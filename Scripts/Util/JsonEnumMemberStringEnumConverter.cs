@@ -11,58 +11,20 @@ using System.Collections;
 
 namespace MASTMAN.Util
 {
-    public class JsonEnumMemberStringEnumConverter : JsonConverterFactory
-    {
-        private readonly JsonNamingPolicy? namingPolicy;
-        private readonly bool allowIntegerValues;
-        private readonly JsonStringEnumConverter baseConverter;
-
-        public JsonEnumMemberStringEnumConverter() : this(null, true) { }
-
-        public JsonEnumMemberStringEnumConverter(JsonNamingPolicy? namingPolicy = null, bool allowIntegerValues = true)
-        {
-            this.namingPolicy = namingPolicy;
-            this.allowIntegerValues = allowIntegerValues;
-            this.baseConverter = new JsonStringEnumConverter(namingPolicy, allowIntegerValues);
-        }
-
-        public override bool CanConvert(Type typeToConvert) => baseConverter.CanConvert(typeToConvert);
-
-        public override JsonConverter CreateConverter(Type typeToConvert, JsonSerializerOptions options)
-        {
-            var query = from field in typeToConvert.GetFields(BindingFlags.Public | BindingFlags.Static)
-                        let attr = field.GetCustomAttribute<EnumMemberAttribute>()
-                        where attr != null && attr.Value != null
-                        select (field.Name, attr.Value);
-            var dictionary = query.ToDictionary(p => p.Item1, p => p.Item2);
-            if (dictionary.Count > 0)
-                return new JsonStringEnumConverter(new DictionaryLookupNamingPolicy(dictionary, namingPolicy), allowIntegerValues).CreateConverter(typeToConvert, options);
-            else
-                return baseConverter.CreateConverter(typeToConvert, options);
-        }
-    }
-
-    public class JsonNamingPolicyDecorator : JsonNamingPolicy
-    {
-        readonly JsonNamingPolicy? underlyingNamingPolicy;
-
-        public JsonNamingPolicyDecorator(JsonNamingPolicy? underlyingNamingPolicy) => this.underlyingNamingPolicy = underlyingNamingPolicy;
-        public override string ConvertName(string name) => underlyingNamingPolicy?.ConvertName(name) ?? name;
-    }
-
-    internal class DictionaryLookupNamingPolicy : JsonNamingPolicyDecorator
-    {
-        readonly Dictionary<string, string> dictionary;
-
-        public DictionaryLookupNamingPolicy(Dictionary<string, string> dictionary, JsonNamingPolicy? underlyingNamingPolicy) : base(underlyingNamingPolicy) => this.dictionary = dictionary ?? throw new ArgumentNullException();
-        public override string ConvertName(string name) => dictionary.TryGetValue(name, out var value) ? value : base.ConvertName(name);
-    }
-
     public class ItemConverterDecorator<TItemConverter> : JsonConverterFactory where TItemConverter : JsonConverter, new()
     {
         readonly TItemConverter itemConverter = new TItemConverter();
 
-        public override bool CanConvert(Type typeToConvert) => GetItemType(typeToConvert).ItemType is var itemType && itemType != null && itemConverter.CanConvert(itemType);
+        public override bool CanConvert(Type typeToConvert) {
+            Type? itemType = GetItemType(typeToConvert).ItemType;
+
+            if(itemType != null && itemConverter.CanConvert(itemType))
+            {
+                return true;
+            }
+
+            return false;
+        }
 
         public override JsonConverter CreateConverter(Type typeToConvert, JsonSerializerOptions options)
         {
@@ -187,5 +149,100 @@ namespace MASTMAN.Util
     {
         public static IEnumerable<Type> GetInterfacesAndSelf(this Type type) =>
             (type ?? throw new ArgumentNullException()).IsInterface ? new[] { type }.Concat(type.GetInterfaces()) : type.GetInterfaces();
+    }
+
+
+
+
+    public class JsonEnumMemberStringEnumConverter<TEnum> : JsonConverter<TEnum> where TEnum : struct, Enum
+    {
+        private readonly Dictionary<string, TEnum> _nameToEnum;
+        private readonly Dictionary<TEnum, string> _enumToName;
+
+        public JsonEnumMemberStringEnumConverter()
+        {
+            _nameToEnum = new Dictionary<string, TEnum>();
+            _enumToName = new Dictionary<TEnum, string>();
+
+            foreach (var field in typeof(TEnum).GetFields(BindingFlags.Public | BindingFlags.Static))
+            {
+                var enumValue = (TEnum)field.GetValue(null);
+                var jsonPropertyName = field.GetCustomAttribute<JsonPropertyNameAttribute>()?.Name ?? field.Name;
+                _nameToEnum[jsonPropertyName] = enumValue;
+                _enumToName[enumValue] = jsonPropertyName;
+            }
+        }
+
+        public override TEnum Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            if (reader.TokenType != JsonTokenType.String)
+            {
+                throw new JsonException();
+            }
+
+            var enumString = reader.GetString();
+            if (_nameToEnum.TryGetValue(enumString, out var enumValue))
+            {
+                return enumValue;
+            }
+
+            throw new JsonException($"Unable to convert \"{enumString}\" to Enum \"{typeof(TEnum)}\"");
+        }
+
+        public override void Write(Utf8JsonWriter writer, TEnum value, JsonSerializerOptions options)
+        {
+            if (_enumToName.TryGetValue(value, out var name))
+            {
+                writer.WriteStringValue(name);
+            }
+            else
+            {
+                throw new JsonException($"Unable to convert Enum \"{typeof(TEnum)}\" to string.");
+            }
+        }
+    }
+
+    public class JsonEnumListConverter<TEnum> : JsonConverter<List<TEnum>> where TEnum : struct, Enum
+    {
+        private readonly JsonEnumMemberStringEnumConverter<TEnum> _enumConverter = new JsonEnumMemberStringEnumConverter<TEnum>();
+
+        public override List<TEnum> Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            if (reader.TokenType != JsonTokenType.StartArray)
+            {
+                throw new JsonException();
+            }
+
+            var list = new List<TEnum>();
+            while (reader.Read())
+            {
+                if (reader.TokenType == JsonTokenType.EndArray)
+                {
+                    break;
+                }
+
+                if (reader.TokenType == JsonTokenType.String)
+                {
+                    var enumValue = _enumConverter.Read(ref reader, typeof(TEnum), options);
+                    list.Add(enumValue);
+                }
+                else
+                {
+                    throw new JsonException();
+                }
+            }
+
+            return list;
+        }
+
+        public override void Write(Utf8JsonWriter writer, List<TEnum> value, JsonSerializerOptions options)
+        {
+            writer.WriteStartArray();
+            foreach (var enumValue in value)
+            {
+                _enumConverter.Write(writer, enumValue, options);
+            }
+            writer.WriteEndArray();
+        }
     }
 }

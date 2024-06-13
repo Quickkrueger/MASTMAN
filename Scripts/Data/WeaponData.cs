@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using MASTMAN.Util;
+using System.Collections.Generic;
+using System.Runtime.Serialization;
 using System.Text.Json.Serialization;
 
 namespace MASTMAN.Data
@@ -24,11 +26,9 @@ namespace MASTMAN.Data
         public int LicenseLevel { get; set; }
 
         [JsonPropertyName("mount")]
-        [JsonConverter(typeof(JsonStringEnumConverter))]
         public MountType Mount { get; set; }
 
         [JsonPropertyName("type")]
-        [JsonConverter(typeof(JsonStringEnumConverter))]
         public WeaponType Type { get; set; }
 
         [JsonPropertyName("cost")]
@@ -107,20 +107,29 @@ namespace MASTMAN.Data
         public List<WeaponProfileData> Profiles { get; set; }
     }
 
+    [JsonConverter(typeof(JsonEnumMemberStringEnumConverter<WeaponType>))]
     public enum WeaponType
     {
+        any,
         Rifle,
         Cannon,
         Launcher,
         CQB,
         Nexus,
-        Melee
+        Melee,
+        Special,
+        [JsonPropertyName("Spool Weapon")]
+        SpoolWeapon,
+        [JsonPropertyName("???")]
+        None
         // Add other weapon types as needed
     }
 
+    [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum WeaponSize
     {
-        Aux,
+        any,
+        Auxiliary,
         Main,
         Heavy,
         Superheavy

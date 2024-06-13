@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using MASTMAN.Util;
+using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
 namespace MASTMAN.Data

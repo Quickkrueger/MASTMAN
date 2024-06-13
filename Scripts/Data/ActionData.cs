@@ -1,4 +1,5 @@
-﻿using MASTMAN.Util;
+﻿using Godot;
+using MASTMAN.Util;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 using System.Text.Json.Serialization;
@@ -20,28 +21,28 @@ namespace MASTMAN.Data
         public ActivationType Activation { get; set; }
 
         [JsonPropertyName("terse")]
-        public string Terse { get; set; }
+        public string? Terse { get; set; }
 
         [JsonPropertyName("pilot")]
-        public bool Pilot { get; set; }
+        public bool? Pilot { get; set; }
 
         [JsonPropertyName("mech")]
-        public bool Mech { get; set; }
+        public bool? Mech { get; set; }
 
         [JsonPropertyName("synergy_locations")]
-        public List<string> SynergyLocations { get; set; }
+        public List<string>? SynergyLocations { get; set; }
 
         [JsonPropertyName("confirm")]
-        public List<string> Confirm { get; set; }
+        public List<string>? Confirm { get; set; }
 
         [JsonPropertyName("log")]
-        public string Log { get; set; }
+        public string? Log { get; set; }
 
         [JsonPropertyName("ignore_used")]
-        public bool IgnoreUsed { get; set; }
+        public bool? IgnoreUsed { get; set; }
 
         [JsonPropertyName("heat_cost")]
-        public bool HeatCost { get; set; }
+        public bool? HeatCost { get; set; }
 
         public override string ToString()
         {
@@ -50,20 +51,20 @@ namespace MASTMAN.Data
             output += $"\t{Name}\n";
             output += $"\t{Detail}\n";
             output += $"\t{Activation}\n";
-            output += $"\t{Terse}\n";
-            output += $"\t{Pilot}\n";
-            output += $"\t{Mech}\n";
-            output += $"\t{LogHelper.ToStringList<string>(SynergyLocations)}\n";
-            output += $"\t{LogHelper.ToStringList<string>(Confirm)}\n";
-            output += $"\t{Log}\n";
-            output += $"\t{IgnoreUsed}\n";
-            output += $"\t{HeatCost}\n";
+            output += Terse != null ? $"\t{Terse}\n" : "";
+            output += Pilot != null ? $"\t{Pilot}\n" : "";
+            output += Mech != null ? $"\t{Mech}\n" : "";
+            output += SynergyLocations != null && SynergyLocations.Count > 0 ? $"\t{LogHelper.ToStringList<string>(SynergyLocations)}\n" : "";
+            output += Confirm != null && Confirm.Count > 0 ? $"\t{LogHelper.ToStringList<string>(Confirm)}\n" : "";
+            output += Log != null ? $"\t{Log}\n" : "";
+            output += IgnoreUsed != null ? $"\t{IgnoreUsed}\n" : "";
+            output += HeatCost != null ? $"\t{HeatCost}\n" : "";
             output += "}";
             return output;
         }
     }
 
-    [JsonConverter(typeof(JsonEnumMemberStringEnumConverter))]
+    [JsonConverter(typeof(JsonEnumMemberStringEnumConverter<ActivationType>))]
     public enum ActivationType
     {
         Free,
@@ -71,9 +72,9 @@ namespace MASTMAN.Data
         Quick,
         Full,
         Invade,
-        [EnumMember(Value = "Full Tech")]
+        [JsonPropertyName("Full Tech")]
         FullTech,
-        [EnumMember(Value = "Quick Tech")]
+        [JsonPropertyName("Quick Tech")]
         QuickTech,
         Reaction,
         Move,

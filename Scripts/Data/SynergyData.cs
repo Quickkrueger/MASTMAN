@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using MASTMAN.Util;
+using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
 namespace MASTMAN.Data
@@ -12,12 +13,15 @@ namespace MASTMAN.Data
         public string Detail { get; set; }
 
         [JsonPropertyName("weapon_types")]
+        [JsonConverter(typeof(ItemConverterDecorator<JsonStringEnumConverter>))]
         public List<WeaponType> WeaponTypes { get; set; }
 
         [JsonPropertyName("system_types")]
+        [JsonConverter(typeof(JsonEnumListConverter<SystemType>))]
         public List<SystemType> SystemTypes { get; set; }
 
         [JsonPropertyName("weapon_sizes")]
+        [JsonConverter(typeof(ItemConverterDecorator<JsonStringEnumConverter>))]
         public List<WeaponSize> WeaponSizes { get; set; }
     }
 }

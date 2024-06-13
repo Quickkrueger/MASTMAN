@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using MASTMAN.Util;
+using System.Collections.Generic;
+using System.Runtime.Serialization;
 using System.Text.Json.Serialization;
 
 namespace MASTMAN.Data
@@ -12,8 +14,7 @@ namespace MASTMAN.Data
         public string Description { get; set; }
 
         [JsonPropertyName("use")]
-        [JsonConverter(typeof(JsonStringEnumConverter))]
-        public UseType? Use { get; set; }
+        public UseType Use { get; set; }
 
         [JsonPropertyName("actions")]
         public List<ItemActionData> Actions { get; set; }
@@ -37,11 +38,15 @@ namespace MASTMAN.Data
         public List<string> SpecialEquipment { get; set; }
     }
 
+    [JsonConverter(typeof(JsonEnumMemberStringEnumConverter<UseType>))]
     public enum UseType
     {
+        Free,
         Turn,
+        [JsonPropertyName("Next Turn")]
         NextTurn,
         Round,
+        [JsonPropertyName("Next Round")]
         NextRound,
         Scene,
         Encounter,

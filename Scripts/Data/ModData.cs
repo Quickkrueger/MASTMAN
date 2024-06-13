@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using MASTMAN.Util;
+using System;
+using System.Collections.Generic;
+using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace MASTMAN.Data
@@ -36,19 +39,19 @@ namespace MASTMAN.Data
         public List<TagValData> Tags { get; set; }
 
         [JsonPropertyName("allowed_types")]
-        [JsonConverter(typeof(JsonStringEnumConverter))]
+        [JsonConverter(typeof(ItemConverterDecorator<JsonStringEnumConverter>))]
         public List<WeaponType> AllowedTypes { get; set; }
 
         [JsonPropertyName("allowed_sizes")]
-        [JsonConverter(typeof(JsonStringEnumConverter))]
+        [JsonConverter(typeof(ItemConverterDecorator<JsonStringEnumConverter>))]
         public List<WeaponSize> AllowedSizes { get; set; }
 
         [JsonPropertyName("restricted_types")]
-        [JsonConverter(typeof(JsonStringEnumConverter))]
+        [JsonConverter(typeof(ItemConverterDecorator<JsonStringEnumConverter>))]
         public List<WeaponType> RestrictedTypes { get; set; }
 
         [JsonPropertyName("restricted_sizes")]
-        [JsonConverter(typeof(JsonStringEnumConverter))]
+        [JsonConverter(typeof(ItemConverterDecorator<JsonStringEnumConverter>))]
         public List<WeaponSize> RestrictedSizes { get; set; }
 
         [JsonPropertyName("added_tags")]
@@ -85,11 +88,44 @@ namespace MASTMAN.Data
 
     public class DamageData
     {
-        // Define properties for DamageData
+        [JsonPropertyName("type")]
+        [JsonConverter(typeof(JsonStringEnumConverter))]
+        public DamageType Type { get; set; }
+        [JsonPropertyName("val")]
+        [JsonConverter(typeof(StringOrIntToStringConverter))]
+        public string Val { get; set; }
     }
 
     public class RangeData
     {
-        // Define properties for RangeData
+        [JsonPropertyName("type")]
+        [JsonConverter(typeof(JsonStringEnumConverter))]
+        public RangeType Type { get; set; }
+        [JsonPropertyName("val")]
+        [JsonConverter(typeof(StringOrIntToStringConverter))]
+        public string Val { get; set; }
     }
+
+    public class StringOrIntToStringConverter : JsonConverter<string>
+    {
+        public override string Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            if (reader.TokenType == JsonTokenType.String)
+            {
+                return reader.GetString();
+            }
+            else if (reader.TokenType == JsonTokenType.Number)
+            {
+                return reader.GetInt32().ToString();
+            }
+            throw new JsonException($"Unexpected token type: {reader.TokenType}");
+        }
+
+        public override void Write(Utf8JsonWriter writer, string value, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(value);
+        }
+    }
+
+
 }

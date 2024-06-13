@@ -15,22 +15,18 @@ namespace MASTMAN.Data
         public string Detail { get; set; }
 
         [JsonPropertyName("size")]
-        public int Size { get; set; } // Not required for Mines
+        public float Size { get; set; } // Not required for Mines
 
         [JsonPropertyName("activation")]
-        [JsonConverter(typeof(JsonStringEnumConverter))]
         public ActivationType? Activation { get; set; }
 
         [JsonPropertyName("deactivation")]
-        [JsonConverter(typeof(JsonStringEnumConverter))]
         public ActivationType? Deactivation { get; set; }
 
         [JsonPropertyName("recall")]
-        [JsonConverter(typeof(JsonStringEnumConverter))]
         public ActivationType? Recall { get; set; }
 
         [JsonPropertyName("redeploy")]
-        [JsonConverter(typeof(JsonStringEnumConverter))]
         public ActivationType? Redeploy { get; set; }
 
         [JsonPropertyName("instances")]
@@ -43,7 +39,8 @@ namespace MASTMAN.Data
         public int? Armor { get; set; }
 
         [JsonPropertyName("hp")]
-        public int? Hp { get; set; }
+        [JsonConverter(typeof(StringOrIntToStringConverter))]
+        public string? Hp { get; set; }
 
         [JsonPropertyName("evasion")]
         public int? Evasion { get; set; }

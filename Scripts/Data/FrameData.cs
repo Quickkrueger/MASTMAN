@@ -1,5 +1,7 @@
-﻿using System;
+﻿using MASTMAN.Util;
+using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
@@ -26,7 +28,7 @@ namespace MASTMAN.Data
         public string Name { get; set; }
 
         [JsonPropertyName("mechtype")]
-        public List<string> MechType { get; set; } = new List<string>();
+        public List<string> MechType { get; set; }
 
         [JsonPropertyName("specialty")]
         [JsonConverter(typeof(SpecialtyConverter))]
@@ -36,13 +38,14 @@ namespace MASTMAN.Data
         public string Description { get; set; }
 
         [JsonPropertyName("mounts")]
-        public List<MountType> Mounts { get; set; } = new List<MountType>();
+        [JsonConverter(typeof(JsonEnumListConverter<MountType>))]
+        public List<MountType> Mounts { get; set; }
 
         [JsonPropertyName("stats")]
         public FrameStats Stats { get; set; }
 
         [JsonPropertyName("traits")]
-        public List<FrameTraitData> Traits { get; set; } = new List<FrameTraitData>();
+        public List<FrameTraitData> Traits { get; set; }
 
         [JsonPropertyName("core_system")]
         public CoreSystemData CoreSystem { get; set; }
@@ -51,13 +54,13 @@ namespace MASTMAN.Data
         public string ImageUrl { get; set; }
 
         [JsonPropertyName("y_pos")]
-        public int? YPos { get; set; }
+        public float? YPos { get; set; }
     }
 
     public class FrameStats
     {
         [JsonPropertyName("size")]
-        public int Size { get; set; }
+        public float Size { get; set; }
 
         [JsonPropertyName("structure")]
         public int Structure { get; set; }
@@ -99,17 +102,22 @@ namespace MASTMAN.Data
         public int SP { get; set; }
     }
 
+    [JsonConverter(typeof(JsonEnumMemberStringEnumConverter<MountType>))]
     public enum MountType
     {
         Main,
         Heavy,
         [JsonPropertyName("Aux/Aux")]
         AuxAux,
-        Aux,
+        Auxiliary,
         [JsonPropertyName("Main/Aux")]
         MainAux,
         Flex,
-        Integrated
+        Integrated,
+        Superheavy,
+        Special,
+        [JsonPropertyName("Ship-class")]
+        ShipClass
 
     }
 
