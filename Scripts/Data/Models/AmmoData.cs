@@ -6,29 +6,36 @@ namespace MASTMAN.Scripts.Data.Models
 {
     public partial class AmmoData : Resource
     {
+        [Export]
         [JsonPropertyName("name")]
         public string Name { get; set; }
 
+        [Export]
         [JsonPropertyName("description")]
         public string Description { get; set; }
 
+        [Export]
         [JsonPropertyName("cost")]
-        public int? Cost { get; set; }
+        public int Cost { get; set; }
 
+        [Export]
         [JsonPropertyName("allowed_types")]
         [JsonConverter(typeof(JsonStringEnumConverter))]
-        public List<WeaponType> AllowedTypes { get; set; }
+        public Godot.Collections.Array<WeaponType> AllowedTypes { get; set; }
 
+        [Export]
         [JsonPropertyName("allowed_sizes")]
         [JsonConverter(typeof(JsonStringEnumConverter))]
-        public List<WeaponSize> AllowedSizes { get; set; }
+        public Godot.Collections.Array<WeaponSize> AllowedSizes { get; set; }
 
+        [Export]
         [JsonPropertyName("restricted_types")]
         [JsonConverter(typeof(JsonStringEnumConverter))]
-        public List<WeaponType> RestrictedTypes { get; set; }
+        public Godot.Collections.Array<WeaponType> RestrictedTypes { get; set; }
 
+        [Export]
         [JsonPropertyName("restricted_sizes")]
         [JsonConverter(typeof(JsonStringEnumConverter))]
-        public List<WeaponSize> RestrictedSizes { get; set; }
+        public Godot.Collections.Array<WeaponSize> RestrictedSizes { get; set; }
     }
 }

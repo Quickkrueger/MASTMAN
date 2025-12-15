@@ -9,95 +9,127 @@ namespace MASTMAN.Scripts.Data.Models
 {
     public partial class FrameData : Resource
     {
+        [Export]
         [JsonPropertyName("id")]
         public string Id { get; set; }
 
+        [Export]
         [JsonPropertyName("license_level")]
         public int LicenseLevel { get; set; } = 0;
 
+        [Export]
         [JsonPropertyName("license_id")]
         public string LicenseId { get; set; }
 
+        [Export]
         [JsonPropertyName("variant")]
         public string Variant { get; set; }
 
+        [Export]
         [JsonPropertyName("source")]
         public string Source { get; set; }
 
+        [Export]
         [JsonPropertyName("name")]
         public string Name { get; set; }
 
+        [Export]
         [JsonPropertyName("mechtype")]
-        public List<string> MechType { get; set; }
+        public string[] MechType { get; set; }
 
+        [Export]
         [JsonPropertyName("specialty")]
-        [JsonConverter(typeof(SpecialtyConverter))]
-        public object Specialty { get; set; }
+        public bool SpecialtyBool { get; set; }
 
+        [Export]
+        [JsonPropertyName("specialty")]
+        public SpecialtyPrerequisite SpecialtyPrereq { get; set; }
+
+        [Export]
         [JsonPropertyName("description")]
         public string Description { get; set; }
 
+        [Export]
         [JsonPropertyName("mounts")]
         [JsonConverter(typeof(JsonEnumListConverter<MountType>))]
-        public List<MountType> Mounts { get; set; }
+        public Godot.Collections.Array<MountType> Mounts { get; set; }
 
+        [Export]
         [JsonPropertyName("stats")]
         public FrameStats Stats { get; set; }
 
+        [Export]
         [JsonPropertyName("traits")]
-        public List<FrameTraitData> Traits { get; set; }
+        public FrameTraitData[] Traits { get; set; }
 
+        [Export]
         [JsonPropertyName("core_system")]
         public CoreSystemData CoreSystem { get; set; }
 
+        [Export]
         [JsonPropertyName("image_url")]
         public string ImageUrl { get; set; }
 
+        [Export]
         [JsonPropertyName("y_pos")]
-        public float? YPos { get; set; }
+        public float YPos { get; set; }
     }
 
-    public class FrameStats
+    public partial class FrameStats : Resource
     {
+        [Export]
         [JsonPropertyName("size")]
         public float Size { get; set; }
 
+        [Export]
         [JsonPropertyName("structure")]
         public int Structure { get; set; }
 
+        [Export]
         [JsonPropertyName("stress")]
         public int Stress { get; set; }
 
+        [Export]
         [JsonPropertyName("armor")]
         public int Armor { get; set; }
 
+        [Export]
         [JsonPropertyName("hp")]
         public int HP { get; set; }
 
+        [Export]
         [JsonPropertyName("evasion")]
         public int Evasion { get; set; }
 
+        [Export]
         [JsonPropertyName("edef")]
         public int EDef { get; set; }
 
+        [Export]
         [JsonPropertyName("heatcap")]
         public int HeatCap { get; set; }
 
+        [Export]
         [JsonPropertyName("repcap")]
         public int RepCap { get; set; }
 
+        [Export]
         [JsonPropertyName("sensor_range")]
         public int SensorRange { get; set; }
 
+        [Export]
         [JsonPropertyName("tech_attack")]
         public int TechAttack { get; set; }
 
+        [Export]
         [JsonPropertyName("save")]
         public int Save { get; set; }
 
+        [Export]
         [JsonPropertyName("speed")]
         public int Speed { get; set; }
 
+        [Export]
         [JsonPropertyName("sp")]
         public int SP { get; set; }
     }
@@ -121,16 +153,19 @@ namespace MASTMAN.Scripts.Data.Models
 
     }
 
-    public class SpecialtyPrerequisite
+    public partial class SpecialtyPrerequisite : Resource
     {
+        [Export]
         [JsonPropertyName("source")]
         public string Source { get; set; }
 
+        [Export]
         [JsonPropertyName("min_rank")]
         public int MinRank { get; set; }
 
+        [Export]
         [JsonPropertyName("cumulative")]
-        public bool? Cumulative { get; set; }
+        public bool Cumulative { get; set; }
     }
 
     public class SpecialtyConverter : JsonConverter<object>

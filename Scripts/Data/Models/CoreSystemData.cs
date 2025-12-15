@@ -6,64 +6,84 @@ namespace MASTMAN.Scripts.Data.Models
 {
     public partial class CoreSystemData : Resource
     {
+        [Export]
         [JsonPropertyName("name")]
         public string Name { get; set; }
 
+        [Export]
         [JsonPropertyName("active_name")]
         public string ActiveName { get; set; }
 
+        [Export]
         [JsonPropertyName("active_effect")]
         public string ActiveEffect { get; set; }
 
+        [Export]
         [JsonPropertyName("activation")]
         public ActivationType Activation { get; set; }
 
+        [Export]
         [JsonPropertyName("description")]
         public string Description { get; set; }
 
+        [Export]
         [JsonPropertyName("deactivation")]
         public ActivationType Deactivation { get; set; }
 
+        [Export]
         [JsonPropertyName("use")]
         public UseType Use { get; set; }
 
+        [Export]
         [JsonPropertyName("active_actions")]
-        public List<ItemActionData> ActiveActions { get; set; }
+        public ItemActionData[] ActiveActions { get; set; }
 
+        [Export]
         [JsonPropertyName("active_bonuses")]
-        public List<BonusData> ActiveBonuses { get; set; }
+        public BonusData[] ActiveBonuses { get; set; }
 
+        [Export]
         [JsonPropertyName("active_synergies")]
-        public List<SynergyData> ActiveSynergies { get; set; }
+        public SynergyData[] ActiveSynergies { get; set; }
 
+        [Export]
         [JsonPropertyName("passive_name")]
         public string PassiveName { get; set; }
 
+        [Export]
         [JsonPropertyName("passive_effect")]
         public string PassiveEffect { get; set; }
 
+        [Export]
         [JsonPropertyName("passive_actions")]
-        public List<ItemActionData> PassiveActions { get; set; }
+        public ItemActionData[] PassiveActions { get; set; }
 
+        [Export]
         [JsonPropertyName("passive_bonuses")]
-        public List<BonusData> PassiveBonuses { get; set; }
+        public BonusData[] PassiveBonuses { get; set; }
 
+        [Export]
         [JsonPropertyName("passive_synergies")]
-        public List<SynergyData> PassiveSynergies { get; set; }
+        public SynergyData[] PassiveSynergies { get; set; }
 
+        [Export]
         [JsonPropertyName("deployables")]
-        public List<DeployableData> Deployables { get; set; }
+        public DeployableData[] Deployables { get; set; }
 
+        [Export]
         [JsonPropertyName("counters")]
-        public List<CounterData> Counters { get; set; }
+        public CounterData[] Counters { get; set; }
 
+        [Export]
         [JsonPropertyName("integrated")]
-        public List<string> Integrated { get; set; }
+        public string[] Integrated { get; set; }
 
+        [Export]
         [JsonPropertyName("special_equipment")]
-        public List<string> SpecialEquipment { get; set; }
+        public string[] SpecialEquipment { get; set; }
 
+        [Export]
         [JsonPropertyName("tags")]
-        public List<TagValData> Tags { get; set; }
+        public TagValData[] Tags { get; set; }
     }
 }

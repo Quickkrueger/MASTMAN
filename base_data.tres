@@ -1,27 +1,11 @@
-[gd_resource type="Resource" script_class="BaseDataObject" load_steps=600 format=3]
+[gd_resource type="Resource" script_class="BaseDataObject" load_steps=68 format=3]
 
-[ext_resource type="Script" path="res://Scripts/Data/Models/ActionData.cs" id="1_xcsdk"]
-[ext_resource type="Script" path="res://Scripts/Data/Models/BackgroundData.cs" id="2_nk4i1"]
-[ext_resource type="Script" path="res://Scripts/Data/Models/CoreBonusData.cs" id="3_eissk"]
-[ext_resource type="Script" path="res://Scripts/Data/Models/EnvironmentData.cs" id="4_ia17u"]
-[ext_resource type="Script" path="res://Scripts/Data/Models/FrameData.cs" id="5_sr1jt"]
-[ext_resource type="Script" path="res://Scripts/Data/Models/ManifestData.cs" id="6_i8i48"]
-[ext_resource type="Script" path="res://Scripts/Data/Models/ManufacturerData.cs" id="7_gek43"]
-[ext_resource type="Script" path="res://Scripts/Data/Models/ModData.cs" id="8_13jqg"]
-[ext_resource type="Script" path="res://Scripts/Data/Models/PilotGearData.cs" id="9_jh4p1"]
-[ext_resource type="Script" path="res://Scripts/Data/Models/ReserveData.cs" id="10_ls0mb"]
-[ext_resource type="Script" path="res://Scripts/Data/Models/RuleData.cs" id="11_nxt8j"]
-[ext_resource type="Script" path="res://Scripts/Data/Models/SitrepData.cs" id="12_xkk5r"]
-[ext_resource type="Script" path="res://Scripts/Data/Models/SkillData.cs" id="13_vfkvl"]
-[ext_resource type="Script" path="res://Scripts/Data/Models/StatusData.cs" id="14_7cvvw"]
-[ext_resource type="Script" path="res://Scripts/Data/Models/SystemData.cs" id="15_p1sc8"]
-[ext_resource type="Script" path="res://Scripts/Data/Models/TagData.cs" id="16_evklk"]
-[ext_resource type="Script" path="res://Scripts/Data/Models/TalentData.cs" id="17_ic6k4"]
-[ext_resource type="Script" path="res://Scripts/Data/Models/WeaponData.cs" id="18_eoquw"]
-[ext_resource type="Script" path="res://Scripts/Data/Objects/BaseDataObject.cs" id="19_mh8n5"]
+[ext_resource type="Script" path="res://Scripts/Data/Models/ActionData.cs" id="1_t25tb"]
+[ext_resource type="Script" path="res://Scripts/Data/Models/BackgroundData.cs" id="2_8olg7"]
+[ext_resource type="Script" path="res://Scripts/Data/Objects/BaseDataObject.cs" id="3_3px1v"]
 
-[sub_resource type="Resource" id="Resource_kf7p0"]
-script = ExtResource("1_xcsdk")
+[sub_resource type="Resource" id="Resource_eae11"]
+script = ExtResource("1_t25tb")
 Id = "act_move"
 Name = "Move"
 Detail = "On their turn, characters can always move spaces equal to their SPEED, in addition to any other actions. This is called a standard move to distinguish it from movement granted by systems or talents.<br>A character only counts as moving if they move 1 or more spaces.<br>Characters can move into any adjacent space, even diagonally, as long as the space isn’t occupied by an obstruction (and is one that they would be able to move in – characters can't move straight up unless they can fly, for example). There are several factors that can affect movement, which are detailed here."
@@ -30,8 +14,8 @@ Terse = "Move your character up to its Speed in any direction."
 Pilot = true
 Mech = true
 
-[sub_resource type="Resource" id="Resource_ocdu4"]
-script = ExtResource("1_xcsdk")
+[sub_resource type="Resource" id="Resource_lb20t"]
+script = ExtResource("1_t25tb")
 Id = "act_overcharge"
 Name = "Overcharge"
 Detail = "When you OVERCHARGE, you briefly push your mech beyond factory specifications for a tactical advantage. Moments of intense action won’t tax your mech’s systems too much, but sustained action beyond prescribed limits takes a toll.<br>Once per turn, you can OVERCHARGE your mech, allowing you to make any quick action as a free action – even actions you have already taken this turn.<br>The first time you OVERCHARGE, take 1 heat.<br>The second time you OVERCHARGE, take 1d3 heat.<br>The third time, take 1d6 heat, and each time thereafter take 1d6+4 heat.<br>A FULL REPAIR resets this counter."
@@ -39,16 +23,16 @@ Terse = "Overcharging immediately allows you to make any quick action of your ch
 SynergyLocations = PackedStringArray("overcharge")
 Confirm = PackedStringArray("REACTOR LIMITER DISABLED. CORE TEMPERATURES RISING.")
 
-[sub_resource type="Resource" id="Resource_dft76"]
-script = ExtResource("1_xcsdk")
+[sub_resource type="Resource" id="Resource_gkhvc"]
+script = ExtResource("1_t25tb")
 Id = "act_skirmish"
 Name = "Skirmish"
 Detail = "When you SKIRMISH, you attack with a single weapon.<br>To SKIRMISH, choose a weapon and a valid target within RANGE (or THREAT) then make an attack.<br>• In addition to your primary attack, you may also attack with a different AUXILIARY weapon on the same mount. That weapon doesn’t deal bonus damage.<br>• SUPERHEAVY weapons are too cumbersome to use in a SKIRMISH, and can only be fired as part of a BARRAGE."
 Activation = 2
 Terse = "Attack with a single weapon. In addition to your primary attack, you may also attack with a different Auxiliary weapon on the same mount."
 
-[sub_resource type="Resource" id="Resource_to7u3"]
-script = ExtResource("1_xcsdk")
+[sub_resource type="Resource" id="Resource_yx1xc"]
+script = ExtResource("1_t25tb")
 Id = "act_boost"
 Name = "Boost"
 Detail = "When you BOOST, you move at least 1 space, up to your SPEED. This allows you to make an extra movement, on top of your standard move. Certain talents and systems can only be used when you BOOST, not when you make a standard move."
@@ -59,8 +43,8 @@ Mech = true
 SynergyLocations = PackedStringArray("boost")
 Confirm = PackedStringArray("POWER REDIRECTED.")
 
-[sub_resource type="Resource" id="Resource_ymxdl"]
-script = ExtResource("1_xcsdk")
+[sub_resource type="Resource" id="Resource_r71f6"]
+script = ExtResource("1_t25tb")
 Id = "act_ram"
 Name = "Ram"
 Detail = "When you RAM, you make a melee attack with the aim of knocking a target down or back.<br>To RAM, make a melee attack against an adjacent character the same SIZE or smaller than you. On a success, your target is knocked PRONE and you may also choose to knock them back by one space, directly away from you."
@@ -69,8 +53,8 @@ Terse = "Attempt to knock down or knock back your target. On a success the targe
 SynergyLocations = PackedStringArray("ram")
 Confirm = PackedStringArray("MANEUVER CONFIRMED.", "WARNING: PROXIMITY.", "WARNING: COLLISION IMMINENT")
 
-[sub_resource type="Resource" id="Resource_2piey"]
-script = ExtResource("1_xcsdk")
+[sub_resource type="Resource" id="Resource_vw2ft"]
+script = ExtResource("1_t25tb")
 Id = "act_grapple"
 Name = "Grapple"
 Detail = "When you GRAPPLE, you try to grab hold of a target and overpower them – disarming, subduing, or damaging them so they can’t do the same to you.<br>To GRAPPLE, choose an adjacent character and make a melee attack. On a hit:<br>• both characters become ENGAGED;<br>• neither character can BOOST or take reactions for the duration of the grapple;<br>• the smaller character becomes IMMOBILIZED but moves when the larger party moves, mirroring their movement. If both parties are the same SIZE, either can make contested HULL checks at the start of their turn: the winner counts as larger than the loser until this contest is repeated.<br>A GRAPPLE ends when:<br>• either character breaks adjacency, such as if they are knocked back by another effect;<br>• the attacker chooses to end the grapple as a free action;<br>• The defender breaks free by succeeding on a contested HULL check as a quick action.<br>If a GRAPPLE involves more than two characters, the same rules apply, but when counting SIZE, add together the SIZE of all characters on each side. For example, if two SIZE 1 allied characters are grappling a single SIZE 2 enemy, the allied characters count as a combined SIZE 2 and can try to drag their foe around."
@@ -78,8 +62,8 @@ Activation = 2
 Terse = "Attempt to grab on your target, potentially immobilizing it or riding it."
 SynergyLocations = PackedStringArray("grapple")
 
-[sub_resource type="Resource" id="Resource_ottqj"]
-script = ExtResource("1_xcsdk")
+[sub_resource type="Resource" id="Resource_cxfmy"]
+script = ExtResource("1_t25tb")
 Id = "act_quick_tech"
 Name = "Quick Tech"
 Detail = "When you use QUICK TECH, you engage in electronic warfare, countermeasures, and other technical actions, often aided by a mech’s powerful computing and simulation cores.<br>Each time you take this action, you choose an option from the QUICK TECH list. All mechs have access to these options, but some systems enhance them or make new options available.<br>Unlike other quick actions, QUICK TECH can be taken more than once per turn; however, a different option must be chosen every time, unless specified otherwise or granted as a free action."
@@ -88,8 +72,8 @@ Terse = "Perform quick electronic warfare or systems-boosting activities."
 SynergyLocations = PackedStringArray("quick_tech")
 IgnoreUsed = true
 
-[sub_resource type="Resource" id="Resource_80gne"]
-script = ExtResource("1_xcsdk")
+[sub_resource type="Resource" id="Resource_6vfkj"]
+script = ExtResource("1_t25tb")
 Id = "act_bolster"
 Name = "Bolster"
 Detail = "When you BOLSTER, you use your mech’s formidable processing power to enhance another character’s systems.<br>To BOLSTER, choose a character within SENSORS. They receive +2 Accuracy on the next skill check or save they make between now and the end of their next turn. Characters can only benefit from one BOLSTER at a time."
@@ -98,8 +82,8 @@ Terse = "Enhance another character’s systems."
 SynergyLocations = PackedStringArray("bolster")
 Confirm = PackedStringArray("UPLINK ESTABLISHED.", "PARALLELIZING COMBAT ALGORITHMS")
 
-[sub_resource type="Resource" id="Resource_vyxmm"]
-script = ExtResource("1_xcsdk")
+[sub_resource type="Resource" id="Resource_e0lsl"]
+script = ExtResource("1_t25tb")
 Id = "act_scan"
 Name = "Scan"
 Detail = "When you SCAN, you use your mech’s powerful sensors to perform a deep scan on an enemy.<br>To SCAN, choose a character or object within SENSORS and line of sight, then ask the GM for one of the following pieces of information, which they must answer honestly:<br>• Your target’s weapons, systems, and full statistics (HP, SPEED, EVASION, ARMOR, MECH SKILLS, and so on).<br>• One piece of hidden information about the target, such as confidential cargo or data, current mission, the identity of the pilot, and so on.<br>• Generic or public information about the target that can be pulled from an info bank or records, such as the model number of a mech.<br>Any information gathered is only current at the time of the SCAN – if the target later takes damage, for instance, you don’t receive an update."
@@ -108,8 +92,8 @@ Terse = "Perform a deep scan on an enemy"
 SynergyLocations = PackedStringArray("scan")
 Confirm = PackedStringArray("ESTABLISHING TARGET LOCK.", "LOCK CONFIRMED. FIRING SOLUTIONS CALCULATED.")
 
-[sub_resource type="Resource" id="Resource_2qgv4"]
-script = ExtResource("1_xcsdk")
+[sub_resource type="Resource" id="Resource_jqax2"]
+script = ExtResource("1_t25tb")
 Id = "act_lockon"
 Name = "Lock On"
 Detail = "When you LOCK ON, you digitally mark a target, lighting them up for your teammates’ targeting systems and exposing weak points.<br>To LOCK ON, choose a character within SENSORS and line of sight. They gain the LOCK ON condition. Any character making an attack against a character with LOCK ON may choose to gain +1 Accuracy on that attack and then clear the LOCK ON condition after that attack resolves. This is called consuming LOCK ON."
@@ -118,16 +102,16 @@ Terse = "Digitally mark a target"
 SynergyLocations = PackedStringArray("lock_on")
 Confirm = PackedStringArray("ESTABLISHING TARGET LOCK.", "LOCK CONFIRMED. FIRING SOLUTIONS CALCULATED.")
 
-[sub_resource type="Resource" id="Resource_jgmhk"]
-script = ExtResource("1_xcsdk")
+[sub_resource type="Resource" id="Resource_juy21"]
+script = ExtResource("1_t25tb")
 Id = "act_invade"
 Name = "Invade"
 Detail = "When you INVADE, you mount a direct electronic attack against a target. To INVADE, make a tech attack against a character within SENSORS and line of sight. On a success, your target takes 2 heat and you choose one of the INVASION options available to you. FRAGMENT SIGNAL is available to all characters, and additional options are granted by certain systems and equipment with the INVADE tag.  You can also INVADE willing allied characters to create certain effects. If your target is willing and allied, you are automatically successful, it doesn’t count as an attack, and your target doesn’t take any heat."
 Activation = 6
 Terse = "Mount a direct electronic attack against a target"
 
-[sub_resource type="Resource" id="Resource_xo7el"]
-script = ExtResource("1_xcsdk")
+[sub_resource type="Resource" id="Resource_38bcg"]
+script = ExtResource("1_t25tb")
 Id = "act_inv_fragment_signal"
 Name = "Fragment Signal"
 Detail = "You feed false information, obscene messages, or phantom signals to your target’s computing core. They become IMPAIRED and SLOWED until the end of their next turn."
@@ -135,8 +119,8 @@ Activation = 4
 Terse = "IMPAIR and SLOW a character until the end of their next turn."
 Confirm = PackedStringArray("SIGNAL FRAGMENTATION IN PROGRESS.")
 
-[sub_resource type="Resource" id="Resource_62lx8"]
-script = ExtResource("1_xcsdk")
+[sub_resource type="Resource" id="Resource_cijs3"]
+script = ExtResource("1_t25tb")
 Id = "act_hide"
 Name = "Hide"
 Detail = "When you HIDE, you obscure the position of your mech in order to reposition, avoid incoming fire, repair, or ambush.<br>To HIDE, you must not be ENGAGED and you must either be outside of any enemies’ line of sight, obscured by sufficient cover, or invisible. If you HIDE while meeting one of these criteria, you gain the HIDDEN status.<br>Hard cover is sufficient to HIDE as long as it is large enough to totally conceal you, but soft cover is only sufficient if you are completely inside an area or zone that grants soft cover – many systems and talents that grant soft cover or plain old obscurement just don’t provide enough to hide behind!<br>If you are INVISIBLE, you can always HIDE, regardless of cover, unless you’re ENGAGED.<br>The exact location of HIDDEN targets cannot be identified and they cannot be targeted directly by attacks or hostile actions, but they can still be hit by attacks that affect an area. Although NPCs cannot perfectly locate a HIDDEN character, they might still know an approximate location. Thus, an NPC could flush an area with a flamethrower even if they don’t know exactly where a HIDDEN player is lurking.<br>Additionally, other characters ignore engagement with you while you are HIDDEN – it’s assumed you’re trying to stay stealthy.<br>You cease to be HIDDEN if you make an attack (melee, ranged, or tech) or if your mech takes a hostile action (such as forcing a target to make a save). Using BOOST or taking reactions with your mech also causes you to lose HIDDEN. Other actions can be taken as normal.<br>You also immediately lose HIDDEN if your cover disappears or is destroyed, or if you lose cover due to line of sight (e.g., if a mech jumps over a wall and can now draw unbroken line of sight to you). If you’re hiding while INVISIBLE, you lose HIDDEN when you cease to be INVISIBLE unless you are in cover."
@@ -147,8 +131,8 @@ Mech = true
 SynergyLocations = PackedStringArray("hide")
 Confirm = PackedStringArray("SENSOR SIGNATURE OBSCURED. COMMS IN TIGHTBEAM ONLY. SIGHTLINES CLEAR.")
 
-[sub_resource type="Resource" id="Resource_5wm0c"]
-script = ExtResource("1_xcsdk")
+[sub_resource type="Resource" id="Resource_xcsdk"]
+script = ExtResource("1_t25tb")
 Id = "act_search"
 Name = "Search"
 Detail = "When you SEARCH, you attempt to identify hidden characters. To SEARCH in a mech, choose a character within your SENSORS that you suspect is HIDDEN and make a contested SYSTEMS check against their AGILITY.<br>To SEARCH as a pilot on foot, make a contested skill check, adding bonuses from triggers as normal. This can be used to reveal characters within RANGE 5.<br>Once a HIDDEN character has been found using SEARCH, they immediately lose HIDDEN and can be located again by any character."
@@ -158,8 +142,8 @@ Pilot = true
 Mech = true
 SynergyLocations = PackedStringArray("search")
 
-[sub_resource type="Resource" id="Resource_sxdgj"]
-script = ExtResource("1_xcsdk")
+[sub_resource type="Resource" id="Resource_nk4i1"]
+script = ExtResource("1_t25tb")
 Id = "act_activate_quick"
 Name = "Quick Activation"
 Detail = "When you ACTIVATE, you use a system or piece of gear that requires either a quick or full action. These systems have the QUICK ACTION or FULL ACTION tags. You can ACTIVATE any number of times a turn but can’t ACTIVATE the same system more than once unless you can do so as a free action."
@@ -168,8 +152,8 @@ Terse = "Activate a system or piece of gear that uses a quick action."
 Pilot = true
 Mech = true
 
-[sub_resource type="Resource" id="Resource_dps0s"]
-script = ExtResource("1_xcsdk")
+[sub_resource type="Resource" id="Resource_eissk"]
+script = ExtResource("1_t25tb")
 Id = "act_eject"
 Name = "Eject"
 Detail = "You can also EJECT as a quick action, flying 6 spaces in the direction of your choice; however, this is a single-use system for emergency use only – it leaves your mech IMPAIRED. Your mech remains IMPAIRED and you cannot EJECT again until your next FULL REPAIR."
@@ -178,8 +162,8 @@ Terse = "Eject from your mech, flying 6 spaces in the direction of your choice."
 SynergyLocations = PackedStringArray("eject")
 Confirm = PackedStringArray("SAFETY PROTOCOLS DISABLED. MANUAL CONTROL MODE SUSPENDED. EXPLOSIVE BOLTS PRIMED.", "GOOD LUCK, PILOT.")
 
-[sub_resource type="Resource" id="Resource_6mmq3"]
-script = ExtResource("1_xcsdk")
+[sub_resource type="Resource" id="Resource_ia17u"]
+script = ExtResource("1_t25tb")
 Id = "act_prepare"
 Name = "Prepare"
 Detail = "When you PREPARE, you get ready to take an action at a specific time or when a specific condition is met (a more advantageous shot, for example).<br>As a quick action, you can PREPARE any other quick action and specify a trigger. Until the start of your next turn, when it is triggered, you can take this action as a reaction.<br>The trigger for your prepared action must be phrased as “When X, then Y,” where X is a reaction, action or move taken by a hostile or allied character and Y is your action. For example, “when an allied character moves adjacent to me, I want to throw a smoke grenade,” or “when a hostile character moves adjacent to me, I want to ram them”.<br>Your preparation counts as taking the action, so it follows all usual restrictions on that action and on taking multiple actions. You can’t, for example, SKIRMISH and then prepare to SKIRMISH again; you also can’t move and then PREPARE to SKIRMISH with an ORDNANCE weapon, which normally needs to be fired before moving or doing anything else on your turn. Additionally, after you PREPARE an action, you can’t move or take any other actions or reactions until the start of your next turn or until your action has been triggered, whichever comes first.<br>Although you can’t take reactions while holding a prepared action, you can take them normally after it has been triggered. You can also drop your prepared action, allowing you to take reactions as usual. If the trigger condition isn’t met, you lose your prepared action.<br>When you PREPARE, it is visible to casual observers (e.g., you clearly take aim or cycle up systems)."
@@ -190,8 +174,8 @@ Mech = true
 SynergyLocations = PackedStringArray("prepare")
 Confirm = PackedStringArray("COMMAND QUEUED, STANDING BY.")
 
-[sub_resource type="Resource" id="Resource_4bad6"]
-script = ExtResource("1_xcsdk")
+[sub_resource type="Resource" id="Resource_sr1jt"]
+script = ExtResource("1_t25tb")
 Id = "act_self_destruct"
 Name = "Self Destruct"
 Detail = "When you SELF DESTRUCT, you overload your mech’s reactor in a final, catastrophic play if there’s no other option for escape or you deem your sacrifice necessary.<br>You can SELF DESTRUCT as a quick action, initiating a reactor meltdown. At the end of your next turn, or at the end of one of your turns within the following two rounds (your choice), your mech explodes as though it suffered a reactor meltdown. The explosion annihilates your mech, killing anyone inside and causing a BURST 2 explosion that deals 4d6 explosive damage. Characters caught in the explosion that succeed on an AGILITY save take half of this damage."
@@ -199,8 +183,8 @@ Activation = 2
 Terse = "As a last ditch measure, set your reactor to go critical and explode."
 SynergyLocations = PackedStringArray("self_destruct")
 
-[sub_resource type="Resource" id="Resource_oj8mg"]
-script = ExtResource("1_xcsdk")
+[sub_resource type="Resource" id="Resource_i8i48"]
+script = ExtResource("1_t25tb")
 Id = "act_shut_down"
 Name = "Shut Down"
 Detail = "When you SHUT DOWN, your mech powers completely off and enters a rest state. It’s always risky to do in the field, but it’s sometimes necessary to prevent a catastrophic systems overload or an NHP cascading.<br>You can SHUT DOWN your mech as a quick action. Your mech takes the SHUT DOWN status, with these effects:<br>• all heat is cleared, as is EXPOSED;<br>• any cascading NHPs return to a normal state;<br>• any statuses or conditions affecting the mech caused by tech actions, such as LOCK ON, immediately end;<br>• the mech gains IMMUNITY to all tech actions and attacks, including any from allied characters;<br>• the mech is STUNNED indefinitely. Nothing can prevent this condition, and it remains until the mech ceases to be SHUT DOWN.<br>The only way to remove the SHUT DOWN status is to BOOT UP the mech."
@@ -209,8 +193,8 @@ Terse = "Shut down your mech as a desperate measure, to end system attacks, rega
 SynergyLocations = PackedStringArray("shut_down")
 Confirm = PackedStringArray("ALERT: EMERGENCY SHUTDOWN", "STOPPING GMS/VCTRL.MANUAL", "KILLING ALL REMAINING PROCESSES", "confirmGING RESOLVER STATE", ">://cc.main.term", ">:// _")
 
-[sub_resource type="Resource" id="Resource_jlfwb"]
-script = ExtResource("1_xcsdk")
+[sub_resource type="Resource" id="Resource_gek43"]
+script = ExtResource("1_t25tb")
 Id = "act_reload"
 Name = "Reload"
 Detail = "When you RELOAD, you reload one Pilot Weapon with the LOADING tag, making it usable again."
@@ -219,8 +203,8 @@ Terse = "Reload one weapon as a pilot."
 Pilot = true
 SynergyLocations = PackedStringArray("reload")
 
-[sub_resource type="Resource" id="Resource_od2je"]
-script = ExtResource("1_xcsdk")
+[sub_resource type="Resource" id="Resource_13jqg"]
+script = ExtResource("1_t25tb")
 Id = "act_barrage"
 Name = "Barrage"
 Detail = "When you BARRAGE, you attack with two weapons, or with one SUPERHEAVY weapon.<br>To BARRAGE, choose your weapons and either one target or different targets – within range – then make an attack with each weapon.<br>• In addition to your primary attacks, you may also attack with an AUXILIARY weapon on each mount that was fired, so long as the AUXILIARY weapon hasn’t yet been fired this action. These AUXILIARY weapons don’t deal bonus damage.<br>• SUPERHEAVY weapons can only be fired as part of a BARRAGE."
@@ -228,8 +212,8 @@ Activation = 3
 Terse = "Attack with two weapons, or attack with a single superheavy weapon."
 SynergyLocations = PackedStringArray("barrage")
 
-[sub_resource type="Resource" id="Resource_fxkp6"]
-script = ExtResource("1_xcsdk")
+[sub_resource type="Resource" id="Resource_jh4p1"]
+script = ExtResource("1_t25tb")
 Id = "act_full_tech"
 Name = "Full Tech"
 Detail = "When you use FULL TECH, you perform multiple tech actions or a single, more complex action.<br>To use FULL TECH, choose two QUICK TECH options or a single system or tech option that requires FULL TECH to activate. If you choose two QUICK TECH options, you can choose the same option multiple times."
@@ -237,8 +221,8 @@ Activation = 3
 Terse = "Choose and perform two Quick Tech options, or perform a full tech action. If you choose two Quick Tech options, you can choose the same option multiple times."
 SynergyLocations = PackedStringArray("full_tech")
 
-[sub_resource type="Resource" id="Resource_cmpis"]
-script = ExtResource("1_xcsdk")
+[sub_resource type="Resource" id="Resource_ls0mb"]
+script = ExtResource("1_t25tb")
 Id = "act_stabilize"
 Name = "Stabilize"
 Detail = "When you STABILIZE, you enact emergency protocols to purge your mech’s systems of excess heat, repair your chassis where you can, or eliminate hostile code.<br>To STABILIZE, choose one of the following:<br>• Cool your mech, clearing all heat and EXPOSED.<br>• Mark 1 REPAIR to restore all HP.<br>Additionally, choose one of the following:<br>• Reload all LOADING weapons.<br>• Clear any burn currently affecting your mech.<br>• Clear a condition that wasn’t caused by one of your own systems, talents, etc.<br>• Clear an adjacent allied character’s condition that wasn’t caused by one of their own systems, talents, etc."
@@ -246,8 +230,8 @@ Activation = 3
 Terse = "Heal and cool down your mech, reload, or attempt to end conditions affecting it."
 SynergyLocations = PackedStringArray("stabilize")
 
-[sub_resource type="Resource" id="Resource_ru4ce"]
-script = ExtResource("1_xcsdk")
+[sub_resource type="Resource" id="Resource_nxt8j"]
+script = ExtResource("1_t25tb")
 Id = "act_disengage"
 Name = "Disengage"
 Detail = "When you DISENGAGE, you attempt to extricate yourself safely from a dangerous situation, make a steady and measured retreat, or rely on your mech’s agility to slip in and out of threat ranges faster than an enemy can strike.<br>Until the end of your current turn, you ignore engagement and your movement does not provoke reactions."
@@ -256,8 +240,8 @@ Terse = "Disengage safely from a dangerous situation. Until the end of your curr
 SynergyLocations = PackedStringArray("disengage")
 Confirm = PackedStringArray("DISENGAGE SUCCESSFUL. NEW EXTRICATION VECTORS AVAILABLE.")
 
-[sub_resource type="Resource" id="Resource_l4kv5"]
-script = ExtResource("1_xcsdk")
+[sub_resource type="Resource" id="Resource_xkk5r"]
+script = ExtResource("1_t25tb")
 Id = "act_improvised_attack"
 Name = "Improvised Attack"
 Detail = "When you make an IMPROVISED ATTACK, you attack with a rifle butt, fist, or another improvised melee weapon. You can use anything from the butt of a weapon to a slab of concrete or a length of hull plating – the flavor of the attack is up to you!<br>To make an IMPROVISED ATTACK, make a melee attack against an adjacent target. On a success, they take 1d6 kinetic damage."
@@ -265,8 +249,8 @@ Activation = 3
 Terse = "Attack with a fist, rifle butt, or improvised weapon in melee."
 SynergyLocations = PackedStringArray("improvised_attack")
 
-[sub_resource type="Resource" id="Resource_r57k1"]
-script = ExtResource("1_xcsdk")
+[sub_resource type="Resource" id="Resource_vfkvl"]
+script = ExtResource("1_t25tb")
 Id = "act_activate_full"
 Name = "Full Activation"
 Detail = "When you ACTIVATE, you use a system or piece of gear that requires either a quick or full action. These systems have the QUICK ACTION or FULL ACTION tags. You can ACTIVATE any number of times a turn but can’t ACTIVATE the same system more than once unless you can do so as a free action."
@@ -276,8 +260,8 @@ Pilot = true
 Mech = true
 SynergyLocations = PackedStringArray("full_activation")
 
-[sub_resource type="Resource" id="Resource_xq8am"]
-script = ExtResource("1_xcsdk")
+[sub_resource type="Resource" id="Resource_7cvvw"]
+script = ExtResource("1_t25tb")
 Id = "act_boot_up"
 Name = "Boot Up"
 Detail = "You can BOOT UP a mech that you are piloting as a full action, clearing SHUT DOWN and restoring your mech to a powered state."
@@ -286,8 +270,8 @@ Terse = "Fire up your mech from Shut Down."
 SynergyLocations = PackedStringArray("boot_up")
 Confirm = PackedStringArray("COMPANION/CONCIERGE UNIT INITIALIZING", "GMS COMP/CON Unit Mk XI Rev 11.4.1c", "5016.8.22 General Massive Systems // Please Operate Responsibly", "RESTORING PROCESSES AT ret.n@142::ACCORD-6", "INTERFACE ONLINE. REBOOT SUCCESSFUL.")
 
-[sub_resource type="Resource" id="Resource_df34b"]
-script = ExtResource("1_xcsdk")
+[sub_resource type="Resource" id="Resource_p1sc8"]
+script = ExtResource("1_t25tb")
 Id = "act_mount"
 Name = "Mount"
 Detail = "When you MOUNT, you climb onto a mech. Mounting is the preferred term among most pilots. You don’t “get in” or “climb aboard” – you mount. You’re the cavalry, after all.<br>You can MOUNT as a full action. You must be adjacent your mech to MOUNT. <br>Additionally, you can also MOUNT willing allied mechs or vehicles. When you do so, move into the same space and then move with them."
@@ -295,8 +279,8 @@ Activation = 3
 Terse = "Get in to your mech."
 Pilot = true
 
-[sub_resource type="Resource" id="Resource_cfuft"]
-script = ExtResource("1_xcsdk")
+[sub_resource type="Resource" id="Resource_evklk"]
+script = ExtResource("1_t25tb")
 Id = "act_dismount"
 Name = "Dismount"
 Detail = "When you DISMOUNT, you climb off of a mech. Dismounting is the preferred term among most pilots.<br>You can DISMOUNT as a full action. When you DISMOUNT, you are placed in an adjacent space – if there are no free spaces, you cannot DISMOUNT.<br>Additionally, you can also DISMOUNT willing allied mechs or vehicles you have MOUNTED."
@@ -305,8 +289,8 @@ Terse = "Get out of your mech."
 SynergyLocations = PackedStringArray("dismount")
 Confirm = PackedStringArray("LOCKS DISENGAGED. MANUAL CONTROL MODE SUSPENDED.")
 
-[sub_resource type="Resource" id="Resource_sqsx8"]
-script = ExtResource("1_xcsdk")
+[sub_resource type="Resource" id="Resource_ic6k4"]
+script = ExtResource("1_t25tb")
 Id = "act_skill_check"
 Name = "Skill Check"
 Detail = "When you make a SKILL CHECK, you undertake an activity that isn’t covered by other actions but has a clear goal and is sufficiently complex to require a roll. The parameters and outcomes of SKILL CHECKS are up to the GM, but they must be involved enough to require a full action. If you want to do something that can be done quickly, no action is required.<br>Examples of SKILL CHECKS:<br>• Bruja, on foot, wants to open a locked door. The GM asks her to make a SKILL CHECK and decides that Bruja can get a bonus from her ‘Hack or Fix’ trigger.<br>• Pan wants to jump a crevasse in his mech that’s wider than he can normally manage. The GM decides to allow him to try it with AGILITY.<br>• Zaid wants to lift a heavy boulder with his mech, to clear a passage. The GM decides this is probably a full action and requires a SKILL CHECK with HULL."
@@ -316,8 +300,8 @@ Pilot = true
 Mech = true
 SynergyLocations = PackedStringArray("skill_check")
 
-[sub_resource type="Resource" id="Resource_wsyu5"]
-script = ExtResource("1_xcsdk")
+[sub_resource type="Resource" id="Resource_eoquw"]
+script = ExtResource("1_t25tb")
 Id = "act_fight"
 Name = "Fight"
 Detail = "When you FIGHT, you attack (melee or ranged) with one weapon.<br>To FIGHT, choose a weapon and attack a target within RANGE or THREAT and line of sight as a full action. Ranged attacks are affected by cover and receive +1 difficulty if you’re ENGAGED."
@@ -325,8 +309,8 @@ Activation = 3
 Terse = "Attack with one weapon as a pilot."
 Pilot = true
 
-[sub_resource type="Resource" id="Resource_5qnjr"]
-script = ExtResource("1_xcsdk")
+[sub_resource type="Resource" id="Resource_mh8n5"]
+script = ExtResource("1_t25tb")
 Id = "act_jockey"
 Name = "Jockey"
 Detail = "When you JOCKEY, you aggressively attack an enemy mech while on foot. It cannot be emphasized enough how foolhardy and dangerous this is.<br>To JOCKEY, you must be adjacent to a mech. As a full action, make a contested skill check against the mech, using GRIT (or a relevant trigger, at the GM’s discretion). The mech contests with HULL. On a success, you manage to climb onto the mech, sharing its space and moving with it. The mech can attempt to shake you off by succeeding on another contested skill check as a full action; alternatively, you can jump off as part of your movement on your turn.<br>When you successfully JOCKEY, choose one of the following options:<br>• DISTRACT: The mech is IMPAIRED and SLOWED until the end of its next turn.<br>• SHRED: Deal 2 heat to the mech by ripping at wiring, paneling, and so on.<br>• DAMAGE: Deal 4 kinetic damage to the mech by attacking joints, hatches, and so on.<br>On each of your subsequent turns, you can continue to choose from the options above as full actions, as long as you don't stop jockeying (or get thrown off)."
@@ -334,16 +318,16 @@ Activation = 3
 Terse = "Attempt to attack a mech on foot as a pilot."
 Pilot = true
 
-[sub_resource type="Resource" id="Resource_pl74x"]
-script = ExtResource("1_xcsdk")
+[sub_resource type="Resource" id="Resource_kf7p0"]
+script = ExtResource("1_t25tb")
 Id = "act_brace"
 Name = "Brace"
 Detail = "When you BRACE, you ready your mech against incoming fire.<br>Brace<br>Reaction, 1/round<br>Trigger: You are hit by an attack and damage has been rolled.<br>Effect: You count as having RESISTANCE to all damage, burn, and heat from the triggering attack, and until the end of your next turn, all other attacks against you are made at +1 difficulty.<br>Due to the stress of bracing, you cannot take reactions until the end of your next turn and on that turn, you can only take one quick action – you cannot OVERCHARGE, move normally, take full actions, or take free actions."
 Activation = 7
 Terse = "Brace your mech for impact, reducing damage at the cost of your next turn’s actions."
 
-[sub_resource type="Resource" id="Resource_pn0qm"]
-script = ExtResource("1_xcsdk")
+[sub_resource type="Resource" id="Resource_ocdu4"]
+script = ExtResource("1_t25tb")
 Id = "act_overwatch"
 Name = "Overwatch"
 Detail = "When you OVERWATCH, you control and defend the space around your mech from enemy incursion through pilot skill, reflexes, or finely tuned subsystems.<br>Unless specified otherwise, all weapons default to 1 THREAT.<br>Overwatch<br>Reaction, 1/round<br>Trigger: A hostile character starts any movement (including BOOST and other actions) inside one of your weapons’ THREAT.<br>Effect: Trigger OVERWATCH, immediately using that weapon to SKIRMISH against that character as a reaction, before they move."
@@ -352,1710 +336,240 @@ Terse = "Attack a close-by target attempting to move."
 Pilot = true
 Mech = true
 
-[sub_resource type="Resource" id="Resource_bpudh"]
-script = ExtResource("1_xcsdk")
+[sub_resource type="Resource" id="Resource_dft76"]
+script = ExtResource("1_t25tb")
 Id = "act_free_action"
 Name = "Free Action"
 Detail = "Free actions are often granted by systems, talents, gear, or OVERCHARGE. Characters may perform any number of free actions on their turn, but only on their turn, and only those granted to them. Free actions can always be used to make duplicate actions.<br>The most common type of free action is a PROTOCOL, which is granted by gear or systems and can be activated or deactivated only at the start of a turn. Each Protocol can only be taken once per turn."
 Terse = "Characters may perform any number of Free Actions on their turn."
 
-[sub_resource type="Resource" id="Resource_ghjkg"]
-script = ExtResource("1_xcsdk")
+[sub_resource type="Resource" id="Resource_to7u3"]
+script = ExtResource("1_t25tb")
 Id = "act_buy_some_time"
 Name = "Buy Some Time"
 Detail = "When you BUY SOME TIME, you try to stave off a reckoning, extend a window of opportunity, or merely buy some time and breathing room for you and your group. You might be trying to dodge some heat, survive stranded in the wilderness, or cause a distraction so another plan can reach its climax. You can use that distraction or bought time as RESERVES for the next mission.<br>Describe your plan and roll:<br>On 9 or less, you can only buy a little time, and only if drastic measures are taken right now. Otherwise, whatever you’re trying to stave off catches up to you.<br>On 10–19, you buy enough time, but the situation becomes precarious or desperate. Next time you get this result for the same situation, treat it as 9 or less.<br>On 20+, you buy as much time as you need, until the next downtime session. Next time you get this result for the same situation, treat it as 10–19."
 Activation = 9
 Terse = "Try and stave off a reckoning or extend your window of opportunity."
 
-[sub_resource type="Resource" id="Resource_vd0cv"]
-script = ExtResource("1_xcsdk")
+[sub_resource type="Resource" id="Resource_ymxdl"]
+script = ExtResource("1_t25tb")
 Id = "act_gather_information"
 Name = "Gather Information"
 Detail = "When you GATHER INFORMATION, you poke your nose around, perhaps where it doesn’t belong, and investigate something – conducting research, following up on a mystery, tracking a target, or keeping an eye on something. You might head to a library or go undercover to learn what you can. Whatever it involves, you’re trying to GATHER INFORMATION on a subject of your choice. You can use information gained as RESERVES.<br>Name your subject and method, and roll:<br>On 9 or less, choose one:<br>• You get what you’re looking for, but it gets you into trouble straight away.<br>• You get out now and avoid trouble.<br>On 10–19, you find what you’re looking for, but choose one:<br>• You leave clear evidence of your rummaging.<br>• You have to dispatch someone or implicate someone innocent to avoid attention.<br>On 20+, you get what you’re looking for with no complications."
 Activation = 9
 Terse = "Investigate, do research, or keep an eye on something."
 
-[sub_resource type="Resource" id="Resource_v4gcp"]
-script = ExtResource("1_xcsdk")
+[sub_resource type="Resource" id="Resource_2piey"]
+script = ExtResource("1_t25tb")
 Id = "act_get_a_damn_drink"
 Name = "Get a Damn Drink"
 Detail = "When you GET A DAMN DRINK, you blow off some steam, carouse, and generally get into trouble. You might be trying to make connections, collect gossip, forge a reputation, or even just to forget what happened on the last mission. There’s usually trouble.<br>State your intention and roll:<br>On 9 or less, decide whether you had good time or not; either way, you wake up in a gutter somewhere with only one remaining:<br>• Your dignity.<br>• All of your possessions.<br>• Your memory.<br>On 10–19, gain one as RESERVES and lose one:<br>• A good reputation.<br>• A friend or connection.<br>• A useful item or piece of information.<br>• A convenient opportunity.<br>On 20+, gain two from the 10–19 list as RESERVES and don’t lose anything.<br>You can only make this action where there’s actually a drink to get (e.g., in a town, station, city, or some other populated area), or some other kind of entertainment."
 Activation = 9
 Terse = "Blow off some steam and generally get into trouble."
 
-[sub_resource type="Resource" id="Resource_me84r"]
-script = ExtResource("1_xcsdk")
+[sub_resource type="Resource" id="Resource_ottqj"]
+script = ExtResource("1_t25tb")
 Id = "act_get_connected"
 Name = "Get Connected"
 Detail = "When you GET CONNECTED, you make connections, call in favors, ask for help, or drum up support for a course of action. You can use your contacts’ resources or aid as RESERVES for the next mission.<br>Name your contact and roll:<br>On 9 or less, your contact will help you, but you’ve got to do a favor or make good on a promise right now. If you don’t, they won’t help you.<br>On 10–19, your contact will help you, but you’ve got to do a favor or make good on a promise afterwards. If you don’t follow through, treat this result as 9 or less next time you get it for the same organization.<br>On 20+, your contact will help you, no strings attached. Treat this result as 10–19 next time you get it for the same organization.<br>To take this action, you need to be within comms range or somewhere you can have a good old-fashioned face-to-face conversation."
 Activation = 9
 Terse = "Make connections, ask for help, or drum up support."
 
-[sub_resource type="Resource" id="Resource_am575"]
-script = ExtResource("1_xcsdk")
+[sub_resource type="Resource" id="Resource_80gne"]
+script = ExtResource("1_t25tb")
 Id = "act_get_creative"
 Name = "Get Creative"
 Detail = "When you GET CREATIVE, you tweak something or try to make something new – either a physical item, or a piece of software. Once finished, you can use your new creation as RESERVES.<br>Describe your project and roll:<br>On 9 or less, you don’t make any progress on your project. Next time you get this result for the same project, treat it as a 10–19.<br>On 10–19, you make progress on your project, but don’t quite finish it. You can finish it during your next downtime without rolling, but choose the two things you’re going to need:<br>• Quality materials.<br>• Specific knowledge or techniques.<br>• Specialized tools.<br>• A good workspace.<br>On 20+, you finish your project before the next mission. If it’s especially complex, treat this as 10–19, but only choose one.<br>Your project doesn’t have to be something from the gear list, but it usually can’t be as impactful as a piece of mech gear."
 Activation = 9
 Terse = "Tweak something or attempt to make something new."
 
-[sub_resource type="Resource" id="Resource_6mwxb"]
-script = ExtResource("1_xcsdk")
+[sub_resource type="Resource" id="Resource_vyxmm"]
+script = ExtResource("1_t25tb")
 Id = "act_get_focused"
 Name = "Get Focused"
 Detail = "When you GET FOCUSED, you focus on increasing your own skills, training, and self-improvement. You might practice, learn, meditate, or call on a teacher.<br>Name what you want to learn or improve (e.g., a skill, technique, academic subject, or language). The GM will give your pilot a new +2 trigger based on your practice and training. For example, the trigger could be +2 Playing Chess or +2 Dancing. You can also improve a trigger from +2 to +4 or +4 to +6 by taking this downtime action.<br>This action can be used to learn something like starship piloting, cooking, chess, boxing, history, or etiquette. It should usually be a specific non-martial skill or something personal to your character."
 Activation = 9
 Terse = "Practice, learn, meditate, or call on a teacher."
 
-[sub_resource type="Resource" id="Resource_s78ts"]
-script = ExtResource("1_xcsdk")
+[sub_resource type="Resource" id="Resource_2qgv4"]
+script = ExtResource("1_t25tb")
 Id = "act_get_organized"
 Name = "Get Organized"
 Detail = "When you GET ORGANIZED, you start, run, or improve an organization, business, or other venture.<br>State your organization’s purpose or goal, and choose a FOCUS: military, scientific, academic, criminal, humanitarian, industrial, entertainment, or political. It begins with +2 in either EFFICIENCY or INFLUENCE and +0 in the other, with a maximum of +6. EFFICIENCY determines how effectively your organization conducts activities within its scope (e.g., a military organization with high efficiency would be good at combat). INFLUENCE is its size, reach, wealth, and reputation.<br>When your organization directly assists with an activity, you may add either its EFFICIENCY or INFLUENCE as a statistic bonus to your skill check. EFFICIENCY is used when performing activities related to your organization’s FOCUS. INFLUENCE is used when acquiring assets, creating opportunities, or swaying public opinion. Advantages gained with the help of your organization can be used as RESERVES.<br>Each downtime after the first, roll 1d20:<br>On 9 or less, choose one or your organization folds immediately:<br>• Your organization loses 2 EFFICIENCY and 2 INFLUENCE, to a minimum of 0. If both are already at 0, you may not choose this.<br>• Your organization needs to pay debts, make an aggressive move, or get bailed out. You choose which, and the GM decides what that looks like.<br>On 10–19, your organization is stable. It gains +2 EFFICIENCY or INFLUENCE, to a maximum of +6.<br>On 20+, your organization gains +2 EFFICIENCY and +2 INFLUENCE, to a maximum of +6.<br>You must roll for your organization every downtime after starting one, but the roll doesn’t count as a downtime action."
 Activation = 9
 Terse = "Start, run, or improve an organization."
 
-[sub_resource type="Resource" id="Resource_7ayu5"]
-script = ExtResource("1_xcsdk")
+[sub_resource type="Resource" id="Resource_jgmhk"]
+script = ExtResource("1_t25tb")
 Id = "act_power_at_a_cost"
 Name = "Power at a Cost"
 Detail = "When you seek POWER AT A COST, you’re trying to get your hands on something.<br>Name what you want. You can definitely get it, but depending on the outlandishness of the request, the GM chooses one or two:<br>• It’s going to take a lot more time than you thought.<br>• It’s going to be really damn risky.<br>• You’ll have to have to give something up or leave something behind (e.g., wealth, resources, allies).<br>• You’re going to piss off someone or something important and powerful.<br>• Things are going to go wildly off-plan.<br>• You’ll need more information to proceed safely.<br>• It’s going to fall apart damn soon.<br>• You’ll need more resources, but you know where to find them.<br>• You can get something almost right: a lesser version, or less of it.<br>This is a straightforward way to acquire RESERVES, opportunities, and additional resources. You might want something directly useful for a mission; some‐ thing more abstract, like time, safety, information, allies, or support; something practical, like a base of operations, materials, shelter, or food; or, even something as simple as a damn pack of cigarettes.<br>You can also use POWER AT A COST during missions for similar effects. Other downtime actions generally can’t be used during missions, but your group can adapt them if desired."
 Activation = 9
 Terse = "Gain rewards, opportunities, or resources."
 
-[sub_resource type="Resource" id="Resource_u0h3t"]
-script = ExtResource("1_xcsdk")
+[sub_resource type="Resource" id="Resource_xo7el"]
+script = ExtResource("1_t25tb")
 Id = "act_scrounge_and_barter"
 Name = "Scrounge and Barter"
 Detail = "When you SCROUNGE AND BARTER, you try to get your hands on some gear or an asset by dredging the scrapyard, chasing down rumors, bartering in the local market, or hunting around.<br>You might want some better pilot gear, a vehicle, narcotics, goods, or other sundries. It needs to be something physical, but doesn’t necessarily have to be on the gear list. If you get it, you can take it on the next mission as RESERVES.<br>Name what you want and roll:<br>On 9 or less, you get what you want, but choose one:<br>• It was stolen, probably from someone who’s looking for it.<br>• It’s degraded, old, filthy, or malfunctioning.<br>• Someone else has it right now and won’t give it up without force or convincing.<br>On 10–19, you get what you want, but choose the price you need to pay:<br>• Time.<br>• Dignity.<br>• Reputation.<br>• Health, comfort, and wellness. On 20+, you get what you’re looking for, no problem."
 Activation = 9
 Terse = "Try and get your hands on some gear or asset."
 
-[sub_resource type="Resource" id="Resource_d83bt"]
-script = ExtResource("2_nk4i1")
-
-[sub_resource type="Resource" id="Resource_7o45f"]
-script = ExtResource("2_nk4i1")
-
-[sub_resource type="Resource" id="Resource_akryg"]
-script = ExtResource("2_nk4i1")
-
-[sub_resource type="Resource" id="Resource_irpxa"]
-script = ExtResource("2_nk4i1")
-
-[sub_resource type="Resource" id="Resource_x6ana"]
-script = ExtResource("2_nk4i1")
-
-[sub_resource type="Resource" id="Resource_5ccrn"]
-script = ExtResource("2_nk4i1")
-
-[sub_resource type="Resource" id="Resource_k06t1"]
-script = ExtResource("2_nk4i1")
-
-[sub_resource type="Resource" id="Resource_rbgfb"]
-script = ExtResource("2_nk4i1")
-
-[sub_resource type="Resource" id="Resource_cpswy"]
-script = ExtResource("2_nk4i1")
-
-[sub_resource type="Resource" id="Resource_3met4"]
-script = ExtResource("2_nk4i1")
-
-[sub_resource type="Resource" id="Resource_0pjlf"]
-script = ExtResource("2_nk4i1")
-
-[sub_resource type="Resource" id="Resource_eaiwj"]
-script = ExtResource("2_nk4i1")
-
-[sub_resource type="Resource" id="Resource_j557g"]
-script = ExtResource("2_nk4i1")
-
-[sub_resource type="Resource" id="Resource_fs80t"]
-script = ExtResource("2_nk4i1")
-
-[sub_resource type="Resource" id="Resource_b8xtn"]
-script = ExtResource("2_nk4i1")
-
-[sub_resource type="Resource" id="Resource_go6c2"]
-script = ExtResource("2_nk4i1")
-
-[sub_resource type="Resource" id="Resource_y3j5e"]
-script = ExtResource("2_nk4i1")
-
-[sub_resource type="Resource" id="Resource_2vr7t"]
-script = ExtResource("2_nk4i1")
-
-[sub_resource type="Resource" id="Resource_thdva"]
-script = ExtResource("2_nk4i1")
-
-[sub_resource type="Resource" id="Resource_utqdr"]
-script = ExtResource("2_nk4i1")
-
-[sub_resource type="Resource" id="Resource_akl8g"]
-script = ExtResource("3_eissk")
-
-[sub_resource type="Resource" id="Resource_tku6m"]
-script = ExtResource("3_eissk")
-
-[sub_resource type="Resource" id="Resource_608mf"]
-script = ExtResource("3_eissk")
-
-[sub_resource type="Resource" id="Resource_xi0px"]
-script = ExtResource("3_eissk")
-
-[sub_resource type="Resource" id="Resource_laujb"]
-script = ExtResource("3_eissk")
-
-[sub_resource type="Resource" id="Resource_5hc81"]
-script = ExtResource("3_eissk")
-
-[sub_resource type="Resource" id="Resource_magjc"]
-script = ExtResource("3_eissk")
-
-[sub_resource type="Resource" id="Resource_7jk1i"]
-script = ExtResource("3_eissk")
-
-[sub_resource type="Resource" id="Resource_jxk4s"]
-script = ExtResource("3_eissk")
-
-[sub_resource type="Resource" id="Resource_n5kfl"]
-script = ExtResource("3_eissk")
-
-[sub_resource type="Resource" id="Resource_e12gc"]
-script = ExtResource("3_eissk")
-
-[sub_resource type="Resource" id="Resource_6fx1l"]
-script = ExtResource("3_eissk")
-
-[sub_resource type="Resource" id="Resource_irm5s"]
-script = ExtResource("3_eissk")
-
-[sub_resource type="Resource" id="Resource_huuuq"]
-script = ExtResource("3_eissk")
-
-[sub_resource type="Resource" id="Resource_r87ao"]
-script = ExtResource("3_eissk")
-
-[sub_resource type="Resource" id="Resource_n2nta"]
-script = ExtResource("3_eissk")
-
-[sub_resource type="Resource" id="Resource_6obb0"]
-script = ExtResource("3_eissk")
-
-[sub_resource type="Resource" id="Resource_46glf"]
-script = ExtResource("3_eissk")
-
-[sub_resource type="Resource" id="Resource_gwsfm"]
-script = ExtResource("3_eissk")
-
-[sub_resource type="Resource" id="Resource_1ld0o"]
-script = ExtResource("3_eissk")
-
-[sub_resource type="Resource" id="Resource_lk38q"]
-script = ExtResource("3_eissk")
-
-[sub_resource type="Resource" id="Resource_gn1wn"]
-script = ExtResource("3_eissk")
-
-[sub_resource type="Resource" id="Resource_44pj7"]
-script = ExtResource("3_eissk")
-
-[sub_resource type="Resource" id="Resource_2rxvf"]
-script = ExtResource("3_eissk")
-
-[sub_resource type="Resource" id="Resource_csg6g"]
-script = ExtResource("3_eissk")
-
-[sub_resource type="Resource" id="Resource_4qxhr"]
-script = ExtResource("3_eissk")
-
-[sub_resource type="Resource" id="Resource_5jhch"]
-script = ExtResource("3_eissk")
-
-[sub_resource type="Resource" id="Resource_t8vae"]
-script = ExtResource("3_eissk")
-
-[sub_resource type="Resource" id="Resource_svj77"]
-script = ExtResource("3_eissk")
-
-[sub_resource type="Resource" id="Resource_gnjvy"]
-script = ExtResource("3_eissk")
-
-[sub_resource type="Resource" id="Resource_dp4ju"]
-script = ExtResource("3_eissk")
-
-[sub_resource type="Resource" id="Resource_dbw4f"]
-script = ExtResource("4_ia17u")
-
-[sub_resource type="Resource" id="Resource_4k601"]
-script = ExtResource("4_ia17u")
-
-[sub_resource type="Resource" id="Resource_srfds"]
-script = ExtResource("4_ia17u")
-
-[sub_resource type="Resource" id="Resource_o5jis"]
-script = ExtResource("4_ia17u")
-
-[sub_resource type="Resource" id="Resource_loeh0"]
-script = ExtResource("4_ia17u")
-
-[sub_resource type="Resource" id="Resource_iu6sj"]
-script = ExtResource("4_ia17u")
-
-[sub_resource type="Resource" id="Resource_oprgf"]
-script = ExtResource("4_ia17u")
-
-[sub_resource type="Resource" id="Resource_s8uk5"]
-script = ExtResource("4_ia17u")
-
-[sub_resource type="Resource" id="Resource_43d8a"]
-script = ExtResource("4_ia17u")
-
-[sub_resource type="Resource" id="Resource_nnj4i"]
-script = ExtResource("4_ia17u")
-
-[sub_resource type="Resource" id="Resource_ebk1e"]
-script = ExtResource("4_ia17u")
-
-[sub_resource type="Resource" id="Resource_gtyff"]
-script = ExtResource("4_ia17u")
-
-[sub_resource type="Resource" id="Resource_6m7ms"]
-script = ExtResource("4_ia17u")
-
-[sub_resource type="Resource" id="Resource_ecjgc"]
-script = ExtResource("4_ia17u")
-
-[sub_resource type="Resource" id="Resource_r3pxb"]
-script = ExtResource("4_ia17u")
-
-[sub_resource type="Resource" id="Resource_1jv1i"]
-script = ExtResource("4_ia17u")
-
-[sub_resource type="Resource" id="Resource_287ao"]
-script = ExtResource("4_ia17u")
-
-[sub_resource type="Resource" id="Resource_hnwl7"]
-script = ExtResource("4_ia17u")
-
-[sub_resource type="Resource" id="Resource_1hvca"]
-script = ExtResource("4_ia17u")
-
-[sub_resource type="Resource" id="Resource_16blb"]
-script = ExtResource("4_ia17u")
-
-[sub_resource type="Resource" id="Resource_ilivc"]
-script = ExtResource("5_sr1jt")
-
-[sub_resource type="Resource" id="Resource_u3l24"]
-script = ExtResource("5_sr1jt")
-
-[sub_resource type="Resource" id="Resource_5voqx"]
-script = ExtResource("5_sr1jt")
-
-[sub_resource type="Resource" id="Resource_76bu1"]
-script = ExtResource("5_sr1jt")
-
-[sub_resource type="Resource" id="Resource_yqn4f"]
-script = ExtResource("5_sr1jt")
-
-[sub_resource type="Resource" id="Resource_1l4rj"]
-script = ExtResource("5_sr1jt")
-
-[sub_resource type="Resource" id="Resource_sdut3"]
-script = ExtResource("5_sr1jt")
-
-[sub_resource type="Resource" id="Resource_gm4gv"]
-script = ExtResource("5_sr1jt")
-
-[sub_resource type="Resource" id="Resource_ytm16"]
-script = ExtResource("5_sr1jt")
-
-[sub_resource type="Resource" id="Resource_2gxo8"]
-script = ExtResource("5_sr1jt")
-
-[sub_resource type="Resource" id="Resource_j6hun"]
-script = ExtResource("5_sr1jt")
-
-[sub_resource type="Resource" id="Resource_4vi88"]
-script = ExtResource("5_sr1jt")
-
-[sub_resource type="Resource" id="Resource_m40w3"]
-script = ExtResource("5_sr1jt")
-
-[sub_resource type="Resource" id="Resource_wr781"]
-script = ExtResource("5_sr1jt")
-
-[sub_resource type="Resource" id="Resource_scvec"]
-script = ExtResource("5_sr1jt")
-
-[sub_resource type="Resource" id="Resource_eeq2i"]
-script = ExtResource("5_sr1jt")
-
-[sub_resource type="Resource" id="Resource_iieye"]
-script = ExtResource("5_sr1jt")
-
-[sub_resource type="Resource" id="Resource_bw25f"]
-script = ExtResource("5_sr1jt")
-
-[sub_resource type="Resource" id="Resource_x6llg"]
-script = ExtResource("5_sr1jt")
-
-[sub_resource type="Resource" id="Resource_2mv31"]
-script = ExtResource("5_sr1jt")
-
-[sub_resource type="Resource" id="Resource_lctvp"]
-script = ExtResource("5_sr1jt")
-
-[sub_resource type="Resource" id="Resource_l8ur8"]
-script = ExtResource("5_sr1jt")
-
-[sub_resource type="Resource" id="Resource_4y5mr"]
-script = ExtResource("5_sr1jt")
-
-[sub_resource type="Resource" id="Resource_52jdy"]
-script = ExtResource("5_sr1jt")
-
-[sub_resource type="Resource" id="Resource_8pjr0"]
-script = ExtResource("5_sr1jt")
-
-[sub_resource type="Resource" id="Resource_unms4"]
-script = ExtResource("5_sr1jt")
-
-[sub_resource type="Resource" id="Resource_vqpo5"]
-script = ExtResource("5_sr1jt")
-
-[sub_resource type="Resource" id="Resource_7c0d1"]
-script = ExtResource("5_sr1jt")
-
-[sub_resource type="Resource" id="Resource_h0dfy"]
-script = ExtResource("5_sr1jt")
-
-[sub_resource type="Resource" id="Resource_exake"]
-script = ExtResource("5_sr1jt")
-
-[sub_resource type="Resource" id="Resource_kdtdk"]
-script = ExtResource("6_i8i48")
-
-[sub_resource type="Resource" id="Resource_1t1hm"]
-script = ExtResource("7_gek43")
-
-[sub_resource type="Resource" id="Resource_4avxv"]
-script = ExtResource("7_gek43")
-
-[sub_resource type="Resource" id="Resource_pbdj5"]
-script = ExtResource("7_gek43")
-
-[sub_resource type="Resource" id="Resource_tkc1t"]
-script = ExtResource("7_gek43")
-
-[sub_resource type="Resource" id="Resource_73307"]
-script = ExtResource("7_gek43")
-
-[sub_resource type="Resource" id="Resource_towya"]
-script = ExtResource("8_13jqg")
-
-[sub_resource type="Resource" id="Resource_igul8"]
-script = ExtResource("8_13jqg")
-
-[sub_resource type="Resource" id="Resource_y6rih"]
-script = ExtResource("8_13jqg")
-
-[sub_resource type="Resource" id="Resource_ms1fk"]
-script = ExtResource("8_13jqg")
-
-[sub_resource type="Resource" id="Resource_dqhc6"]
-script = ExtResource("8_13jqg")
-
-[sub_resource type="Resource" id="Resource_130yp"]
-script = ExtResource("8_13jqg")
-
-[sub_resource type="Resource" id="Resource_x2ps4"]
-script = ExtResource("8_13jqg")
-
-[sub_resource type="Resource" id="Resource_ru31s"]
-script = ExtResource("8_13jqg")
-
-[sub_resource type="Resource" id="Resource_jcnsc"]
-script = ExtResource("8_13jqg")
-
-[sub_resource type="Resource" id="Resource_rsj7w"]
-script = ExtResource("9_jh4p1")
-
-[sub_resource type="Resource" id="Resource_hrbt3"]
-script = ExtResource("9_jh4p1")
-
-[sub_resource type="Resource" id="Resource_a3rbd"]
-script = ExtResource("9_jh4p1")
-
-[sub_resource type="Resource" id="Resource_545ju"]
-script = ExtResource("9_jh4p1")
-
-[sub_resource type="Resource" id="Resource_xripp"]
-script = ExtResource("9_jh4p1")
-
-[sub_resource type="Resource" id="Resource_gv5wo"]
-script = ExtResource("9_jh4p1")
-
-[sub_resource type="Resource" id="Resource_rvsw2"]
-script = ExtResource("9_jh4p1")
-
-[sub_resource type="Resource" id="Resource_857rl"]
-script = ExtResource("9_jh4p1")
-
-[sub_resource type="Resource" id="Resource_00w88"]
-script = ExtResource("9_jh4p1")
-
-[sub_resource type="Resource" id="Resource_32k7x"]
-script = ExtResource("9_jh4p1")
-
-[sub_resource type="Resource" id="Resource_cmo4j"]
-script = ExtResource("9_jh4p1")
-
-[sub_resource type="Resource" id="Resource_uv8xl"]
-script = ExtResource("9_jh4p1")
-
-[sub_resource type="Resource" id="Resource_a5yge"]
-script = ExtResource("9_jh4p1")
-
-[sub_resource type="Resource" id="Resource_kr8vp"]
-script = ExtResource("9_jh4p1")
-
-[sub_resource type="Resource" id="Resource_3l4al"]
-script = ExtResource("9_jh4p1")
-
-[sub_resource type="Resource" id="Resource_akwjt"]
-script = ExtResource("9_jh4p1")
-
-[sub_resource type="Resource" id="Resource_5rtml"]
-script = ExtResource("9_jh4p1")
-
-[sub_resource type="Resource" id="Resource_niw6t"]
-script = ExtResource("9_jh4p1")
-
-[sub_resource type="Resource" id="Resource_5337x"]
-script = ExtResource("9_jh4p1")
-
-[sub_resource type="Resource" id="Resource_1ejng"]
-script = ExtResource("9_jh4p1")
-
-[sub_resource type="Resource" id="Resource_s3hfx"]
-script = ExtResource("9_jh4p1")
-
-[sub_resource type="Resource" id="Resource_kym32"]
-script = ExtResource("9_jh4p1")
-
-[sub_resource type="Resource" id="Resource_pxiyf"]
-script = ExtResource("9_jh4p1")
-
-[sub_resource type="Resource" id="Resource_yd3oq"]
-script = ExtResource("9_jh4p1")
-
-[sub_resource type="Resource" id="Resource_7cmfv"]
-script = ExtResource("9_jh4p1")
-
-[sub_resource type="Resource" id="Resource_ny5g7"]
-script = ExtResource("9_jh4p1")
-
-[sub_resource type="Resource" id="Resource_8wnh5"]
-script = ExtResource("9_jh4p1")
-
-[sub_resource type="Resource" id="Resource_j5so4"]
-script = ExtResource("9_jh4p1")
-
-[sub_resource type="Resource" id="Resource_g0ol8"]
-script = ExtResource("9_jh4p1")
-
-[sub_resource type="Resource" id="Resource_bkyhk"]
-script = ExtResource("9_jh4p1")
-
-[sub_resource type="Resource" id="Resource_u0b71"]
-script = ExtResource("9_jh4p1")
-
-[sub_resource type="Resource" id="Resource_qf6xh"]
-script = ExtResource("9_jh4p1")
-
-[sub_resource type="Resource" id="Resource_atnqa"]
-script = ExtResource("9_jh4p1")
-
-[sub_resource type="Resource" id="Resource_tb7lt"]
-script = ExtResource("9_jh4p1")
-
-[sub_resource type="Resource" id="Resource_oyjs3"]
-script = ExtResource("9_jh4p1")
-
-[sub_resource type="Resource" id="Resource_42l8k"]
-script = ExtResource("9_jh4p1")
-
-[sub_resource type="Resource" id="Resource_y5gcf"]
-script = ExtResource("9_jh4p1")
-
-[sub_resource type="Resource" id="Resource_j0vyl"]
-script = ExtResource("9_jh4p1")
-
-[sub_resource type="Resource" id="Resource_l4ixm"]
-script = ExtResource("9_jh4p1")
-
-[sub_resource type="Resource" id="Resource_yisll"]
-script = ExtResource("9_jh4p1")
-
-[sub_resource type="Resource" id="Resource_ebf33"]
-script = ExtResource("10_ls0mb")
-
-[sub_resource type="Resource" id="Resource_iqfl4"]
-script = ExtResource("10_ls0mb")
-
-[sub_resource type="Resource" id="Resource_u6ntx"]
-script = ExtResource("10_ls0mb")
-
-[sub_resource type="Resource" id="Resource_p3a4e"]
-script = ExtResource("10_ls0mb")
-
-[sub_resource type="Resource" id="Resource_k6hme"]
-script = ExtResource("10_ls0mb")
-
-[sub_resource type="Resource" id="Resource_i8pfw"]
-script = ExtResource("10_ls0mb")
-
-[sub_resource type="Resource" id="Resource_7ncj6"]
-script = ExtResource("10_ls0mb")
-
-[sub_resource type="Resource" id="Resource_jt8g1"]
-script = ExtResource("10_ls0mb")
-
-[sub_resource type="Resource" id="Resource_jos8q"]
-script = ExtResource("10_ls0mb")
-
-[sub_resource type="Resource" id="Resource_vaku2"]
-script = ExtResource("10_ls0mb")
-
-[sub_resource type="Resource" id="Resource_d7au7"]
-script = ExtResource("10_ls0mb")
-
-[sub_resource type="Resource" id="Resource_7i4rf"]
-script = ExtResource("10_ls0mb")
-
-[sub_resource type="Resource" id="Resource_hejdb"]
-script = ExtResource("10_ls0mb")
-
-[sub_resource type="Resource" id="Resource_xvyf0"]
-script = ExtResource("10_ls0mb")
-
-[sub_resource type="Resource" id="Resource_4el5g"]
-script = ExtResource("10_ls0mb")
-
-[sub_resource type="Resource" id="Resource_xpq0w"]
-script = ExtResource("10_ls0mb")
-
-[sub_resource type="Resource" id="Resource_gejja"]
-script = ExtResource("10_ls0mb")
-
-[sub_resource type="Resource" id="Resource_qg6tk"]
-script = ExtResource("10_ls0mb")
-
-[sub_resource type="Resource" id="Resource_rqwcs"]
-script = ExtResource("10_ls0mb")
-
-[sub_resource type="Resource" id="Resource_e22wx"]
-script = ExtResource("10_ls0mb")
-
-[sub_resource type="Resource" id="Resource_4u878"]
-script = ExtResource("10_ls0mb")
-
-[sub_resource type="Resource" id="Resource_ysffv"]
-script = ExtResource("10_ls0mb")
-
-[sub_resource type="Resource" id="Resource_4g28m"]
-script = ExtResource("10_ls0mb")
-
-[sub_resource type="Resource" id="Resource_6idi8"]
-script = ExtResource("10_ls0mb")
-
-[sub_resource type="Resource" id="Resource_rsdp3"]
-script = ExtResource("10_ls0mb")
-
-[sub_resource type="Resource" id="Resource_2y43t"]
-script = ExtResource("10_ls0mb")
-
-[sub_resource type="Resource" id="Resource_b6mq1"]
-script = ExtResource("10_ls0mb")
-
-[sub_resource type="Resource" id="Resource_5xb1u"]
-script = ExtResource("10_ls0mb")
-
-[sub_resource type="Resource" id="Resource_s71cu"]
-script = ExtResource("10_ls0mb")
-
-[sub_resource type="Resource" id="Resource_5e5pn"]
-script = ExtResource("10_ls0mb")
-
-[sub_resource type="Resource" id="Resource_1pb3h"]
-script = ExtResource("10_ls0mb")
-
-[sub_resource type="Resource" id="Resource_li052"]
-script = ExtResource("10_ls0mb")
-
-[sub_resource type="Resource" id="Resource_cdxdj"]
-script = ExtResource("10_ls0mb")
-
-[sub_resource type="Resource" id="Resource_fdljd"]
-script = ExtResource("10_ls0mb")
-
-[sub_resource type="Resource" id="Resource_06xl5"]
-script = ExtResource("10_ls0mb")
-
-[sub_resource type="Resource" id="Resource_8p5t0"]
-script = ExtResource("11_nxt8j")
-
-[sub_resource type="Resource" id="Resource_l6tl2"]
-script = ExtResource("12_xkk5r")
-
-[sub_resource type="Resource" id="Resource_a3lx7"]
-script = ExtResource("12_xkk5r")
-
-[sub_resource type="Resource" id="Resource_s5vei"]
-script = ExtResource("12_xkk5r")
-
-[sub_resource type="Resource" id="Resource_4y7ir"]
-script = ExtResource("12_xkk5r")
-
-[sub_resource type="Resource" id="Resource_gsuo4"]
-script = ExtResource("12_xkk5r")
-
-[sub_resource type="Resource" id="Resource_rlfig"]
-script = ExtResource("12_xkk5r")
-
-[sub_resource type="Resource" id="Resource_mw0lb"]
-script = ExtResource("12_xkk5r")
-
-[sub_resource type="Resource" id="Resource_ecfbu"]
-script = ExtResource("13_vfkvl")
-
-[sub_resource type="Resource" id="Resource_n13ql"]
-script = ExtResource("13_vfkvl")
-
-[sub_resource type="Resource" id="Resource_uw3jl"]
-script = ExtResource("13_vfkvl")
-
-[sub_resource type="Resource" id="Resource_btd8x"]
-script = ExtResource("13_vfkvl")
-
-[sub_resource type="Resource" id="Resource_kh5nh"]
-script = ExtResource("13_vfkvl")
-
-[sub_resource type="Resource" id="Resource_c02wk"]
-script = ExtResource("13_vfkvl")
-
-[sub_resource type="Resource" id="Resource_liskx"]
-script = ExtResource("13_vfkvl")
-
-[sub_resource type="Resource" id="Resource_1f3wh"]
-script = ExtResource("13_vfkvl")
-
-[sub_resource type="Resource" id="Resource_eicjv"]
-script = ExtResource("13_vfkvl")
-
-[sub_resource type="Resource" id="Resource_hrxsg"]
-script = ExtResource("13_vfkvl")
-
-[sub_resource type="Resource" id="Resource_sye3a"]
-script = ExtResource("13_vfkvl")
-
-[sub_resource type="Resource" id="Resource_vo0jc"]
-script = ExtResource("13_vfkvl")
-
-[sub_resource type="Resource" id="Resource_2gvia"]
-script = ExtResource("13_vfkvl")
-
-[sub_resource type="Resource" id="Resource_keni1"]
-script = ExtResource("13_vfkvl")
-
-[sub_resource type="Resource" id="Resource_sh6ff"]
-script = ExtResource("13_vfkvl")
-
-[sub_resource type="Resource" id="Resource_guv5k"]
-script = ExtResource("13_vfkvl")
-
-[sub_resource type="Resource" id="Resource_0vwjb"]
-script = ExtResource("13_vfkvl")
-
-[sub_resource type="Resource" id="Resource_t0nec"]
-script = ExtResource("13_vfkvl")
-
-[sub_resource type="Resource" id="Resource_78cxi"]
-script = ExtResource("13_vfkvl")
-
-[sub_resource type="Resource" id="Resource_hkprk"]
-script = ExtResource("13_vfkvl")
-
-[sub_resource type="Resource" id="Resource_7gfoc"]
-script = ExtResource("13_vfkvl")
-
-[sub_resource type="Resource" id="Resource_kw8kq"]
-script = ExtResource("13_vfkvl")
-
-[sub_resource type="Resource" id="Resource_0rb1k"]
-script = ExtResource("14_7cvvw")
-
-[sub_resource type="Resource" id="Resource_tyrl0"]
-script = ExtResource("14_7cvvw")
-
-[sub_resource type="Resource" id="Resource_vnuvi"]
-script = ExtResource("14_7cvvw")
-
-[sub_resource type="Resource" id="Resource_idryr"]
-script = ExtResource("14_7cvvw")
-
-[sub_resource type="Resource" id="Resource_4d3ge"]
-script = ExtResource("14_7cvvw")
-
-[sub_resource type="Resource" id="Resource_i4rts"]
-script = ExtResource("14_7cvvw")
-
-[sub_resource type="Resource" id="Resource_4ciq8"]
-script = ExtResource("14_7cvvw")
-
-[sub_resource type="Resource" id="Resource_fguhg"]
-script = ExtResource("14_7cvvw")
-
-[sub_resource type="Resource" id="Resource_qk08r"]
-script = ExtResource("14_7cvvw")
-
-[sub_resource type="Resource" id="Resource_v8fu2"]
-script = ExtResource("14_7cvvw")
-
-[sub_resource type="Resource" id="Resource_giydg"]
-script = ExtResource("14_7cvvw")
-
-[sub_resource type="Resource" id="Resource_supxj"]
-script = ExtResource("14_7cvvw")
-
-[sub_resource type="Resource" id="Resource_n8g5n"]
-script = ExtResource("14_7cvvw")
-
-[sub_resource type="Resource" id="Resource_qg5ne"]
-script = ExtResource("14_7cvvw")
-
-[sub_resource type="Resource" id="Resource_vm3if"]
-script = ExtResource("14_7cvvw")
-
-[sub_resource type="Resource" id="Resource_jd7hj"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_0usvj"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_jx2hn"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_7y01u"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_7ro24"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_kyxdi"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_p3m0g"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_ysnou"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_kjwwt"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_lvsey"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_xa5wb"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_3nrm5"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_pg2tu"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_116qg"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_kgmth"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_6ugkt"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_dve8y"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_040ey"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_2wkh8"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_wqyr3"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_tsrf2"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_g0xtw"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_bvb4q"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_87rdd"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_gow8v"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_1dgmx"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_b3dwy"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_lstyg"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_3of60"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_srhdt"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_nnoa7"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_164tq"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_h1xhd"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_p6520"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_7a0ft"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_hr24q"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_a47ut"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_5maup"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_kfrcw"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_vp2m2"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_urioi"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_arqxd"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_w40p7"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_dlhmx"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_4ja3y"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_0hciv"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_fi24r"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_5fwb4"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_6py58"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_7q5pe"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_fo2rj"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_4txig"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_vly6w"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_6c0sp"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_mmp5b"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_tphd7"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_q7upl"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_kq035"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_6cn3x"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_q5d35"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_is2fv"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_8s7s0"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_7anw0"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_l3of5"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_a4isg"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_rnh7i"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_xc16g"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_ha3pm"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_3jtop"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_w606s"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_klyap"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_lf3gr"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_oobel"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_0vj44"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_jqvvg"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_1bv0c"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_dp3yb"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_ws1ap"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_jmduy"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_nngmf"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_dh2rd"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_jfagy"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_1m46c"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_4dx4j"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_cg3me"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_5um4l"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_ouktc"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_u7qcv"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_vij1u"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_wfcsk"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_nbamk"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_2paq2"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_vyb1b"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_hw80e"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_i5oew"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_o5q1x"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_5swe4"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_d0rli"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_reyxo"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_dasqp"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_2hqjk"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_51ac6"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_pn3re"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_odcro"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_0qiw5"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_vu8qp"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_h2jnc"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_qv5se"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_xwvdj"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_qrij5"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_vdx6g"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_54db1"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_l2bs5"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_0ir4h"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_v1v5r"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_32lat"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_v03ov"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_aqf2v"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_uutjl"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_8aqgr"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_2apq7"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_f815l"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_2dusy"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_i3yty"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_4hv67"]
-script = ExtResource("15_p1sc8")
-
-[sub_resource type="Resource" id="Resource_oijdh"]
-script = ExtResource("16_evklk")
-
-[sub_resource type="Resource" id="Resource_girxh"]
-script = ExtResource("16_evklk")
-
-[sub_resource type="Resource" id="Resource_7pwgw"]
-script = ExtResource("16_evklk")
-
-[sub_resource type="Resource" id="Resource_1ln53"]
-script = ExtResource("16_evklk")
-
-[sub_resource type="Resource" id="Resource_bo1x2"]
-script = ExtResource("16_evklk")
-
-[sub_resource type="Resource" id="Resource_etu7d"]
-script = ExtResource("16_evklk")
-
-[sub_resource type="Resource" id="Resource_3iylw"]
-script = ExtResource("16_evklk")
-
-[sub_resource type="Resource" id="Resource_2ufci"]
-script = ExtResource("16_evklk")
-
-[sub_resource type="Resource" id="Resource_petoi"]
-script = ExtResource("16_evklk")
-
-[sub_resource type="Resource" id="Resource_3prdd"]
-script = ExtResource("16_evklk")
-
-[sub_resource type="Resource" id="Resource_nykjc"]
-script = ExtResource("16_evklk")
-
-[sub_resource type="Resource" id="Resource_2fahr"]
-script = ExtResource("16_evklk")
-
-[sub_resource type="Resource" id="Resource_ititn"]
-script = ExtResource("16_evklk")
-
-[sub_resource type="Resource" id="Resource_jbm7c"]
-script = ExtResource("16_evklk")
-
-[sub_resource type="Resource" id="Resource_t0d87"]
-script = ExtResource("16_evklk")
-
-[sub_resource type="Resource" id="Resource_6h0xk"]
-script = ExtResource("16_evklk")
-
-[sub_resource type="Resource" id="Resource_uibed"]
-script = ExtResource("16_evklk")
-
-[sub_resource type="Resource" id="Resource_uooin"]
-script = ExtResource("16_evklk")
-
-[sub_resource type="Resource" id="Resource_qj3vf"]
-script = ExtResource("16_evklk")
-
-[sub_resource type="Resource" id="Resource_p6nw0"]
-script = ExtResource("16_evklk")
-
-[sub_resource type="Resource" id="Resource_cm0h5"]
-script = ExtResource("16_evklk")
-
-[sub_resource type="Resource" id="Resource_sr8ay"]
-script = ExtResource("16_evklk")
-
-[sub_resource type="Resource" id="Resource_pthie"]
-script = ExtResource("16_evklk")
-
-[sub_resource type="Resource" id="Resource_y13mr"]
-script = ExtResource("16_evklk")
-
-[sub_resource type="Resource" id="Resource_6g45j"]
-script = ExtResource("16_evklk")
-
-[sub_resource type="Resource" id="Resource_3wd14"]
-script = ExtResource("16_evklk")
-
-[sub_resource type="Resource" id="Resource_3ogli"]
-script = ExtResource("16_evklk")
-
-[sub_resource type="Resource" id="Resource_s45hp"]
-script = ExtResource("16_evklk")
-
-[sub_resource type="Resource" id="Resource_mawu2"]
-script = ExtResource("16_evklk")
-
-[sub_resource type="Resource" id="Resource_lieif"]
-script = ExtResource("16_evklk")
-
-[sub_resource type="Resource" id="Resource_o6ico"]
-script = ExtResource("16_evklk")
-
-[sub_resource type="Resource" id="Resource_ipmc3"]
-script = ExtResource("16_evklk")
-
-[sub_resource type="Resource" id="Resource_hllug"]
-script = ExtResource("16_evklk")
-
-[sub_resource type="Resource" id="Resource_6uk7t"]
-script = ExtResource("16_evklk")
-
-[sub_resource type="Resource" id="Resource_5gok1"]
-script = ExtResource("16_evklk")
-
-[sub_resource type="Resource" id="Resource_c7i00"]
-script = ExtResource("16_evklk")
-
-[sub_resource type="Resource" id="Resource_2o72r"]
-script = ExtResource("16_evklk")
-
-[sub_resource type="Resource" id="Resource_5a3ll"]
-script = ExtResource("16_evklk")
-
-[sub_resource type="Resource" id="Resource_hg8ve"]
-script = ExtResource("16_evklk")
-
-[sub_resource type="Resource" id="Resource_bnvja"]
-script = ExtResource("16_evklk")
-
-[sub_resource type="Resource" id="Resource_2j2bw"]
-script = ExtResource("16_evklk")
-
-[sub_resource type="Resource" id="Resource_j3bg5"]
-script = ExtResource("16_evklk")
-
-[sub_resource type="Resource" id="Resource_81tp8"]
-script = ExtResource("16_evklk")
-
-[sub_resource type="Resource" id="Resource_ke8ss"]
-script = ExtResource("16_evklk")
-
-[sub_resource type="Resource" id="Resource_qox8p"]
-script = ExtResource("16_evklk")
-
-[sub_resource type="Resource" id="Resource_boiyk"]
-script = ExtResource("16_evklk")
-
-[sub_resource type="Resource" id="Resource_vmpkb"]
-script = ExtResource("16_evklk")
-
-[sub_resource type="Resource" id="Resource_k48oj"]
-script = ExtResource("16_evklk")
-
-[sub_resource type="Resource" id="Resource_wxb1i"]
-script = ExtResource("16_evklk")
-
-[sub_resource type="Resource" id="Resource_xhtfp"]
-script = ExtResource("16_evklk")
-
-[sub_resource type="Resource" id="Resource_ckkws"]
-script = ExtResource("16_evklk")
-
-[sub_resource type="Resource" id="Resource_6nqu5"]
-script = ExtResource("16_evklk")
-
-[sub_resource type="Resource" id="Resource_vskbc"]
-script = ExtResource("16_evklk")
-
-[sub_resource type="Resource" id="Resource_j2o7c"]
-script = ExtResource("16_evklk")
-
-[sub_resource type="Resource" id="Resource_0ifmn"]
-script = ExtResource("16_evklk")
-
-[sub_resource type="Resource" id="Resource_34jhd"]
-script = ExtResource("16_evklk")
-
-[sub_resource type="Resource" id="Resource_ofaof"]
-script = ExtResource("16_evklk")
-
-[sub_resource type="Resource" id="Resource_5n43f"]
-script = ExtResource("16_evklk")
-
-[sub_resource type="Resource" id="Resource_emm62"]
-script = ExtResource("16_evklk")
-
-[sub_resource type="Resource" id="Resource_1uwbr"]
-script = ExtResource("16_evklk")
-
-[sub_resource type="Resource" id="Resource_25oh3"]
-script = ExtResource("17_ic6k4")
-
-[sub_resource type="Resource" id="Resource_yfegy"]
-script = ExtResource("17_ic6k4")
-
-[sub_resource type="Resource" id="Resource_3t01t"]
-script = ExtResource("17_ic6k4")
-
-[sub_resource type="Resource" id="Resource_7al76"]
-script = ExtResource("17_ic6k4")
-
-[sub_resource type="Resource" id="Resource_fu1gn"]
-script = ExtResource("17_ic6k4")
-
-[sub_resource type="Resource" id="Resource_1lqtq"]
-script = ExtResource("17_ic6k4")
-
-[sub_resource type="Resource" id="Resource_jq3jd"]
-script = ExtResource("17_ic6k4")
-
-[sub_resource type="Resource" id="Resource_blwfx"]
-script = ExtResource("17_ic6k4")
-
-[sub_resource type="Resource" id="Resource_fvsv4"]
-script = ExtResource("17_ic6k4")
-
-[sub_resource type="Resource" id="Resource_8r7yv"]
-script = ExtResource("17_ic6k4")
-
-[sub_resource type="Resource" id="Resource_8bh5b"]
-script = ExtResource("17_ic6k4")
-
-[sub_resource type="Resource" id="Resource_e0atr"]
-script = ExtResource("17_ic6k4")
-
-[sub_resource type="Resource" id="Resource_sft53"]
-script = ExtResource("17_ic6k4")
-
-[sub_resource type="Resource" id="Resource_cx7jd"]
-script = ExtResource("17_ic6k4")
-
-[sub_resource type="Resource" id="Resource_xca8q"]
-script = ExtResource("17_ic6k4")
-
-[sub_resource type="Resource" id="Resource_i2dhd"]
-script = ExtResource("17_ic6k4")
-
-[sub_resource type="Resource" id="Resource_wcs7y"]
-script = ExtResource("17_ic6k4")
-
-[sub_resource type="Resource" id="Resource_fm4vl"]
-script = ExtResource("17_ic6k4")
-
-[sub_resource type="Resource" id="Resource_cq844"]
-script = ExtResource("17_ic6k4")
-
-[sub_resource type="Resource" id="Resource_m5t6f"]
-script = ExtResource("17_ic6k4")
-
-[sub_resource type="Resource" id="Resource_qik2v"]
-script = ExtResource("17_ic6k4")
-
-[sub_resource type="Resource" id="Resource_5u5pa"]
-script = ExtResource("17_ic6k4")
-
-[sub_resource type="Resource" id="Resource_p5xei"]
-script = ExtResource("17_ic6k4")
-
-[sub_resource type="Resource" id="Resource_f37vj"]
-script = ExtResource("17_ic6k4")
-
-[sub_resource type="Resource" id="Resource_f2ohl"]
-script = ExtResource("17_ic6k4")
-
-[sub_resource type="Resource" id="Resource_xvq70"]
-script = ExtResource("17_ic6k4")
-
-[sub_resource type="Resource" id="Resource_pcneh"]
-script = ExtResource("17_ic6k4")
-
-[sub_resource type="Resource" id="Resource_lrvuu"]
-script = ExtResource("17_ic6k4")
-
-[sub_resource type="Resource" id="Resource_hxby6"]
-script = ExtResource("17_ic6k4")
-
-[sub_resource type="Resource" id="Resource_rua5p"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_e882e"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_rm44w"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_hgigr"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_xf7u6"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_icfrr"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_48j8j"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_ycqhg"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_bke5r"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_4ghvy"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_hi15a"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_e5xob"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_arvgp"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_13llu"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_ruu6m"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_paay3"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_boc33"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_gx4q0"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_nisad"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_oqikm"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_l75v3"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_wrao4"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_urb12"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_yaj23"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_20vp1"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_fech1"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_nm2us"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_c364h"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_vdalj"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_g467y"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_mf4es"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_g46ku"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_k6ds6"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_fyjh6"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_r4foa"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_frfss"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_yrgl3"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_5h1v3"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_h1jgy"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_26ian"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_qjkl8"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_ln03l"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_ej47l"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_evpg4"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_pafyh"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_v87a6"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_100xe"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_etbya"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_q524w"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_p17gx"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_6qof7"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_7iqqq"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_ssl6u"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_ung8u"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_d2kvt"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_2iq4a"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_5yqyk"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_cp28s"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_u1m28"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_rurfa"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_5xogi"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_ruwgf"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_ivu3s"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_gkvgv"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_w0lq4"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_n3kkq"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_7wikg"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_cscu8"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_vd2ls"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_1r7m6"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_kn8qh"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_cliqh"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_kyrxm"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_tmkh0"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_lovsj"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_24nu7"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_34g0l"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_fv501"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_tgipk"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_gccyg"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_ey1d5"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_fm5d4"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_745fg"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_3yykr"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_8hcuh"]
-script = ExtResource("18_eoquw")
-
-[sub_resource type="Resource" id="Resource_nskgn"]
-script = ExtResource("18_eoquw")
+[sub_resource type="Resource" id="Resource_62lx8"]
+script = ExtResource("2_8olg7")
+Id = "pbg_celebrity"
+Name = "Celebrity"
+Description = "You were a figure in the public eye. <i>Were you an actor? A singer? An artist? An athlete? A politician? The public face of a corporate or military advertising campaign?</i><br>In your old life, you couldn’t go anywhere without the paparazzi hovering nearby. <i>How are you adjusting to your new life as a pilot? Did you volunteer, or were you conscripted? Can you still practice your art, craft, or profession, or does the rigid military structure make it difficult to pull double-duty?</i>"
+Skills = PackedStringArray("sk_charm", "sk_pull_rank", "sk_lead_or_inspire", "sk_threaten")
+
+[sub_resource type="Resource" id="Resource_5wm0c"]
+script = ExtResource("2_8olg7")
+Id = "pbg_colonist"
+Name = "Colonist"
+Description = "You were a colonist on the frontier; one of the first generations to be born on a newly settled world. You’re used to the demands of frontier life and well-aware of the precarious position most homesteaders live in. <i>Why did you leave? Were you forced to flee, becoming a refugee? Did you choose to enlist?</i><br>And then there’s the home you left behind: <i>Is the colony still there? Your family? How familiar are you with the luxuries of core worlds? Do you find other cultures difficult to deal with, or are you fascinated by the wealth of humanity’s cultural expression? Do you carry reminders of home, or do you curse its name? Was your colony in a galactic backwater, or is it a fresh colony in a populated, high-traffic area of space? Where is your colony located?</i>"
+Skills = PackedStringArray("sk_word_on_the_street", "sk_spot", "sk_survive", "sk_patch")
+
+[sub_resource type="Resource" id="Resource_sxdgj"]
+script = ExtResource("2_8olg7")
+Id = "pbg_criminal"
+Name = "Criminal"
+Description = "You were a criminal: small-time, master, or something in between. <i>Did you work for corporate clients? A criminal organization? Yourself? Did you mug pedestrians in the dark underbelly of a massive city, or did you slip, unnoticed, into corporate databases to steal data? Did you do it for personal gain, or just to feed your family? How did you find yourself in this life, and how did you become a pilot? Did you operate with a code of honor? Were you loyal to a single family, a small crew, a politician, or an ideology? Did you operate in the shadows, or was your work carried out in the daylight, unafraid of consequences?</i><br>There must be a reason you decided to get out. <i>Was it a bad job, or maybe witness protection? Are your former employers or crew still around? What connections do they have, and how do they feel about you now? What – if anything – haunts you?</i><br>Note: for a more classic “Western” flavor, see the Outlaw Background.<i></i>"
+Skills = PackedStringArray("sk_threaten", "sk_apply_fists_to_faces", "sk_word_on_the_street", "sk_take_control")
+
+[sub_resource type="Resource" id="Resource_dps0s"]
+script = ExtResource("2_8olg7")
+Id = "pbg_far_field_team"
+Name = "Far-Field Team"
+Description = "You were a member of a Union far-field team (FFT), working on the frontier and the edge of civilization to evaluate strange worlds and planetoids for anomalies, discoveries, and habitability. <i>What have you seen on the wild frontier? How many worlds have you traveled? Were you part of a small team, or a large one? Where is your homeworld?</i><br>Something must drive you to explore: <i>Is it a grail world you seek? An Eden among the stars? Was your interest in the frontier mystical, scientific, based on old-fashioned curiosity, or spurred on by something else? Maybe there was a legend you heard, out there in the dark, that you long to find, or that you’re terrified you might encounter? What secrets – if any – have you encountered on your long-range surveys? Do you remain in contact with your old team members, if they’re still alive?</i><br>As a former (or current) part of an FFT, you're Cosmopolitan: <i>When was “your time”? How separate do you feel from the passage of time?</i>"
+Skills = PackedStringArray("sk_survive", "sk_investigate", "sk_spot", "sk_charm")
+
+[sub_resource type="Resource" id="Resource_6mmq3"]
+script = ExtResource("2_8olg7")
+Id = "pbg_hacker"
+Name = "Hacker"
+Description = "You specialized in information warfare and data espionage, either for your own gain or the benefit of your employers. To you, the omninet – the faster-than-light information web that connects Union worlds – is home. <i>How did you come to this life? Did you grow up plugged into the omninet, or did you come to it late? How well-versed are you in the omninet’s hidden places, tricks, and secrets? How notorious were you before you became a pilot? Do people still whisper your name? Do other hackers remember you, and are you celebrated or cursed among them?</i><br>It wasn’t just the omninet that you hacked, though. <i>How adept are you at manipulating other networks? Can you manipulate discrete systems, genetic code, or some other type of environment, digital or mechanical? What secrets have you gained access to?</i>"
+Skills = PackedStringArray("sk_act_unseen_or_unheard", "sk_get_a_hold_of_something", "sk_hack_or_fix", "sk_invent_or_create")
+
+[sub_resource type="Resource" id="Resource_4bad6"]
+script = ExtResource("2_8olg7")
+Id = "pbg_mechanic"
+Name = "Mechanic"
+Description = "Grease monkey, wrench, working joe; you were a mechanic prior to becoming a pilot. <i>Did you work in space, swaddled in an EVA rig, patching up damaged starships? Or were you planetside, tuning trucks and haulers in a motor pool? Did you repair battle-torn mechs, dreaming that you might one day pilot your own? Did you own a garage, or did you work for someone? Were you military, corporate, part of a caste, or a union member? How handy are you in the field? Is there a side project you've been working on?</i>"
+Skills = PackedStringArray("sk_hack_or_fix", "sk_get_somewhere_quickly", "sk_get_a_hold_of_something", "sk_blow_something_up")
+
+[sub_resource type="Resource" id="Resource_oj8mg"]
+script = ExtResource("2_8olg7")
+Id = "pbg_medic"
+Name = "Medic"
+Description = "You were a medical specialist in your old life. <i>How did you wind up piloting a mech? What was your specialty? Did you work in research, care, or trauma? Did you love the life and take your duty seriously, or did you see yourself as an organic mechanic?</i><br>You might have worked in a colony or on a core world, in private practice, for a corporation, or on a noble family’s payroll: <i>Did you operate a small frontier practice, or work in a blink station urgent care center, or in a massive hospital campus? Were you a whitecoat or an EMT? Is there a memory that haunts you, or one that gives you comfort?</i>"
+Skills = PackedStringArray("sk_patch", "sk_assault", "sk_read_a_situation", "sk_stay_cool")
+
+[sub_resource type="Resource" id="Resource_jlfwb"]
+script = ExtResource("2_8olg7")
+Id = "pbg_mercenary"
+Name = "Mercenary"
+Description = "As a soldier of fortune, you lived by the motto, “have gun, will travel.” You and your kit were available to the highest bidder. <i>Did you work alone or with a crew? Did your company have a ship? Was this when you started piloting mechs of your own? What was your code of honor, if you had one?</i><br>Something pushed you to the mercenary life: <i>Was it the promise of riches? Desire for power? Adventure? Desperation?</i><br>For some reason, you left that life behind: <i>Why? Was there a job that went bad, or one that really was that legendary “one last job”? Are your old company mates still kicking around? Was there a rival company, or other enemies you made? Do you remember that time fondly, or do you never speak of it?</i>"
+Skills = PackedStringArray("sk_threaten", "sk_blow_something_up", "sk_take_control", "sk_apply_fists_to_faces")
+
+[sub_resource type="Resource" id="Resource_od2je"]
+script = ExtResource("2_8olg7")
+Id = "pbg_nhp_specialist"
+Name = "NHP Specialist"
+Description = "You were closely involved in the study, creation, or maintenance of a prime non-human person. Nonhuman persons, or NHPs, are complex artificial intelligences. As a prime NHP, the one you were associated with was even more complex than most. <i>Did you interact with that entity like a scientist or engineer, or more like a priest or shaman? Do you have a personal connection to them, after all this time? How do clones of that NHP perceive you? And now that you’re a pilot, how do you feel about non-human intelligence?</i>"
+Skills = PackedStringArray("sk_stay_cool", "sk_read_a_situation", "sk_invent_or_create", "sk_investigate")
+
+[sub_resource type="Resource" id="Resource_fxkp6"]
+script = ExtResource("2_8olg7")
+Id = "pbg_noble"
+Name = "Noble"
+Description = "You are a member of your world’s aristocracy, destined from birth to ascend to power. <i>From what authority does this birthright come? A god? An ancestor? An ancient text? A complex annual rotation? How is power passed down from one generation to the next?</i><br>Your noble status came from somewhere: <i>Are you the first in your family to receive a title of nobility, the last of your house, or the scion of a well-established line? Are you the heir, or just a middle child? What’s your relationship with your noble parents?</i><br>Whatever privileges you might have received at home, you found that Union disregards titles in its armed forces; your prior status is just background noise, unless you return home or belong to a group that recognizes nobility. <i>How did you take this change?</i>"
+Skills = PackedStringArray("sk_pull_rank", "sk_lead_or_inspire", "sk_read_a_situation", "sk_show_off")
+
+[sub_resource type="Resource" id="Resource_cmpis"]
+script = ExtResource("2_8olg7")
+Id = "pbg_outlaw"
+Name = "Outlaw"
+Description = "You came from humble beginnings, born on the edge of cultivated space or beneath the looming towers of core worlds – forgotten until you reached out and took what was owed. Some call you criminal, thief, or outlaw, but you just tell it as it is: if they hadn’t denied you bread, you wouldn’t have had to take it. <i>Were you a brute or a raconteur? A charmer or a monster? Were your actions motivated by ideology, need, desire, or some combination of those three? Who defined you as an “outlaw\", and who saw you as a hero? Is there a bounty on your head?</i>"
+Skills = PackedStringArray("sk_show_off", "sk_take_someone_out", "sk_charm", "sk_survive")
+
+[sub_resource type="Resource" id="Resource_ru4ce"]
+script = ExtResource("2_8olg7")
+Id = "pbg_penal_colonist"
+Name = "Penal Colonist"
+Description = "A long time ago, you were exiled to a penal colony for a sentence of hard labor. When the Third Committee abolished all penal colonies, your prison-planet was – in theory – “liberated”. Unfortunately, nothing much changed until Union’s relief ships finally arrived. Now free in practice as well as theory, places that had once been off-limits were made open to you: <i>Did you stay for a time? Or did you choose to leave, heading for the stars or trying to find your way back home? Were you guilty of your crimes, or unjustly condemned?</i><br>Penal colonies were harsh, unforgiving environments: <i>Was yours monitored by some authority, or was it relegated to anarchy even before Union's abolition of the system? Was there some kind of rudimentary society there? Did you have friends and enemies there, and did any of them make it off-world? What about your family – did you have one before your sentence? What has become of them, or do you not know?</i>"
+Skills = PackedStringArray("sk_survive", "sk_apply_fists_to_faces", "sk_word_on_the_street", "sk_spot")
+
+[sub_resource type="Resource" id="Resource_l4kv5"]
+script = ExtResource("2_8olg7")
+Id = "pbg_priest"
+Name = "Priest"
+Description = "You were a priest in your old life, either from a large, pan-galactic religion, or a smaller sect. <i>Were you a hermit? Did you live celibate in a monastery? Did you wear simple cloth robes, or majestic vestments? What restrictions were placed upon you by your church? What manner of respect was afforded to you as a person of the cloth, and was it your choice to become one? How did you come to serve as a pilot?</i><br>There are churches everywhere, each unique in their own ways. <i>Were you a member of a prominent religion, or a secretive, outlawed one? Did you preach a Terran faith, born on Cradle and carried for millennia since? Or was yours a Cosmopolitan spirituality, one from the stars and the void of interstellar space? Perhaps you ministered to a small flock of an obscure sect out on the frontier, or in the urban canyons of a core world? Have you kept your faith, or lost it?</i>"
+Skills = PackedStringArray("sk_read_a_situation", "sk_stay_cool", "sk_take_control", "sk_lead_or_inspire")
+
+[sub_resource type="Resource" id="Resource_r57k1"]
+script = ExtResource("2_8olg7")
+Id = "pbg_scientist"
+Name = "Scientist"
+Description = "You were a scientist – private or public, working in the lab or the field. <i>What was your area of expertise, and for how long have you practiced it? Where did you study, and what’s your relationship with that institution? Do you have rivals, and are you well-known or relatively obscure? How did your home society perceive science? How did you become a pilot?</i><br><i>Importantly, did you work with a powerful manufacturer like Harrison Armory, Smith-Shimano, or IPS-N? Or did you delve into the uncanny, working in secret with a small, dedicated HORUS cell? What secrets do you know?</i>"
+Skills = PackedStringArray("sk_investigate", "sk_invent_or_create", "sk_get_a_hold_of_something", "sk_blow_something_up")
+
+[sub_resource type="Resource" id="Resource_xq8am"]
+script = ExtResource("2_8olg7")
+Id = "pbg_soldier"
+Name = "Soldier"
+Description = "Grunt. GI. Ox. Poilu. Man-at-Arms. You were a soldier of the rank and file, serving in a planetary defense force, local militia, national army, or royal guard. <i>How long did you serve before Union called you up? What kind of specialty did you train for? Have you seen combat before, or are you green? Were you a volunteer, a conscript, or a member of a warrior caste? Is soldiering a proud family, civic, or religious tradition, or a life that you regret? Where are the other soldiers from your old squad, and what is your relationship with them like now?</i>"
+Skills = PackedStringArray("sk_assault", "sk_blow_something_up", "sk_pull_rank", "sk_take_control")
+
+[sub_resource type="Resource" id="Resource_df34b"]
+script = ExtResource("2_8olg7")
+Id = "pbg_spaceborn"
+Name = "Spaceborn"
+Description = "You grew up on a space station, in tight quarters and a small community, surrounded always by the unforgiving hard vacuum of space. <i>Were resources scarce, or plentiful? Was your station isolated or was it a local (or galactic!) hub? Was it parked in the endless night of deep space, or in orbit above a planet, moon, or another stellar body? Was it entirely manufactured, or was it built into an asteroid or moon?</i><br>No two stations are alike. <i>Did you grow up watching great ships dock and depart – exposed to the thousands of languages and cultures of the galaxy, dreaming of exploration – or did you grow up in dark, rocky halls, ignorant of the galaxy outside? In short, what was your life like, why did you leave, and can you go back?</i>"
+Skills = PackedStringArray("sk_survive", "sk_hack_or_fix", "sk_get_somewhere_quickly", "sk_stay_cool")
+
+[sub_resource type="Resource" id="Resource_cfuft"]
+script = ExtResource("2_8olg7")
+Id = "pbg_spec_ops"
+Name = "Spec Ops"
+Description = "You might have been a spy or assassin, working alone, or maybe you were part of an elite unit, operating behind enemy lines with little-to-no support, equipped with the best equipment your commanders trusted you with.<i></i><br>Your missions were long, dangerous, and never publicized. If soldiers are hammers, you were a scalpel. Whatever organization you served, it was spoken only in whispers around military barracks and academies both. <i>What work did you do that no one knows was you or your unit? How close has the galaxy come to all-out war? Where have you operated? How old are you – really? What secrets do you know? Where is the rest of your team?</i>"
+Skills = PackedStringArray("sk_act_unseen_or_unheard", "sk_take_someone_out", "sk_spot", "sk_stay_cool")
+
+[sub_resource type="Resource" id="Resource_sqsx8"]
+script = ExtResource("2_8olg7")
+Id = "pbg_super_soldier"
+Name = "Super Soldier"
+Description = "You are the result of a corporate or state project intended to create better soldiers using biological enhancement, gene therapy, neurological enhancement, or even just extreme conditioning. <i>Were you raised from birth to become what you are, or did you volunteer as an adult for a super-soldier program? Are you one of the countless “super soldiers” to be produced by Harrison Armory’s facsimile-cloning programs? Was the project sanctioned or not? Did it succeed? Have you tested your abilities in the field, or are you unproven and eager to see what you can do?</i><br>Under the Third Committee, fewer programs like the one that created you still operate: <i>Are you happy about that, or do you think it makes Union weak? What is your relationship to your makers? Is there a family that doesn't know you exist? Or are you from a line of mass-pro‐ duced siblings? Were you liberated, did you surrender, or are you still in the service of the organization or entity you were made to serve?</i>"
+Skills = PackedStringArray("sk_apply_fists_to_faces", "sk_get_somewhere_quickly", "sk_assault", "sk_read_a_situation")
+
+[sub_resource type="Resource" id="Resource_wsyu5"]
+script = ExtResource("2_8olg7")
+Id = "pbg_starship_pilot"
+Name = "Starship Pilot"
+Description = "You flew a starship – civilian, corporate, military or otherwise. You may have piloted a freighter, a fighter, a shuttle, or a larger ship. <i>Did you have a regular run, or did you fly anywhere? Were you a member of a crew, or did you have one of your own? What kind of flying did you do and what eventually happened to your ship? Did you stick to low and mid-orbit shuttle runs?</i><br>Being a pilot is as much a lifestyle as it is a profession: <i>What was your callsign, and were you known or obscure? Was there a rival service, pilot, or group of pilots that you had friction with? Have you worked with NHPs or flown in combat? Have you ever seen anything strange out in interstellar space or the total void of blinkspace?</i>"
+Skills = PackedStringArray("sk_get_somewhere_quickly", "sk_show_off", "sk_get_a_hold_of_something", "sk_hack_or_fix")
+
+[sub_resource type="Resource" id="Resource_5qnjr"]
+script = ExtResource("2_8olg7")
+Id = "pbg_worker"
+Name = "Worker"
+Description = "At the end of the day, empire only functions when labor clocks in. Labor mines the raw materials; labor fashions stone and metal and organic matter into bolts and screws and glue; labor designs the patterns for printers; labor shapes and welds, hammers and builds. Without the labor of trillions, all progress would grind to a halt. <i>Before you set down the wrench and picked up a helm, what kind of work did you do? Did you work in the fields, factories, shipyards, mines, or somewhere else? What was your life like before you began training as a pilot? Why did you leave? Will you return? Was there a project you worked on that you're especially proud of? Do you have an old crew still working on the clock? What world did you call home, and what were the working conditions there?</i>"
+Skills = PackedStringArray("sk_word_on_the_street", "sk_stay_cool", "sk_lead_or_inspire", "sk_invent_or_create")
 
 [resource]
-script = ExtResource("19_mh8n5")
-Actions = [SubResource("Resource_kf7p0"), SubResource("Resource_ocdu4"), SubResource("Resource_dft76"), SubResource("Resource_to7u3"), SubResource("Resource_ymxdl"), SubResource("Resource_2piey"), SubResource("Resource_ottqj"), SubResource("Resource_80gne"), SubResource("Resource_vyxmm"), SubResource("Resource_2qgv4"), SubResource("Resource_jgmhk"), SubResource("Resource_xo7el"), SubResource("Resource_62lx8"), SubResource("Resource_5wm0c"), SubResource("Resource_sxdgj"), SubResource("Resource_dps0s"), SubResource("Resource_6mmq3"), SubResource("Resource_4bad6"), SubResource("Resource_oj8mg"), SubResource("Resource_jlfwb"), SubResource("Resource_od2je"), SubResource("Resource_fxkp6"), SubResource("Resource_cmpis"), SubResource("Resource_ru4ce"), SubResource("Resource_l4kv5"), SubResource("Resource_r57k1"), SubResource("Resource_xq8am"), SubResource("Resource_df34b"), SubResource("Resource_cfuft"), SubResource("Resource_sqsx8"), SubResource("Resource_wsyu5"), SubResource("Resource_5qnjr"), SubResource("Resource_pl74x"), SubResource("Resource_pn0qm"), SubResource("Resource_bpudh"), SubResource("Resource_ghjkg"), SubResource("Resource_vd0cv"), SubResource("Resource_v4gcp"), SubResource("Resource_me84r"), SubResource("Resource_am575"), SubResource("Resource_6mwxb"), SubResource("Resource_s78ts"), SubResource("Resource_7ayu5"), SubResource("Resource_u0h3t")]
-Backgrounds = [SubResource("Resource_d83bt"), SubResource("Resource_7o45f"), SubResource("Resource_akryg"), SubResource("Resource_irpxa"), SubResource("Resource_x6ana"), SubResource("Resource_5ccrn"), SubResource("Resource_k06t1"), SubResource("Resource_rbgfb"), SubResource("Resource_cpswy"), SubResource("Resource_3met4"), SubResource("Resource_0pjlf"), SubResource("Resource_eaiwj"), SubResource("Resource_j557g"), SubResource("Resource_fs80t"), SubResource("Resource_b8xtn"), SubResource("Resource_go6c2"), SubResource("Resource_y3j5e"), SubResource("Resource_2vr7t"), SubResource("Resource_thdva"), SubResource("Resource_utqdr")]
-CoreBonuses = [SubResource("Resource_akl8g"), SubResource("Resource_tku6m"), SubResource("Resource_608mf"), SubResource("Resource_xi0px"), SubResource("Resource_laujb"), SubResource("Resource_5hc81"), SubResource("Resource_magjc"), SubResource("Resource_7jk1i"), SubResource("Resource_jxk4s"), SubResource("Resource_n5kfl"), SubResource("Resource_e12gc"), SubResource("Resource_6fx1l"), SubResource("Resource_irm5s"), SubResource("Resource_huuuq"), SubResource("Resource_r87ao"), SubResource("Resource_n2nta"), SubResource("Resource_6obb0"), SubResource("Resource_46glf"), SubResource("Resource_gwsfm"), SubResource("Resource_1ld0o"), SubResource("Resource_lk38q"), SubResource("Resource_gn1wn"), SubResource("Resource_44pj7"), SubResource("Resource_2rxvf"), SubResource("Resource_csg6g"), SubResource("Resource_4qxhr"), SubResource("Resource_5jhch"), SubResource("Resource_t8vae"), SubResource("Resource_svj77"), SubResource("Resource_gnjvy"), SubResource("Resource_dp4ju")]
-Environments = [SubResource("Resource_dbw4f"), SubResource("Resource_4k601"), SubResource("Resource_srfds"), SubResource("Resource_o5jis"), SubResource("Resource_loeh0"), SubResource("Resource_iu6sj"), SubResource("Resource_oprgf"), SubResource("Resource_s8uk5"), SubResource("Resource_43d8a"), SubResource("Resource_nnj4i"), SubResource("Resource_ebk1e"), SubResource("Resource_gtyff"), SubResource("Resource_6m7ms"), SubResource("Resource_ecjgc"), SubResource("Resource_r3pxb"), SubResource("Resource_1jv1i"), SubResource("Resource_287ao"), SubResource("Resource_hnwl7"), SubResource("Resource_1hvca"), SubResource("Resource_16blb")]
-Frames = [SubResource("Resource_ilivc"), SubResource("Resource_u3l24"), SubResource("Resource_5voqx"), SubResource("Resource_76bu1"), SubResource("Resource_yqn4f"), SubResource("Resource_1l4rj"), SubResource("Resource_sdut3"), SubResource("Resource_gm4gv"), SubResource("Resource_ytm16"), SubResource("Resource_2gxo8"), SubResource("Resource_j6hun"), SubResource("Resource_4vi88"), SubResource("Resource_m40w3"), SubResource("Resource_wr781"), SubResource("Resource_scvec"), SubResource("Resource_eeq2i"), SubResource("Resource_iieye"), SubResource("Resource_bw25f"), SubResource("Resource_x6llg"), SubResource("Resource_2mv31"), SubResource("Resource_lctvp"), SubResource("Resource_l8ur8"), SubResource("Resource_4y5mr"), SubResource("Resource_52jdy"), SubResource("Resource_8pjr0"), SubResource("Resource_unms4"), SubResource("Resource_vqpo5"), SubResource("Resource_7c0d1"), SubResource("Resource_h0dfy"), SubResource("Resource_exake")]
-Manifest = SubResource("Resource_kdtdk")
-Manufacturers = [SubResource("Resource_1t1hm"), SubResource("Resource_4avxv"), SubResource("Resource_pbdj5"), SubResource("Resource_tkc1t"), SubResource("Resource_73307")]
-Mods = [SubResource("Resource_towya"), SubResource("Resource_igul8"), SubResource("Resource_y6rih"), SubResource("Resource_ms1fk"), SubResource("Resource_dqhc6"), SubResource("Resource_130yp"), SubResource("Resource_x2ps4"), SubResource("Resource_ru31s"), SubResource("Resource_jcnsc")]
-PilotGear = [SubResource("Resource_rsj7w"), SubResource("Resource_hrbt3"), SubResource("Resource_a3rbd"), SubResource("Resource_545ju"), SubResource("Resource_xripp"), SubResource("Resource_gv5wo"), SubResource("Resource_rvsw2"), SubResource("Resource_857rl"), SubResource("Resource_00w88"), SubResource("Resource_32k7x"), SubResource("Resource_cmo4j"), SubResource("Resource_uv8xl"), SubResource("Resource_a5yge"), SubResource("Resource_kr8vp"), SubResource("Resource_3l4al"), SubResource("Resource_akwjt"), SubResource("Resource_5rtml"), SubResource("Resource_niw6t"), SubResource("Resource_5337x"), SubResource("Resource_1ejng"), SubResource("Resource_s3hfx"), SubResource("Resource_kym32"), SubResource("Resource_pxiyf"), SubResource("Resource_yd3oq"), SubResource("Resource_7cmfv"), SubResource("Resource_ny5g7"), SubResource("Resource_8wnh5"), SubResource("Resource_j5so4"), SubResource("Resource_g0ol8"), SubResource("Resource_bkyhk"), SubResource("Resource_u0b71"), SubResource("Resource_qf6xh"), SubResource("Resource_atnqa"), SubResource("Resource_tb7lt"), SubResource("Resource_oyjs3"), SubResource("Resource_42l8k"), SubResource("Resource_y5gcf"), SubResource("Resource_j0vyl"), SubResource("Resource_l4ixm"), SubResource("Resource_yisll")]
-Reserves = [SubResource("Resource_ebf33"), SubResource("Resource_iqfl4"), SubResource("Resource_u6ntx"), SubResource("Resource_p3a4e"), SubResource("Resource_k6hme"), SubResource("Resource_i8pfw"), SubResource("Resource_7ncj6"), SubResource("Resource_jt8g1"), SubResource("Resource_jos8q"), SubResource("Resource_vaku2"), SubResource("Resource_d7au7"), SubResource("Resource_7i4rf"), SubResource("Resource_hejdb"), SubResource("Resource_xvyf0"), SubResource("Resource_4el5g"), SubResource("Resource_xpq0w"), SubResource("Resource_gejja"), SubResource("Resource_qg6tk"), SubResource("Resource_rqwcs"), SubResource("Resource_e22wx"), SubResource("Resource_4u878"), SubResource("Resource_ysffv"), SubResource("Resource_4g28m"), SubResource("Resource_6idi8"), SubResource("Resource_rsdp3"), SubResource("Resource_2y43t"), SubResource("Resource_b6mq1"), SubResource("Resource_5xb1u"), SubResource("Resource_s71cu"), SubResource("Resource_5e5pn"), SubResource("Resource_1pb3h"), SubResource("Resource_li052"), SubResource("Resource_cdxdj"), SubResource("Resource_fdljd"), SubResource("Resource_06xl5")]
-Rules = SubResource("Resource_8p5t0")
-Sitreps = [SubResource("Resource_l6tl2"), SubResource("Resource_a3lx7"), SubResource("Resource_s5vei"), SubResource("Resource_4y7ir"), SubResource("Resource_gsuo4"), SubResource("Resource_rlfig"), SubResource("Resource_mw0lb")]
-Skills = [SubResource("Resource_ecfbu"), SubResource("Resource_n13ql"), SubResource("Resource_uw3jl"), SubResource("Resource_btd8x"), SubResource("Resource_kh5nh"), SubResource("Resource_c02wk"), SubResource("Resource_liskx"), SubResource("Resource_1f3wh"), SubResource("Resource_eicjv"), SubResource("Resource_hrxsg"), SubResource("Resource_sye3a"), SubResource("Resource_vo0jc"), SubResource("Resource_2gvia"), SubResource("Resource_keni1"), SubResource("Resource_sh6ff"), SubResource("Resource_guv5k"), SubResource("Resource_0vwjb"), SubResource("Resource_t0nec"), SubResource("Resource_78cxi"), SubResource("Resource_hkprk"), SubResource("Resource_7gfoc"), SubResource("Resource_kw8kq")]
-Statuses = [SubResource("Resource_0rb1k"), SubResource("Resource_tyrl0"), SubResource("Resource_vnuvi"), SubResource("Resource_idryr"), SubResource("Resource_4d3ge"), SubResource("Resource_i4rts"), SubResource("Resource_4ciq8"), SubResource("Resource_fguhg"), SubResource("Resource_qk08r"), SubResource("Resource_v8fu2"), SubResource("Resource_giydg"), SubResource("Resource_supxj"), SubResource("Resource_n8g5n"), SubResource("Resource_qg5ne"), SubResource("Resource_vm3if")]
-Systems = [SubResource("Resource_jd7hj"), SubResource("Resource_0usvj"), SubResource("Resource_jx2hn"), SubResource("Resource_7y01u"), SubResource("Resource_7ro24"), SubResource("Resource_kyxdi"), SubResource("Resource_p3m0g"), SubResource("Resource_ysnou"), SubResource("Resource_kjwwt"), SubResource("Resource_lvsey"), SubResource("Resource_xa5wb"), SubResource("Resource_3nrm5"), SubResource("Resource_pg2tu"), SubResource("Resource_116qg"), SubResource("Resource_kgmth"), SubResource("Resource_6ugkt"), SubResource("Resource_dve8y"), SubResource("Resource_040ey"), SubResource("Resource_2wkh8"), SubResource("Resource_wqyr3"), SubResource("Resource_tsrf2"), SubResource("Resource_g0xtw"), SubResource("Resource_bvb4q"), SubResource("Resource_87rdd"), SubResource("Resource_gow8v"), SubResource("Resource_1dgmx"), SubResource("Resource_b3dwy"), SubResource("Resource_lstyg"), SubResource("Resource_3of60"), SubResource("Resource_srhdt"), SubResource("Resource_nnoa7"), SubResource("Resource_164tq"), SubResource("Resource_h1xhd"), SubResource("Resource_p6520"), SubResource("Resource_7a0ft"), SubResource("Resource_hr24q"), SubResource("Resource_a47ut"), SubResource("Resource_5maup"), SubResource("Resource_kfrcw"), SubResource("Resource_vp2m2"), SubResource("Resource_urioi"), SubResource("Resource_arqxd"), SubResource("Resource_w40p7"), SubResource("Resource_dlhmx"), SubResource("Resource_4ja3y"), SubResource("Resource_0hciv"), SubResource("Resource_fi24r"), SubResource("Resource_5fwb4"), SubResource("Resource_6py58"), SubResource("Resource_7q5pe"), SubResource("Resource_fo2rj"), SubResource("Resource_4txig"), SubResource("Resource_vly6w"), SubResource("Resource_6c0sp"), SubResource("Resource_mmp5b"), SubResource("Resource_tphd7"), SubResource("Resource_q7upl"), SubResource("Resource_kq035"), SubResource("Resource_6cn3x"), SubResource("Resource_q5d35"), SubResource("Resource_is2fv"), SubResource("Resource_8s7s0"), SubResource("Resource_7anw0"), SubResource("Resource_l3of5"), SubResource("Resource_a4isg"), SubResource("Resource_rnh7i"), SubResource("Resource_xc16g"), SubResource("Resource_ha3pm"), SubResource("Resource_3jtop"), SubResource("Resource_w606s"), SubResource("Resource_klyap"), SubResource("Resource_lf3gr"), SubResource("Resource_oobel"), SubResource("Resource_0vj44"), SubResource("Resource_jqvvg"), SubResource("Resource_1bv0c"), SubResource("Resource_dp3yb"), SubResource("Resource_ws1ap"), SubResource("Resource_jmduy"), SubResource("Resource_nngmf"), SubResource("Resource_dh2rd"), SubResource("Resource_jfagy"), SubResource("Resource_1m46c"), SubResource("Resource_4dx4j"), SubResource("Resource_cg3me"), SubResource("Resource_5um4l"), SubResource("Resource_ouktc"), SubResource("Resource_u7qcv"), SubResource("Resource_vij1u"), SubResource("Resource_wfcsk"), SubResource("Resource_nbamk"), SubResource("Resource_2paq2"), SubResource("Resource_vyb1b"), SubResource("Resource_hw80e"), SubResource("Resource_i5oew"), SubResource("Resource_o5q1x"), SubResource("Resource_5swe4"), SubResource("Resource_d0rli"), SubResource("Resource_reyxo"), SubResource("Resource_dasqp"), SubResource("Resource_2hqjk"), SubResource("Resource_51ac6"), SubResource("Resource_pn3re"), SubResource("Resource_odcro"), SubResource("Resource_0qiw5"), SubResource("Resource_vu8qp"), SubResource("Resource_h2jnc"), SubResource("Resource_qv5se"), SubResource("Resource_xwvdj"), SubResource("Resource_qrij5"), SubResource("Resource_vdx6g"), SubResource("Resource_54db1"), SubResource("Resource_l2bs5"), SubResource("Resource_0ir4h"), SubResource("Resource_v1v5r"), SubResource("Resource_32lat"), SubResource("Resource_v03ov"), SubResource("Resource_aqf2v"), SubResource("Resource_uutjl"), SubResource("Resource_8aqgr"), SubResource("Resource_2apq7"), SubResource("Resource_f815l"), SubResource("Resource_2dusy"), SubResource("Resource_i3yty"), SubResource("Resource_4hv67")]
-Tags = [SubResource("Resource_oijdh"), SubResource("Resource_girxh"), SubResource("Resource_7pwgw"), SubResource("Resource_1ln53"), SubResource("Resource_bo1x2"), SubResource("Resource_etu7d"), SubResource("Resource_3iylw"), SubResource("Resource_2ufci"), SubResource("Resource_petoi"), SubResource("Resource_3prdd"), SubResource("Resource_nykjc"), SubResource("Resource_2fahr"), SubResource("Resource_ititn"), SubResource("Resource_jbm7c"), SubResource("Resource_t0d87"), SubResource("Resource_6h0xk"), SubResource("Resource_uibed"), SubResource("Resource_uooin"), SubResource("Resource_qj3vf"), SubResource("Resource_p6nw0"), SubResource("Resource_cm0h5"), SubResource("Resource_sr8ay"), SubResource("Resource_pthie"), SubResource("Resource_y13mr"), SubResource("Resource_6g45j"), SubResource("Resource_3wd14"), SubResource("Resource_3ogli"), SubResource("Resource_s45hp"), SubResource("Resource_mawu2"), SubResource("Resource_lieif"), SubResource("Resource_o6ico"), SubResource("Resource_ipmc3"), SubResource("Resource_hllug"), SubResource("Resource_6uk7t"), SubResource("Resource_5gok1"), SubResource("Resource_c7i00"), SubResource("Resource_2o72r"), SubResource("Resource_5a3ll"), SubResource("Resource_hg8ve"), SubResource("Resource_bnvja"), SubResource("Resource_2j2bw"), SubResource("Resource_j3bg5"), SubResource("Resource_81tp8"), SubResource("Resource_ke8ss"), SubResource("Resource_qox8p"), SubResource("Resource_boiyk"), SubResource("Resource_vmpkb"), SubResource("Resource_k48oj"), SubResource("Resource_wxb1i"), SubResource("Resource_xhtfp"), SubResource("Resource_ckkws"), SubResource("Resource_6nqu5"), SubResource("Resource_vskbc"), SubResource("Resource_j2o7c"), SubResource("Resource_0ifmn"), SubResource("Resource_34jhd"), SubResource("Resource_ofaof"), SubResource("Resource_5n43f"), SubResource("Resource_emm62"), SubResource("Resource_1uwbr")]
-Talents = [SubResource("Resource_25oh3"), SubResource("Resource_yfegy"), SubResource("Resource_3t01t"), SubResource("Resource_7al76"), SubResource("Resource_fu1gn"), SubResource("Resource_1lqtq"), SubResource("Resource_jq3jd"), SubResource("Resource_blwfx"), SubResource("Resource_fvsv4"), SubResource("Resource_8r7yv"), SubResource("Resource_8bh5b"), SubResource("Resource_e0atr"), SubResource("Resource_sft53"), SubResource("Resource_cx7jd"), SubResource("Resource_xca8q"), SubResource("Resource_i2dhd"), SubResource("Resource_wcs7y"), SubResource("Resource_fm4vl"), SubResource("Resource_cq844"), SubResource("Resource_m5t6f"), SubResource("Resource_qik2v"), SubResource("Resource_5u5pa"), SubResource("Resource_p5xei"), SubResource("Resource_f37vj"), SubResource("Resource_f2ohl"), SubResource("Resource_xvq70"), SubResource("Resource_pcneh"), SubResource("Resource_lrvuu"), SubResource("Resource_hxby6")]
-Weapons = [SubResource("Resource_rua5p"), SubResource("Resource_e882e"), SubResource("Resource_rm44w"), SubResource("Resource_hgigr"), SubResource("Resource_xf7u6"), SubResource("Resource_icfrr"), SubResource("Resource_48j8j"), SubResource("Resource_ycqhg"), SubResource("Resource_bke5r"), SubResource("Resource_4ghvy"), SubResource("Resource_hi15a"), SubResource("Resource_e5xob"), SubResource("Resource_arvgp"), SubResource("Resource_13llu"), SubResource("Resource_ruu6m"), SubResource("Resource_paay3"), SubResource("Resource_boc33"), SubResource("Resource_gx4q0"), SubResource("Resource_nisad"), SubResource("Resource_oqikm"), SubResource("Resource_l75v3"), SubResource("Resource_wrao4"), SubResource("Resource_urb12"), SubResource("Resource_yaj23"), SubResource("Resource_20vp1"), SubResource("Resource_fech1"), SubResource("Resource_nm2us"), SubResource("Resource_c364h"), SubResource("Resource_vdalj"), SubResource("Resource_g467y"), SubResource("Resource_mf4es"), SubResource("Resource_g46ku"), SubResource("Resource_k6ds6"), SubResource("Resource_fyjh6"), SubResource("Resource_r4foa"), SubResource("Resource_frfss"), SubResource("Resource_yrgl3"), SubResource("Resource_5h1v3"), SubResource("Resource_h1jgy"), SubResource("Resource_26ian"), SubResource("Resource_qjkl8"), SubResource("Resource_ln03l"), SubResource("Resource_ej47l"), SubResource("Resource_evpg4"), SubResource("Resource_pafyh"), SubResource("Resource_v87a6"), SubResource("Resource_100xe"), SubResource("Resource_etbya"), SubResource("Resource_q524w"), SubResource("Resource_p17gx"), SubResource("Resource_6qof7"), SubResource("Resource_7iqqq"), SubResource("Resource_ssl6u"), SubResource("Resource_ung8u"), SubResource("Resource_d2kvt"), SubResource("Resource_2iq4a"), SubResource("Resource_5yqyk"), SubResource("Resource_cp28s"), SubResource("Resource_u1m28"), SubResource("Resource_rurfa"), SubResource("Resource_5xogi"), SubResource("Resource_ruwgf"), SubResource("Resource_ivu3s"), SubResource("Resource_gkvgv"), SubResource("Resource_w0lq4"), SubResource("Resource_n3kkq"), SubResource("Resource_7wikg"), SubResource("Resource_cscu8"), SubResource("Resource_vd2ls"), SubResource("Resource_1r7m6"), SubResource("Resource_kn8qh"), SubResource("Resource_cliqh"), SubResource("Resource_kyrxm"), SubResource("Resource_tmkh0"), SubResource("Resource_lovsj"), SubResource("Resource_24nu7"), SubResource("Resource_34g0l"), SubResource("Resource_fv501"), SubResource("Resource_tgipk"), SubResource("Resource_gccyg"), SubResource("Resource_ey1d5"), SubResource("Resource_fm5d4"), SubResource("Resource_745fg"), SubResource("Resource_3yykr"), SubResource("Resource_8hcuh"), SubResource("Resource_nskgn")]
+script = ExtResource("3_3px1v")
+Actions = [SubResource("Resource_eae11"), SubResource("Resource_lb20t"), SubResource("Resource_gkhvc"), SubResource("Resource_yx1xc"), SubResource("Resource_r71f6"), SubResource("Resource_vw2ft"), SubResource("Resource_cxfmy"), SubResource("Resource_6vfkj"), SubResource("Resource_e0lsl"), SubResource("Resource_jqax2"), SubResource("Resource_juy21"), SubResource("Resource_38bcg"), SubResource("Resource_cijs3"), SubResource("Resource_xcsdk"), SubResource("Resource_nk4i1"), SubResource("Resource_eissk"), SubResource("Resource_ia17u"), SubResource("Resource_sr1jt"), SubResource("Resource_i8i48"), SubResource("Resource_gek43"), SubResource("Resource_13jqg"), SubResource("Resource_jh4p1"), SubResource("Resource_ls0mb"), SubResource("Resource_nxt8j"), SubResource("Resource_xkk5r"), SubResource("Resource_vfkvl"), SubResource("Resource_7cvvw"), SubResource("Resource_p1sc8"), SubResource("Resource_evklk"), SubResource("Resource_ic6k4"), SubResource("Resource_eoquw"), SubResource("Resource_mh8n5"), SubResource("Resource_kf7p0"), SubResource("Resource_ocdu4"), SubResource("Resource_dft76"), SubResource("Resource_to7u3"), SubResource("Resource_ymxdl"), SubResource("Resource_2piey"), SubResource("Resource_ottqj"), SubResource("Resource_80gne"), SubResource("Resource_vyxmm"), SubResource("Resource_2qgv4"), SubResource("Resource_jgmhk"), SubResource("Resource_xo7el")]
+Backgrounds = [SubResource("Resource_62lx8"), SubResource("Resource_5wm0c"), SubResource("Resource_sxdgj"), SubResource("Resource_dps0s"), SubResource("Resource_6mmq3"), SubResource("Resource_4bad6"), SubResource("Resource_oj8mg"), SubResource("Resource_jlfwb"), SubResource("Resource_od2je"), SubResource("Resource_fxkp6"), SubResource("Resource_cmpis"), SubResource("Resource_ru4ce"), SubResource("Resource_l4kv5"), SubResource("Resource_r57k1"), SubResource("Resource_xq8am"), SubResource("Resource_df34b"), SubResource("Resource_cfuft"), SubResource("Resource_sqsx8"), SubResource("Resource_wsyu5"), SubResource("Resource_5qnjr")]
+CoreBonuses = null
+Environments = null
+Frames = null
+Manufacturers = null
+Mods = null
+PilotGear = null
+Reserves = null
+Sitreps = null
+Skills = null
+Statuses = null
+Systems = null
+Tags = null
+Talents = null
+Weapons = null

@@ -1,17 +1,20 @@
-﻿using System.Text.Json.Serialization;
+﻿using Godot;
+using System.Text.Json.Serialization;
 using System.Text.Json;
 using System;
 
 namespace MASTMAN.Scripts.Data.Models
 {
-    public class TagValData
+    public partial class TagValData : Resource
     {
+        [Export]
         [JsonPropertyName("id")]
         public string Id { get; set; }
 
+        [Export]
         [JsonPropertyName("val")]
         [JsonConverter(typeof(JsonStringOrNumberConverter))]
-        public object Val { get; set; }
+        public string Val { get; set; }
     }
 
     // Custom converter to handle both string and number types for the "val" property

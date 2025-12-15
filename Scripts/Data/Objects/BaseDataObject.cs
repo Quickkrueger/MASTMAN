@@ -79,7 +79,7 @@ namespace MASTMAN.Data
 			//{ "tables", async (url) => await ProcessFileContent<TableData>(url) },
 			{ "tags", async (url) => Tags = (await ProcessFileListContent < TagData >(url)).ToArray() },
             { "talents", async (url) => Talents = (await ProcessFileListContent < TalentData >(url)).ToArray() },
-            { "weapons", async (url) => Weapons = (await ProcessFileListContent < WeaponData >(url)).ToArray() }
+            { "weapons", async (url) => Weapons = (await ProcessFileListContent <WeaponData>(url)).ToArray() }
         };
         }
 

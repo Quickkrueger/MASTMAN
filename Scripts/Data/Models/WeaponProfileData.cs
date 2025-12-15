@@ -1,60 +1,78 @@
-﻿using MASTMAN.Util;
+﻿using Godot;
+using MASTMAN.Util;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
 namespace MASTMAN.Scripts.Data.Models
 {
-    public class WeaponProfileData
+    public partial class WeaponProfileData : Resource
     {
+        [Export]
         [JsonPropertyName("name")]
         public string Name { get; set; }
 
+        [Export]
         [JsonPropertyName("effect")]
         public string Effect { get; set; }
 
+        [Export]
         [JsonPropertyName("skirmish")]
-        public bool? Skirmish { get; set; }
+        public bool Skirmish { get; set; }
 
+        [Export]
         [JsonPropertyName("barrage")]
-        public bool? Barrage { get; set; }
+        public bool Barrage { get; set; }
 
+        [Export]
         [JsonPropertyName("cost")]
-        public int? Cost { get; set; }
+        public int Cost { get; set; }
 
+        [Export]
         [JsonPropertyName("on_attack")]
         public string OnAttack { get; set; }
 
+        [Export]
         [JsonPropertyName("on_hit")]
         public string OnHit { get; set; }
 
+        [Export]
         [JsonPropertyName("on_crit")]
         public string OnCrit { get; set; }
 
+        [Export]
         [JsonPropertyName("damage")]
-        public List<DamageData> Damage { get; set; }
+        public DamageData[] Damage { get; set; }
 
+        [Export]
         [JsonPropertyName("range")]
-        public List<RangeData> Range { get; set; }
+        public RangeData[] Range { get; set; }
 
+        [Export]
         [JsonPropertyName("actions")]
-        public List<ItemActionData> Actions { get; set; }
+        public ItemActionData[] Actions { get; set; }
 
+        [Export]
         [JsonPropertyName("bonuses")]
-        public List<BonusData> Bonuses { get; set; }
+        public BonusData[] Bonuses { get; set; }
 
+        [Export]
         [JsonPropertyName("synergies")]
-        public List<SynergyData> Synergies { get; set; }
+        public SynergyData[] Synergies { get; set; }
 
+        [Export]
         [JsonPropertyName("deployables")]
-        public List<DeployableData> Deployables { get; set; }
+        public DeployableData[] Deployables { get; set; }
 
+        [Export]
         [JsonPropertyName("counters")]
-        public List<CounterData> Counters { get; set; }
+        public CounterData[] Counters { get; set; }
 
+        [Export]
         [JsonPropertyName("integrated")]
-        public List<string> Integrated { get; set; }
+        public string[] Integrated { get; set; }
 
+        [Export]
         [JsonPropertyName("special_equipment")]
-        public List<string> SpecialEquipment { get; set; }
+        public string[] SpecialEquipment { get; set; }
     }
 }

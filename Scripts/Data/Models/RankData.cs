@@ -1,52 +1,67 @@
-﻿using System.Collections.Generic;
+﻿using Godot;
+using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
 namespace MASTMAN.Scripts.Data.Models
 {
-    public class RankData
+    public partial class RankData : Resource
     {
+        [Export]
         [JsonPropertyName("name")]
         public string Name { get; set; }
 
+        [Export]
         [JsonPropertyName("description")]
         public string Description { get; set; }
 
+        [Export]
         [JsonPropertyName("exclusive")]
-        public bool? Exclusive { get; set; }
+        public bool Exclusive { get; set; }
 
+        [Export]
         [JsonPropertyName("actions")]
-        public List<ItemActionData> Actions { get; set; }
+        public ItemActionData[] Actions { get; set; }
 
+        [Export]
         [JsonPropertyName("bonuses")]
-        public List<BonusData> Bonuses { get; set; }
+        public BonusData[] Bonuses { get; set; }
 
+        [Export]
         [JsonPropertyName("synergies")]
-        public List<SynergyData> Synergies { get; set; }
+        public SynergyData[] Synergies { get; set; }
 
+        [Export]
         [JsonPropertyName("deployables")]
-        public List<DeployableData> Deployables { get; set; }
+        public DeployableData[] Deployables { get; set; }
 
+        [Export]
         [JsonPropertyName("counters")]
-        public List<CounterData> Counters { get; set; }
+        public CounterData[] Counters { get; set; }
 
+        [Export]
         [JsonPropertyName("integrated")]
-        public List<string> Integrated { get; set; }
+        public string[] Integrated { get; set; }
     }
 
-    public class RankedData
+    public partial class RankedData : Resource
     {
+        [Export]
         [JsonPropertyName("id")]
         public string Id { get; set; }
 
+        [Export]
         [JsonPropertyName("rank")]
         public int Rank { get; set; }
 
+        [Export]
         [JsonPropertyName("custom")]
-        public bool? Custom { get; set; }
+        public bool Custom { get; set; }
 
+        [Export]
         [JsonPropertyName("custom_desc")]
         public string CustomDesc { get; set; }
 
+        [Export]
         [JsonPropertyName("custom_detail")]
         public string CustomDetail { get; set; }
     }

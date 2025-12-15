@@ -7,104 +7,137 @@ namespace MASTMAN.Scripts.Data.Models
 {
     public partial class WeaponData : Resource
     {
+        [Export]
         [JsonPropertyName("id")]
         public string Id { get; set; }
 
+        [Export]
         [JsonPropertyName("name")]
         public string Name { get; set; }
 
+        [Export]
         [JsonPropertyName("source")]
         public string Source { get; set; }
 
+        [Export]
         [JsonPropertyName("license")]
         public string License { get; set; }
 
+        [Export]
         [JsonPropertyName("license_id")]
         public string LicenseId { get; set; }
 
+        [Export]
         [JsonPropertyName("license_level")]
         public int LicenseLevel { get; set; }
 
+        [Export]
         [JsonPropertyName("mount")]
         public MountType Mount { get; set; }
 
+        [Export]
         [JsonPropertyName("type")]
         public WeaponType Type { get; set; }
 
+        [Export]
         [JsonPropertyName("cost")]
         public int Cost { get; set; }
 
+        [Export]
         [JsonPropertyName("barrage")]
         public bool Barrage { get; set; }
 
+        [Export]
         [JsonPropertyName("skirmish")]
         public bool Skirmish { get; set; }
 
+        [Export]
         [JsonPropertyName("no_attack")]
         public bool NoAttack { get; set; }
 
+        [Export]
         [JsonPropertyName("no_mods")]
         public bool NoMods { get; set; }
 
+        [Export]
         [JsonPropertyName("no_core_bonus")]
         public bool NoCoreBonus { get; set; }
 
+        [Export]
         [JsonPropertyName("damage")]
-        public List<DamageData> Damage { get; set; }
+        public DamageData[] Damage { get; set; }
 
+        [Export]
         [JsonPropertyName("range")]
-        public List<RangeData> Range { get; set; }
+        public RangeData[] Range { get; set; }
 
+        [Export]
         [JsonPropertyName("tags")]
-        public List<TagValData> Tags { get; set; }
+        public TagValData[] Tags { get; set; }
 
+        [Export]
         [JsonPropertyName("sp")]
         public int SP { get; set; }
 
+        [Export]
         [JsonPropertyName("description")]
         public string Description { get; set; }
 
+        [Export]
         [JsonPropertyName("effect")]
         public string Effect { get; set; }
 
+        [Export]
         [JsonPropertyName("on_attack")]
         public string OnAttack { get; set; }
 
+        [Export]
         [JsonPropertyName("on_hit")]
         public string OnHit { get; set; }
 
+        [Export]
         [JsonPropertyName("on_crit")]
         public string OnCrit { get; set; }
 
+        [Export]
         [JsonPropertyName("actions")]
-        public List<ItemActionData> Actions { get; set; }
+        public ItemActionData[] Actions { get; set; }
 
+        [Export]
         [JsonPropertyName("bonuses")]
-        public List<BonusData> Bonuses { get; set; }
+        public BonusData[] Bonuses { get; set; }
 
+        [Export]
         [JsonPropertyName("no_bonus")]
         public bool NoBonus { get; set; }
 
+        [Export]
         [JsonPropertyName("synergies")]
-        public List<SynergyData> Synergies { get; set; }
+        public SynergyData[] Synergies { get; set; }
 
+        [Export]
         [JsonPropertyName("no_synergy")]
         public bool NoSynergy { get; set; }
 
+        [Export]
         [JsonPropertyName("deployables")]
-        public List<DeployableData> Deployables { get; set; }
+        public DeployableData[] Deployables { get; set; }
 
+        [Export]
         [JsonPropertyName("counters")]
-        public List<CounterData> Counters { get; set; }
+        public CounterData[] Counters { get; set; }
 
+        [Export]
         [JsonPropertyName("integrated")]
-        public List<string> Integrated { get; set; }
+        public string[] Integrated { get; set; }
 
+        [Export]
         [JsonPropertyName("special_equipment")]
-        public List<string> SpecialEquipment { get; set; }
+        public string[] SpecialEquipment { get; set; }
 
+        [Export]
         [JsonPropertyName("profiles")]
-        public List<WeaponProfileData> Profiles { get; set; }
+        public WeaponProfileData[] Profiles { get; set; }
     }
 
     [JsonConverter(typeof(JsonEnumMemberStringEnumConverter<WeaponType>))]

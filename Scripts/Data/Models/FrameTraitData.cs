@@ -1,41 +1,52 @@
 ﻿using MASTMAN.Util;
+using Godot;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 using System.Text.Json.Serialization;
 
 namespace MASTMAN.Scripts.Data.Models
 {
-    public class FrameTraitData
+    public partial class FrameTraitData : Resource
     {
+        [Export]
         [JsonPropertyName("name")]
         public string Name { get; set; }
 
+        [Export]
         [JsonPropertyName("description")]
         public string Description { get; set; }
 
+        [Export]
         [JsonPropertyName("use")]
         public UseType Use { get; set; }
 
+        [Export]
         [JsonPropertyName("actions")]
-        public List<ItemActionData> Actions { get; set; }
+        public ItemActionData[] Actions { get; set; }
 
+        [Export]
         [JsonPropertyName("bonuses")]
-        public List<BonusData> Bonuses { get; set; }
+        public BonusData[] Bonuses { get; set; }
 
+        [Export]
         [JsonPropertyName("synergies")]
-        public List<SynergyData> Synergies { get; set; }
+        public SynergyData[] Synergies { get; set; }
 
+        [Export]
         [JsonPropertyName("deployables")]
-        public List<DeployableData> Deployables { get; set; }
+        public DeployableData[] Deployables { get; set; }
 
+        [Export]
         [JsonPropertyName("counters")]
-        public List<CounterData> Counters { get; set; }
+        public CounterData[] Counters { get; set; }
 
+        [Export]
         [JsonPropertyName("integrated")]
-        public List<string> Integrated { get; set; }
+        public string[] Integrated { get; set; }
 
+        [Export]
         [JsonPropertyName("special_equipment")]
-        public List<string> SpecialEquipment { get; set; }
+        public string[] SpecialEquipment { get; set; }
     }
 
     [JsonConverter(typeof(JsonEnumMemberStringEnumConverter<UseType>))]

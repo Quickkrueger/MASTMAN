@@ -7,42 +7,54 @@ namespace MASTMAN.Scripts.Data.Models
 {
     public partial class PilotGearData : Resource
     {
+        [Export]
         [JsonPropertyName("id")]
         public string Id { get; set; }
 
+        [Export]
         [JsonPropertyName("name")]
         public string Name { get; set; }
 
+        [Export]
         [JsonPropertyName("type")]
         [JsonConverter(typeof(JsonStringEnumConverter))]
         public ItemType Type { get; set; }
 
+        [Export]
         [JsonPropertyName("description")]
         public string Description { get; set; }
 
+        [Export]
         [JsonPropertyName("effect")]
         public string Effect { get; set; }
 
+        [Export]
         [JsonPropertyName("tags")]
-        public List<TagValData> Tags { get; set; }
+        public TagValData[] Tags { get; set; }
 
+        [Export]
         [JsonPropertyName("range")]
-        public List<RangeData> Range { get; set; }
+        public RangeData[] Range { get; set; }
 
+        [Export]
         [JsonPropertyName("damage")]
-        public List<DamageData> Damage { get; set; }
+        public DamageData[] Damage { get; set; }
 
+        [Export]
         [JsonPropertyName("actions")]
-        public List<ItemActionData> Actions { get; set; }
+        public ItemActionData[] Actions { get; set; }
 
+        [Export]
         [JsonPropertyName("bonuses")]
-        public List<BonusData> Bonuses { get; set; }
+        public BonusData[] Bonuses { get; set; }
 
+        [Export]
         [JsonPropertyName("synergies")]
-        public List<SynergyData> Synergies { get; set; }
+        public SynergyData[] Synergies { get; set; }
 
+        [Export]
         [JsonPropertyName("deployables")]
-        public List<DeployableData> Deployables { get; set; }
+        public DeployableData[] Deployables { get; set; }
     }
 
     public enum ItemType

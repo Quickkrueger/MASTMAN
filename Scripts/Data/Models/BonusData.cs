@@ -7,31 +7,43 @@ namespace MASTMAN.Scripts.Data.Models
 {
     public partial class BonusData : Resource
     {
+        [Export]
         [JsonPropertyName("id")]
         public string Id { get; set; }
 
+        [Export]
         [JsonPropertyName("val")]
-        public object Val { get; set; }  // to accommodate both string and number
+        public string ValString { get; set; }
 
+        [Export]
+        [JsonPropertyName("val")]
+        public float ValNum { get; set; }
+
+        [Export]
         [JsonPropertyName("damage_types")]
         [JsonConverter(typeof(JsonEnumListConverter<DamageType>))]
-        public List<DamageType> DamageTypes { get; set; }
+        public Godot.Collections.Array<DamageType> DamageTypes { get; set; }
 
+        [Export]
         [JsonPropertyName("range_types")]
         [JsonConverter(typeof(JsonEnumListConverter<RangeType>))]
-        public List<RangeType> RangeTypes { get; set; }
+        public Godot.Collections.Array<RangeType> RangeTypes { get; set; }
 
+        [Export]
         [JsonPropertyName("weapon_types")]
         [JsonConverter(typeof(JsonEnumListConverter<WeaponType>))]
-        public List<WeaponType> WeaponTypes { get; set; }
+        public Godot.Collections.Array<WeaponType> WeaponTypes { get; set; }
 
+        [Export]
         [JsonPropertyName("weapon_sizes")]
         [JsonConverter(typeof(JsonEnumListConverter<WeaponSize>))]
-        public List<WeaponSize> WeaponSizes { get; set; }
+        public Godot.Collections.Array<WeaponSize> WeaponSizes { get; set; }
 
+        [Export]
         [JsonPropertyName("overwrite")]
         public bool Overwrite { get; set; }
 
+        [Export]
         [JsonPropertyName("replace")]
         public bool Replace { get; set; }
     }

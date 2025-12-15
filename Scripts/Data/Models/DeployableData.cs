@@ -6,107 +6,140 @@ namespace MASTMAN.Scripts.Data.Models
 {
     public partial class DeployableData : Resource
     {
+        [Export]
         [JsonPropertyName("name")]
         public string Name { get; set; }
 
+        [Export]
         [JsonPropertyName("type")]
         public string Type { get; set; } // This is for UI furnishing only
 
+        [Export]
         [JsonPropertyName("detail")]
         public string Detail { get; set; }
 
+        [Export]
         [JsonPropertyName("size")]
         public float Size { get; set; } // Not required for Mines
 
+        [Export]
         [JsonPropertyName("activation")]
-        public ActivationType? Activation { get; set; }
+        public ActivationType Activation { get; set; }
 
+        [Export]
         [JsonPropertyName("deactivation")]
-        public ActivationType? Deactivation { get; set; }
+        public ActivationType Deactivation { get; set; }
 
+        [Export]
         [JsonPropertyName("recall")]
-        public ActivationType? Recall { get; set; }
+        public ActivationType Recall { get; set; }
 
+        [Export]
         [JsonPropertyName("redeploy")]
-        public ActivationType? Redeploy { get; set; }
+        public ActivationType Redeploy { get; set; }
 
+        [Export]
         [JsonPropertyName("instances")]
-        public int? Instances { get; set; }
+        public int Instances { get; set; }
 
+        [Export]
         [JsonPropertyName("cost")]
-        public int? Cost { get; set; }
+        public int Cost { get; set; }
 
+        [Export]
         [JsonPropertyName("armor")]
-        public int? Armor { get; set; }
+        public int Armor { get; set; }
 
+        [Export]
         [JsonPropertyName("hp")]
         [JsonConverter(typeof(StringOrIntToStringConverter))]
         public string Hp { get; set; }
 
+        [Export]
         [JsonPropertyName("evasion")]
-        public int? Evasion { get; set; }
+        public int Evasion { get; set; }
 
+        [Export]
         [JsonPropertyName("edef")]
-        public int? Edef { get; set; }
+        public int Edef { get; set; }
 
+        [Export]
         [JsonPropertyName("heatcap")]
-        public int? Heatcap { get; set; }
+        public int Heatcap { get; set; }
 
+        [Export]
         [JsonPropertyName("repcap")]
-        public int? Repcap { get; set; }
+        public int Repcap { get; set; }
 
+        [Export]
         [JsonPropertyName("sensor_range")]
-        public int? SensorRange { get; set; }
+        public int SensorRange { get; set; }
 
+        [Export]
         [JsonPropertyName("tech_attack")]
-        public int? TechAttack { get; set; }
+        public int TechAttack { get; set; }
 
+        [Export]
         [JsonPropertyName("save")]
-        public int? Save { get; set; }
+        public int Save { get; set; }
 
+        [Export]
         [JsonPropertyName("speed")]
-        public int? Speed { get; set; }
+        public int Speed { get; set; }
 
+        [Export]
         [JsonPropertyName("pilot")]
-        public bool? Pilot { get; set; }
+        public bool Pilot { get; set; }
 
+        [Export]
         [JsonPropertyName("mech")]
-        public bool? Mech { get; set; }
+        public bool Mech { get; set; }
 
+        [Export]
         [JsonPropertyName("actions")]
-        public List<ItemActionData> Actions { get; set; }
+        public ItemActionData[] Actions { get; set; }
 
+        [Export]
         [JsonPropertyName("bonuses")]
-        public List<BonusData> Bonuses { get; set; }
+        public BonusData[] Bonuses { get; set; }
 
+        [Export]
         [JsonPropertyName("synergies")]
-        public List<SynergyData> Synergies { get; set; }
+        public SynergyData[] Synergies { get; set; }
 
+        [Export]
         [JsonPropertyName("counters")]
-        public List<CounterData> Counters { get; set; }
+        public CounterData[] Counters { get; set; }
 
+        [Export]
         [JsonPropertyName("tags")]
-        public List<TagValData> Tags { get; set; }
+        public TagValData[] Tags { get; set; }
     }
 
-    public class DeployedData
+    public partial class DeployedData : Resource
     {
+        [Export]
         [JsonPropertyName("data")]
         public DeployableData Data { get; set; }
 
+        [Export]
         [JsonPropertyName("assigned_name")]
         public string AssignedName { get; set; }
 
+        [Export]
         [JsonPropertyName("current_hp")]
         public int CurrentHp { get; set; }
 
+        [Export]
         [JsonPropertyName("current_duration")]
-        public int? CurrentDuration { get; set; }
+        public int CurrentDuration { get; set; }
 
+        [Export]
         [JsonPropertyName("overshield")]
-        public int? Overshield { get; set; }
+        public int Overshield { get; set; }
 
+        [Export]
         [JsonPropertyName("destroyed")]
-        public bool? Destroyed { get; set; }
+        public bool Destroyed { get; set; }
     }
 }
