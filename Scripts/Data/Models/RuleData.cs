@@ -1,9 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using Godot;
+using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
 namespace MASTMAN.Scripts.Data.Models
 {
-    public class RuleData
+    public partial class RuleData : Resource
     {
         [JsonPropertyName("base_structure")]
         public int BaseStructure { get; set; }

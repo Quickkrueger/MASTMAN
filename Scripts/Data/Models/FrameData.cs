@@ -1,13 +1,13 @@
 ﻿using MASTMAN.Util;
 using System;
 using System.Collections.Generic;
-using System.Runtime.Serialization;
+using Godot;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace MASTMAN.Scripts.Data.Models
 {
-    public class FrameData
+    public partial class FrameData : Resource
     {
         [JsonPropertyName("id")]
         public string Id { get; set; }

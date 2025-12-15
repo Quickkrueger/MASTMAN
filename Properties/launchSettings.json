@@ -6,14 +6,14 @@
     },
     "Launch": {
       "commandName": "Executable",
-      "executablePath": "C:\\Game Dev\\Tools\\Godot\\Godot_v4.2.2-stable_mono_win64.exe",
+      "executablePath": "C:\\Game Dev\\Tools\\Godot\\Godot_v4.5.1-stable_mono_win64.exe",
       "commandLineArgs": "--path . --verbose",
       "workingDirectory": ".",
       "nativeDebugging": true
     },
     "Editor": {
       "commandName": "Executable",
-      "executablePath": "C:\\Game Dev\\Tools\\Godot\\Godot_v4.2.2-stable_mono_win64.exe",
+      "executablePath": "C:\\Game Dev\\Tools\\Godot\\Godot_v4.5.1-stable_mono_win64.exe",
       "commandLineArgs": "--path . --editor --verbose",
       "workingDirectory": ".",
       "nativeDebugging": true

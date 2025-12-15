@@ -1,8 +1,9 @@
-﻿using System.Text.Json.Serialization;
+﻿using Godot;
+using System.Text.Json.Serialization;
 
 namespace MASTMAN.Scripts.Data.Models
 {
-    public class ManifestData
+    public partial class ManifestData : Resource
     {
         [JsonPropertyName("name")]
         public string Name { get; set; }

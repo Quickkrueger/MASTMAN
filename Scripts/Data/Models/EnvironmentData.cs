@@ -1,8 +1,9 @@
-﻿using System.Text.Json.Serialization;
+﻿using Godot;
+using System.Text.Json.Serialization;
 
 namespace MASTMAN.Scripts.Data.Models
 {
-    public class EnvironmentData
+    public partial class EnvironmentData : Resource
     {
         [JsonPropertyName("id")]
         public string Id { get; set; }

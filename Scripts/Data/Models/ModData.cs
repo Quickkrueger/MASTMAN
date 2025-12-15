@@ -1,4 +1,5 @@
 ﻿using MASTMAN.Util;
+using Godot;
 using System;
 using System.Collections.Generic;
 using System.Text.Json;
@@ -6,7 +7,7 @@ using System.Text.Json.Serialization;
 
 namespace MASTMAN.Scripts.Data.Models
 {
-    public class ModData
+    public partial class ModData : Resource
     {
         [JsonPropertyName("id")]
         public string Id { get; set; }

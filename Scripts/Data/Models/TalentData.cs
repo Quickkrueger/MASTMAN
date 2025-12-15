@@ -1,9 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using Godot;
+using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
 namespace MASTMAN.Scripts.Data.Models
 {
-    public class TalentData
+    public partial class TalentData : Resource
     {
         [JsonPropertyName("id")]
         public string Id { get; set; }

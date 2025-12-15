@@ -1,11 +1,11 @@
 ﻿using MASTMAN.Util;
 using System.Collections.Generic;
-using System.Runtime.Serialization;
+using Godot;
 using System.Text.Json.Serialization;
 
 namespace MASTMAN.Scripts.Data.Models
 {
-    public class SystemData
+    public partial class SystemData : Resource
     {
         [JsonPropertyName("id")]
         public string Id { get; set; }

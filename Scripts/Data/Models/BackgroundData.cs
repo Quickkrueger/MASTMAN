@@ -7,7 +7,7 @@ using System.Xml.Linq;
 
 namespace MASTMAN.Scripts.Data.Models
 {
-    public class BackgroundData
+    public partial class BackgroundData : Resource
     {
         [JsonPropertyName("id")]
         public string Id { get; set; }

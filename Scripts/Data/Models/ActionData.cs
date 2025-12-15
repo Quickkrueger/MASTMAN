@@ -1,48 +1,62 @@
 ﻿using Godot;
 using MASTMAN.Util;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text.Json.Serialization;
 
 namespace MASTMAN.Scripts.Data.Models
 {
-    public class ActionData
+    [GlobalClass]
+    public partial class ActionData : Resource
     {
+        [Export]
         [JsonPropertyName("id")]
         public string Id { get; set; }
 
+        [Export]
         [JsonPropertyName("name")]
         public string Name { get; set; }
 
+        [Export]
         [JsonPropertyName("detail")]
         public string Detail { get; set; }
 
+        [Export]
         [JsonPropertyName("activation")]
         public ActivationType Activation { get; set; }
 
+        [Export]
         [JsonPropertyName("terse")]
         public string Terse { get; set; }
 
+        [Export]
         [JsonPropertyName("pilot")]
-        public bool? Pilot { get; set; }
+        public bool Pilot { get; set; }
 
+        [Export]
         [JsonPropertyName("mech")]
-        public bool? Mech { get; set; }
+        public bool Mech { get; set; }
 
+        [Export]
         [JsonPropertyName("synergy_locations")]
-        public List<string> SynergyLocations { get; set; }
+        public string[] SynergyLocations { get; set; }
 
+        [Export]
         [JsonPropertyName("confirm")]
-        public List<string> Confirm { get; set; }
+        public string[] Confirm { get; set; }
 
+        [Export]
         [JsonPropertyName("log")]
         public string Log { get; set; }
 
+        [Export]
         [JsonPropertyName("ignore_used")]
-        public bool? IgnoreUsed { get; set; }
+        public bool IgnoreUsed { get; set; }
 
+        [Export]
         [JsonPropertyName("heat_cost")]
-        public bool? HeatCost { get; set; }
+        public bool HeatCost { get; set; }
 
         public override string ToString()
         {
@@ -54,8 +68,8 @@ namespace MASTMAN.Scripts.Data.Models
             output += Terse != null ? $"\t{Terse}\n" : "";
             output += Pilot != null ? $"\t{Pilot}\n" : "";
             output += Mech != null ? $"\t{Mech}\n" : "";
-            output += SynergyLocations != null && SynergyLocations.Count > 0 ? $"\t{LogHelper.ToStringList(SynergyLocations)}\n" : "";
-            output += Confirm != null && Confirm.Count > 0 ? $"\t{LogHelper.ToStringList(Confirm)}\n" : "";
+            output += SynergyLocations != null && SynergyLocations.Length > 0 ? $"\t{LogHelper.ToStringList(SynergyLocations.ToList())}\n" : "";
+            output += Confirm != null && Confirm.Length > 0 ? $"\t{LogHelper.ToStringList(Confirm.ToList())}\n" : "";
             output += Log != null ? $"\t{Log}\n" : "";
             output += IgnoreUsed != null ? $"\t{IgnoreUsed}\n" : "";
             output += HeatCost != null ? $"\t{HeatCost}\n" : "";

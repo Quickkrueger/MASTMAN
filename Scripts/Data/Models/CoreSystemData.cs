@@ -1,9 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using Godot;
+using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
 namespace MASTMAN.Scripts.Data.Models
 {
-    public class CoreSystemData
+    public partial class CoreSystemData : Resource
     {
         [JsonPropertyName("name")]
         public string Name { get; set; }
