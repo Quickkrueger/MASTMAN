@@ -7,59 +7,77 @@ namespace MASTMAN.Scripts.Data.Models
 {
     public partial class SystemData : Resource
     {
+        [Export]
         [JsonPropertyName("id")]
         public string Id { get; set; }
 
+        [Export]
         [JsonPropertyName("name")]
         public string Name { get; set; }
 
+        [Export]
         [JsonPropertyName("source")]
         public string Source { get; set; }
 
+        [Export]
         [JsonPropertyName("license")]
         public string License { get; set; }
 
+        [Export]
         [JsonPropertyName("license_id")]
         public string LicenseId { get; set; }
 
+        [Export]
         [JsonPropertyName("license_level")]
         public int LicenseLevel { get; set; }
 
+        [Export]
         [JsonPropertyName("effect")]
         public string Effect { get; set; }
 
+        [Export]
         [JsonPropertyName("type")]
         public SystemType Type { get; set; }
 
+        [Export]
         [JsonPropertyName("sp")]
-        public int? Sp { get; set; }
+        public int Sp { get; set; }
 
+        [Export]
         [JsonPropertyName("description")]
         public string Description { get; set; }
 
+        [Export]
         [JsonPropertyName("tags")]
-        public List<TagValData> Tags { get; set; }
+        public TagValData[] Tags { get; set; }
 
+        [Export]
         [JsonPropertyName("actions")]
-        public List<ItemActionData> Actions { get; set; }
+        public ItemActionData[] Actions { get; set; }
 
+        [Export]
         [JsonPropertyName("bonuses")]
-        public List<BonusData> Bonuses { get; set; }
+        public BonusData[] Bonuses { get; set; }
 
+        [Export]
         [JsonPropertyName("synergies")]
-        public List<SynergyData> Synergies { get; set; }
+        public SynergyData[] Synergies { get; set; }
 
+        [Export]
         [JsonPropertyName("deployables")]
-        public List<DeployableData> Deployables { get; set; }
+        public DeployableData[] Deployables { get; set; }
 
+        [Export]
         [JsonPropertyName("counters")]
-        public List<CounterData> Counters { get; set; }
+        public CounterData[] Counters { get; set; }
 
+        [Export]
         [JsonPropertyName("integrated")]
-        public List<string> Integrated { get; set; }
+        public string[] Integrated { get; set; }
 
+        [Export]
         [JsonPropertyName("special_equipment")]
-        public List<string> SpecialEquipment { get; set; }
+        public string[] SpecialEquipment { get; set; }
     }
 
     [JsonConverter(typeof(JsonEnumMemberStringEnumConverter<SystemType>))]

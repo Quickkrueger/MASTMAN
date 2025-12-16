@@ -7,22 +7,27 @@ namespace MASTMAN.Scripts.Data.Models
 {
     public partial class SynergyData : Resource
     {
+        [Export]
         [JsonPropertyName("locations")]
-        public List<string> Locations { get; set; }
+        public string[] Locations { get; set; }
 
+        [Export]
         [JsonPropertyName("detail")]
         public string Detail { get; set; }
 
+        [Export]
         [JsonPropertyName("weapon_types")]
         [JsonConverter(typeof(JsonEnumListConverter<WeaponType>))]
-        public List<WeaponType> WeaponTypes { get; set; }
+        public Godot.Collections.Array<WeaponType> WeaponTypes { get; set; }
 
+        [Export]
         [JsonPropertyName("system_types")]
         [JsonConverter(typeof(JsonEnumListConverter<SystemType>))]
-        public List<SystemType> SystemTypes { get; set; }
+        public Godot.Collections.Array<SystemType> SystemTypes { get; set; }
 
+        [Export]
         [JsonPropertyName("weapon_sizes")]
         [JsonConverter(typeof(JsonEnumListConverter<WeaponSize>))]
-        public List<WeaponSize> WeaponSizes { get; set; }
+        public Godot.Collections.Array<WeaponSize> WeaponSizes { get; set; }
     }
 }

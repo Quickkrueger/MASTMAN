@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cvy7vdt1xurn3"]
 
-[ext_resource type="Script" path="res://Scripts/Manager/Data_Manager.cs" id="1_heg1j"]
+[ext_resource type="Script" uid="uid://53hlc65he0n3" path="res://Scripts/Manager/Data_Manager.cs" id="1_heg1j"]
 
 [node name="Node3D" type="Node3D"]
 
