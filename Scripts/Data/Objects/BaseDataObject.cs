@@ -15,6 +15,7 @@ namespace MASTMAN.Data
         Dictionary<string, Func<string, Task>> processors;
         private static readonly HttpClient client = new HttpClient();
         private bool _debugMode = true;
+
         [Export]
         public ActionData[] Actions { get; set; }
         [Export]
