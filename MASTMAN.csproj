@@ -7,6 +7,10 @@
     <Folder Include="Scenes\Levels\" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Microsoft.JavaScript.NodeApi" Version="0.9.18" />
+    <PackageReference Include="Microsoft.JavaScript.NodeApi.Generator" Version="0.9.18" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
